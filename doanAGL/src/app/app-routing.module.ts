@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CpnAboutusComponent } from './Components/cpn-aboutus/cpn-aboutus.component';
 import { CpnBookingComponent } from './Components/cpn-booking/cpn-booking.component';
 import { CpnContactUsComponent } from './Components/cpn-contact-us/cpn-contact-us.component';
@@ -22,13 +22,12 @@ const routes: Routes = [
   {path:"RTSitems2",component:CpnItemRTRComponent,data:{name:'hoang'}}, //  get id with body
   {path:"galley",component:CpnGalleryComponent},
   {path:"home",component:CpnHomeComponent},
-  {path:"login",component:LoginComponent},
+  {path:"login",loadChildren: () => import('./Components/route-child/md-child/md-child.module').then(m => m.MdChildModule)},
   {path:"register",component:RegitsterComponent},
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

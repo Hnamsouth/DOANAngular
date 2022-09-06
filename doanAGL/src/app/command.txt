@@ -1,0 +1,2 @@
+// create child route&module
+ng generate module md-child --route r-child  --module app.module

@@ -18,6 +18,7 @@ import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegitsterComponent } from './Components/regitster/regitster.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { RegitsterComponent } from './Components/regitster/regitster.component';
     CpnContactUsComponent,
     CpnItemRTRComponent,
     LoginComponent,
-    RegitsterComponent
+    RegitsterComponent,
+
   ],
   imports: [
     BrowserModule,
