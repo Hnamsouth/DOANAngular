@@ -7,6 +7,8 @@ import { CpnEntertainmentComponent } from './Components/cpn-entertainment/cpn-en
 import { CpnGalleryComponent } from './Components/cpn-gallery/cpn-gallery.component';
 import { CpnHomeComponent } from './Components/cpn-home/cpn-home.component';
 import { CpnRestaurantComponent } from './Components/cpn-restaurant/cpn-restaurant.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegitsterComponent } from './Components/regitster/regitster.component';
 import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
 
 const routes: Routes = [
@@ -20,7 +22,8 @@ const routes: Routes = [
   {path:"RTSitems2",component:CpnItemRTRComponent,data:{name:'hoang'}}, //  get id with body
   {path:"galley",component:CpnGalleryComponent},
   {path:"home",component:CpnHomeComponent},
-
+  {path:"login",component:LoginComponent},
+  {path:"register",component:RegitsterComponent},
 
 ];
 

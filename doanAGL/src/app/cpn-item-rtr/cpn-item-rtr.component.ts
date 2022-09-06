@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import axios from 'axios';
 
 @Component({
   selector: 'app-cpn-item-rtr',
@@ -29,6 +30,14 @@ export class CpnItemRTRComponent implements OnInit {
     this.route.queryParamMap.subscribe(qmap=>{
       console.log(qmap)
     })
+
+
+    this.http.get('google.com.nv').subscribe(data=>{
+      console.log(data)
+    },err=>{
+      console.log(err)
+    })
+
   }
 
   ngOnInit(): void {

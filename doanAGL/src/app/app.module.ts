@@ -15,6 +15,8 @@ import { CpnGalleryComponent } from './Components/cpn-gallery/cpn-gallery.compon
 import { CpnAboutusComponent } from './Components/cpn-aboutus/cpn-aboutus.component';
 import { CpnContactUsComponent } from './Components/cpn-contact-us/cpn-contact-us.component';
 import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegitsterComponent } from './Components/regitster/regitster.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
     CpnGalleryComponent,
     CpnAboutusComponent,
     CpnContactUsComponent,
-    CpnItemRTRComponent
+    CpnItemRTRComponent,
+    LoginComponent,
+    RegitsterComponent
   ],
   imports: [
     BrowserModule,
