@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  navsvg='assets/svg/nav.svg'
   slideImage='assets/img/avatars/avatar2.jpg'
   title = 'doanAGL-t2204m';
 
