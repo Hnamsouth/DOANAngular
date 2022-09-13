@@ -1,56 +1,44 @@
-<a routerLink="/login/child-a">test child route a</a> <br>
-<a routerLink="/login/child-b">test child route b</a>
+<div id="main-wrapper" class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="card border-0">
+                <div class="card-body p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-bold text-theme">Login</h3>
+                                </div>
+                                <h6 class="h5 mb-0">Welcome back!</h6>
+                                <p class="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p>
+                                <form>
+                                    <div class="form-group"><label for="exampleInputEmail1">Email address</label><input id="exampleInputEmail1" class="form-control" type="email" /></div>
+                                    <div class="form-group mb-5"><label for="exampleInputPassword1">Password</label><input id="exampleInputPassword1" class="form-control" type="password" /></div>
+                                    <!-- <button class="btn btn-theme" type="submit">Login</button> -->
+                                    <button class="button-30" role="button" type="submit">Login</button>
+                                    <br class=" m-3">
+                                    <a class="forgot-link float-right text-primary" href="#l">Forgot password?</a>
 
-
-<form class=" g-3 needs-validation" [formGroup]="loginForm" novalidate>
-    <div class="col-md-4">
-        <label for="validationCustomUsername" class="form-label">Username</label>
-        <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-            <input type="text" name="username" class="form-control" formControlName="userName">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-inline-block">
+                            <div class="account-block rounded-right">
+                                <div class="overlay rounded-right"></div>
+                                <div class="account-testimonial">
+                                    <h4 class="text-white mb-4">This beautiful theme yours!</h4>
+                                    <p class="lead text-white">&quot;Best investment i made for a long time. Can only recommend it for other users.&quot;</p>
+                                    <p>- Admin User</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-muted text-center mt-3 mb-0">Don&#39;t have an account? <a class="text-primary ml-1" href="register.html">register</a></p>
         </div>
     </div>
-    <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Password</label>
-        <input type="password" name="password" class="form-control" formControlName="password">
-
-    </div>
-    <div class="col-12 mt-3">
-        <button class="btn btn-primary " type="submit">Submit form</button>
-    </div>
-</form>
-<textarea name="test" id="" cols="30" rows="10"></textarea>
-<i class="fa-brands fa-facebook iconanima" style="
-font-size: 100px;
-box-shadow: 10px -5px 10px black
-"></i>
-<style>
-    .iconanima {
-        /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
-        animation: chaychay 10s infinite;
-    }
-    
-    @keyframes chaychay {
-        0% {
-            transform: translateX(-25px);
-        }
-        50% {
-            transform: translateX(50px);
-        }
-        100% {
-            transform: translateX(-25px);
-        }
-    }
-</style>
-
-<img [src]="base64" t="">
-
-
-
-
-<div class="form-group">
-    <label for="file">Choose File</label>
-    <input type="file" id="file" (change)="handleFileInput($event)">
 </div>
-
-<img [src]="test" alt="">
+<!-- HTML !-->
+<button class="button-85" role="button">Button 85</button>
+<!-- HTML !-->
