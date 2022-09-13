@@ -18,8 +18,27 @@ import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegitsterComponent } from './Components/regitster/regitster.component';
 
+import { AgmCoreModule } from '@agm/core';
+
+
+
 
 @NgModule({
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      // please get your own API key here:
+      // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+      apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw',
+      libraries: ['places']
+    })
+
+  ],
   declarations: [
     AppComponent,
     CpnHeaderComponent,
@@ -35,13 +54,6 @@ import { RegitsterComponent } from './Components/regitster/regitster.component';
     LoginComponent,
     RegitsterComponent,
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

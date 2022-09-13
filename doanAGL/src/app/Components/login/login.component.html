@@ -29,7 +29,7 @@ box-shadow: 10px -5px 10px black
         /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
         animation: chaychay 10s infinite;
     }
-
+    
     @keyframes chaychay {
         0% {
             transform: translateX(-25px);
@@ -42,3 +42,15 @@ box-shadow: 10px -5px 10px black
         }
     }
 </style>
+
+<img [src]="base64" t="">
+
+
+
+
+<div class="form-group">
+    <label for="file">Choose File</label>
+    <input type="file" id="file" (change)="handleFileInput($event)">
+</div>
+
+<img [src]="test" alt="">
