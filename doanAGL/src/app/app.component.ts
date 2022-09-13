@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent {
 
   slideImage='assets/img/avatars/avatar2.jpg'
-  title = 'doanAGL';
+  title = 'doanAGL-t2204m';
 
   ar1=[1,2,3,4,5,6];
   ar2=['a','s','b']
