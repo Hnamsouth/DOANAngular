@@ -19,7 +19,10 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegitsterComponent } from './Components/regitster/regitster.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { NgbdRatingEvents } from './Components/login/rating.component';
 
+import {NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
+const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
 
@@ -36,7 +39,8 @@ import { AgmCoreModule } from '@agm/core';
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
       apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw',
       libraries: ['places']
-    })
+    }),
+    ...ngbt
 
   ],
   declarations: [
@@ -53,6 +57,8 @@ import { AgmCoreModule } from '@agm/core';
     CpnItemRTRComponent,
     LoginComponent,
     RegitsterComponent,
+    NgbdRatingEvents
+
 
   ],
   providers: [],

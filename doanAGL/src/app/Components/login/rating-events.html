@@ -1,0 +1,20 @@
+<!-- <ngbd-rating-events [(rate)]="selected" (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly"></ngbd-rating-events>
+<hr>
+<pre>
+Selected: <b>{{selected}}</b>
+Hovered: <b>{{hovered}}</b>
+</pre>
+<button class="btn btn-sm btn-outline-{{readonly ? 'danger' : 'success'}}" (click)="readonly = !readonly">
+  {{ readonly ? "readonly" : "editable"}}
+</button> -->
+<div class="row">
+    <div class="col">
+        <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem>Action - 1</button>
+                <button ngbDropdownItem>Another Action</button>
+                <button ngbDropdownItem>Something else is here</button>
+            </div>
+        </div>
+    </div>

@@ -1,7 +1,7 @@
 .bg-svg {
     background-image: url('https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1920.png'), url('../../../assets/svg/nav.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat-y;
+    // background-size: cover;
     border-bottom: 3px solid #e2b77a;
 }
 
