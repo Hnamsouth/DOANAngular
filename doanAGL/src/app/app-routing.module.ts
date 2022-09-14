@@ -22,7 +22,8 @@ const routes: Routes = [
   {path:"RTSitems2",component:CpnItemRTRComponent,data:{name:'hoang'}}, //  get id with body
   {path:"galley",component:CpnGalleryComponent},
   {path:"home",component:CpnHomeComponent},
-  {path:"login",loadChildren: () => import('./Components/route-child/md-child/md-child.module').then(m => m.MdChildModule)},
+  // {path:"login",loadChildren: () => import('./Components/route-child/md-child/md-child.module').then(m => m.MdChildModule)},
+  {path:"login",component:LoginComponent},
   {path:"register",component:RegitsterComponent},
 ];
 

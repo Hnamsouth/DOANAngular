@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100% 100%" style="width: 100%;">
     <defs>
       <linearGradient id="RadialGradient1">
+<<<<<<< HEAD
         <stop offset="3%" stop-color="#355C7D">
           <animate attributeName="offset" dur="9s" values="0.01;0.09;0.01" repeatCount="indefinite"/>
         </stop>
@@ -14,6 +15,21 @@
           <animate attributeName="offset" dur="9s" values="0.85;0.95;0.85" repeatCount="indefinite"/>
         </stop>
         <stop offset="96%" stop-color="#6C5B7B">
+=======
+        <stop offset="3%" stop-color="#495c83">
+          <animate attributeName="offset" dur="9s" values="0.01;0.09;0.01" repeatCount="indefinite"/>
+        </stop>
+        <stop offset="35%" stop-color="#7a86b6">
+          <animate attributeName="offset" dur="9s" values="0.10;0.24;0.10" repeatCount="indefinite"/>
+        </stop>
+        <stop offset="65%" stop-color="#cfc8da">
+          <animate attributeName="offset" dur="9s" values="0.25;0.84;0.25" repeatCount="indefinite"/>
+        </stop>
+        <stop offset="85%" stop-color="#a8a4ce">
+          <animate attributeName="offset" dur="9s" values="0.85;0.95;0.85" repeatCount="indefinite"/>
+        </stop>
+        <stop offset="96%" stop-color="#495c83">
+>>>>>>> 2950c15f9e7d90b9614fbe600f8abe0c401d9e19
           <animate attributeName="offset" dur="9s" values="0.96;1;0.96" repeatCount="indefinite"/>
         </stop>
       </linearGradient>
@@ -24,5 +40,6 @@
 color nav:
     op1: FFB3B3  FFDBA4 C1EFFF FFE9AE
     op1:495c83  7a86b6 cfc8da a8a4ce 495c83
+    op1:310645  6D2050 5d584e 445F6C 520D3F
 
    -->
