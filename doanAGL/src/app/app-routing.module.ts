@@ -9,6 +9,7 @@ import { CpnHomeComponent } from './Components/cpn-home/cpn-home.component';
 import { CpnRestaurantComponent } from './Components/cpn-restaurant/cpn-restaurant.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegitsterComponent } from './Components/regitster/regitster.component';
+import { PracticesComponent } from './Components/tester/test.component';
 import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   // {path:"login",loadChildren: () => import('./Components/route-child/md-child/md-child.module').then(m => m.MdChildModule)},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegitsterComponent},
+  {path:"test",component:PracticesComponent},
 ];
 
 @NgModule({

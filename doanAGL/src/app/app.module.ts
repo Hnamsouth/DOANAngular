@@ -22,6 +22,8 @@ import { AgmCoreModule } from '@agm/core';
 import { NgbdRatingEvents } from './Components/login/rating.component';
 
 import {NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
+import { PracticesComponent } from './Components/tester/test.component';
+import { CommonModule } from '@angular/common';
 const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
@@ -40,7 +42,8 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
       apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw',
       libraries: ['places']
     }),
-    ...ngbt
+    ...ngbt,
+    CommonModule
 
   ],
   declarations: [
@@ -57,7 +60,8 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
     CpnItemRTRComponent,
     LoginComponent,
     RegitsterComponent,
-    NgbdRatingEvents
+    NgbdRatingEvents,
+    PracticesComponent
 
 
   ],

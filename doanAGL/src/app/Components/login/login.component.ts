@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Binary } from '@angular/compiler';
-import { Component, OnInit, Renderer2 } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import axios from 'axios';
+import { Binary } from '@angular/compiler';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import {Observable, OperatorFunction} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map, filter} from 'rxjs/operators';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Location } from '@angular/common'
 
-type State = {id: number, name: string};
+
 
 @Component({
   selector: 'app-login',
@@ -14,73 +16,88 @@ type State = {id: number, name: string};
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // public model: State|undefined;
-  // formatter = (state: State) => state.name;
-  inp=''
-  states: State[] = [
-    {id: 0, name: 'Alabama'},
-    {id: 1, name: 'Alaska'},
-    {id: 2, name: 'American Samoa'},
-    {id: 3, name: 'Arizona'},
-    {id: 4, name: 'Arkansas'},
-    {id: 5, name: 'California'},
-    {id: 6, name: 'Colorado'},
-    {id: 7, name: 'Connecticut'},
-    {id: 8, name: 'Delaware'},
-    {id: 9, name: 'District Of Columbia'},
-    {id: 10, name: 'Federated States Of Micronesia'}
-  ]
-  base64:string = '';
-  test:any;
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
-  val='';
-  testselect(vl:any){
-    // console.log(vl.value)
-    this.val=vl.value
-    console.log(this.states)
+  //check form shows/hide
+  testSwitch=1;
+  togleform(){
+    // if(this.route.snapshot.params['register'] == 1){this.testSwitch=2;console.log(this.route.snapshot.params['register'])}else{this.testSwitch=1}
+    this.testSwitch=this.testSwitch==1?2:1;
   }
-  constructor(private fbd:FormBuilder,private http:HttpClient) {
-    // let text = this.http.get<any>('http://localhost:1234/get-img').subscribe(value=>{
-    //   console.log(value)
-    // })
+
+  // form login
+  FormLogin =  this.fbd.group({
+    email:['', Validators.required],
+    password:['', Validators.required]
+   })
+   // form register
+   FormRegister =this.fbd.group({
+    Firstname:['', Validators.required],
+    Lastname:['', Validators.required],
+    Email:['', Validators.required],
+    Password:['', Validators.required],
+    repeatpassword:['', Validators.required],
+   })
+  // check repeat pw
+  checkpw=false;
+  iconcheck='bi bi-exclamation-circle danger';
+// check user login
+checkuser=false;
+  constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location) {
+
   }
-  handleFileInput(event:any) {
-    // console.log(event);
-    let file = event.target.files[0];
-    const reader = new FileReader();
-    const ar = new Uint8Array()
-        reader.onloadend=()=>{
-          this.test = reader.result;
-          // console.log(reader.result)
-          // const base64String = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
-        }
-        if (file) {
-            // let as=reader.readAsArrayBuffer(file as Blob);
-            let ass=reader.readAsDataURL(file as Blob);
-            // console.log(as)
-        }
+  // exclamation check
+  onchange(){
+    let data = this.FormRegister.value
+    if(!data.Password && !data.repeatpassword){this.checkpw=false}
+    else if(data.Password===data.repeatpassword){this.checkpw=false}else{
+      this.iconcheck='bi bi-exclamation-circle text-danger'}
+  }
+  //
+  loginSubmit(){
+    let data = this.FormLogin.value
+    // console.log(check.email===check.password? 1:0);
+    console.log(data.email +" "+data.password )
+    this.http.post<any>('http://localhost:1234/checkUer',{emailorphone:data.email,password:data.password}).subscribe(vl=>{
+      console.log(vl)
+      if(vl.status){this.location.back()}else{
+        alert("user not found")
+      }
 
-          // this.http.post('http://localhost:1234/post-img',{longtextimg:this.test}).subscribe(vl=>{console.log(vl)})
-}
+    })
 
- loginForm =  this.fbd.group({
-  userName:['', Validators.required],
-  password:'1234243'
- })
+
+  }
+  registerSubmit(){
+    // check password
+    let data = this.FormRegister.value
+    if(data.Password!==data.repeatpassword || !data.Password || !data.repeatpassword){
+      this.checkpw=true;this.iconcheck='bi bi-exclamation-circle text-danger'}
+      else{
+      this.iconcheck='bi bi-check-circle text-success';
+    }
+    // console.table(this.FormRegister.value);
+//  push api
+    this.http.post('http://localhost:1234/createUser',{
+      firstname:data.Firstname,
+      lastname:data.Lastname,
+      emailorphone:data.Email,
+      password:data.Password
+    }).subscribe(vl=>{console.log(vl)})
+  }
+  checkurl(){
+// check url current
+    // snapshot => test: Route(url:'login', path:'login')
+    this.route.url.subscribe(vl=>{
+      console.log("test: " + vl);
+      })
+      // back
+
+
+      // this.location.back()
+  }
+
 
   ngOnInit(): void {
+
   }
-  ctrl = new FormControl<number | null>(null, Validators.required);
-
-  toggle() {
-    if (this.ctrl.disabled) {
-      this.ctrl.enable();
-    } else {
-      this.ctrl.disable();
-    }
-  }
-
-
-
 
 }

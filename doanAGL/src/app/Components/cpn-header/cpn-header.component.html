@@ -21,39 +21,21 @@
             </ul>
         </div>
 
-        <button type="button" class="button-29 text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Account</button>
-        <!-- <button class="button-29" role="button"><a routerLink="/login">Login</a></button>
-        <button class="button-29" role="button"><a routerLink="/register">Register</a></button> -->
-        <!-- <ngb-accordion #acc="ngbAccordion">
-            <ngb-panel id="toggle-1" title="First panel">
-                <ng-template ngbPanelContent>
+        <!-- <button type="button" class="button-29 text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Account</button> -->
+        <div class="row">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="button-29 text-light" id="dropdownBasic1" ngbDropdownToggle>Login</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <h3>Sign in</h3>
+                        <hr>
+                        <a ngbDropdownItem type="button" class="button-29 text-light" routerLink="/login">Login</a>
+                        <!-- <a ngbDropdownItem type="button" class="button-29 text-light" [routerLink]="['/login',{register:1}]">Login</a> -->
 
-                </ng-template>
-            </ngb-panel>
-        </ngb-accordion>
-
-        <ng-template #popContent>Hello, <b>hoang van nam</b>!</ng-template>
-        <ng-template #popTitle>Fancy <b>content!!</b></ng-template>
-        <button type="button" class="btn btn-outline-secondary" [ngbPopover]="popContent" [popoverTitle]="popTitle">I've got markup and bindings in my popover!</button> -->
-    </div>
-</nav>
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button ngbDropdownItem>Action - 1</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
         </div>
     </div>
-</div>
+</nav>
