@@ -1,0 +1,29 @@
+.bgtest {
+    // position: relative;
+    #castleNight {
+        background-color: #452e75;
+        background-image: url(https://reserve.tokyodisneyresort.jp/cgp/images/en/pc/bg/bg_castle_night_01.jpg);
+    }
+    #castleNoon {
+        background-color: #fce4ab;
+        background-image: url(https://reserve.tokyodisneyresort.jp/cgp/images/en/pc/bg/bg_castle_noon_01.jpg);
+    }
+    #castleMorning {
+        background-color: #97c2f4;
+        background-image: url(https://reserve.tokyodisneyresort.jp/cgp/images/en/pc/bg/bg_castle_morning_01.jpg);
+        opacity: 1;
+    }
+    #castleMorning,
+    #castleNoon,
+    #castleNight {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-repeat: repeat-x;
+        background-position: 0 100%;
+        opacity: 0;
+    }
+}
