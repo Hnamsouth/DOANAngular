@@ -8,6 +8,7 @@ import { CpnGalleryComponent } from './Components/cpn-gallery/cpn-gallery.compon
 import { CpnHomeComponent } from './Components/cpn-home/cpn-home.component';
 import { CpnRestaurantComponent } from './Components/cpn-restaurant/cpn-restaurant.component';
 import { LoginComponent } from './Components/login/login.component';
+import { CheckverifyComponent } from './Components/regitster/checkverify.component';
 import { RegitsterComponent } from './Components/regitster/regitster.component';
 import { PracticesComponent } from './Components/tester/test.component';
 import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
@@ -27,8 +28,8 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"register",component:RegitsterComponent},
   {path:"test",component:PracticesComponent},
-];
-
+  {path:"checkverify",component:CheckverifyComponent},
+]
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

@@ -2,12 +2,13 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import {Observable, OperatorFunction} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map, filter} from 'rxjs/operators';
+
 type State = {id: number, name: string};
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  styleUrls: ['./test.component.scss'],
 })
 export class PracticesComponent implements OnInit {
   inp=''

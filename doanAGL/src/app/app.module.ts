@@ -24,6 +24,7 @@ import { NgbdRatingEvents } from './Components/login/rating.component';
 import {NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 import { PracticesComponent } from './Components/tester/test.component';
 import { CommonModule } from '@angular/common';
+import { CheckverifyComponent } from './Components/regitster/checkverify.component';
 const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
@@ -61,7 +62,8 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
     LoginComponent,
     RegitsterComponent,
     NgbdRatingEvents,
-    PracticesComponent
+    PracticesComponent,
+    CheckverifyComponent
 
 
   ],

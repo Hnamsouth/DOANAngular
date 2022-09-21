@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100% 100%" style="width: 100%;">
     <defs>
       <linearGradient id="RadialGradient1">
-        <stop offset="3%" stop-color="#3d4996">
+        <stop offset="3%" stop-color="#495c83">
           <animate attributeName="offset" dur="9s" values="0.01;0.09;0.01" repeatCount="indefinite"/>
         </stop>
-        <stop offset="35%" stop-color="#1f7d9a">
+        <stop offset="35%" stop-color="#7a86b6">
           <animate attributeName="offset" dur="9s" values="0.10;0.24;0.10" repeatCount="indefinite"/>
         </stop>
-        <stop offset="65%" stop-color="#3e8878">
+        <stop offset="65%" stop-color="#a89ad6">
           <animate attributeName="offset" dur="9s" values="0.25;0.84;0.25" repeatCount="indefinite"/>
         </stop>
-        <stop offset="85%" stop-color="#4e5e93">
+        <stop offset="85%" stop-color="#837fa1">
           <animate attributeName="offset" dur="9s" values="0.85;0.95;0.85" repeatCount="indefinite"/>
         </stop>
-        <stop offset="96%" stop-color="#3d4996">
+        <stop offset="96%" stop-color="#495c83">
           <animate attributeName="offset" dur="9s" values="0.96;1;0.96" repeatCount="indefinite"/>
         </stop>
       </linearGradient>
