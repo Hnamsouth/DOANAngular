@@ -10,7 +10,7 @@ type State = {id: number, name: string};
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss'],
 })
-export class PracticesComponent implements OnInit {
+export  class PracticesComponent implements OnInit {
   inp=''
   states: State[] = [
     {id: 0, name: 'Alabama'},

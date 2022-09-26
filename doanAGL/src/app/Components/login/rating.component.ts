@@ -9,3 +9,4 @@ export class NgbdRatingEvents {
   hovered = 0;
   readonly = false;
 }
+

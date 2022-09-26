@@ -14,7 +14,7 @@ import { CpnEntertainmentComponent } from './Components/cpn-entertainment/cpn-en
 import { CpnGalleryComponent } from './Components/cpn-gallery/cpn-gallery.component';
 import { CpnAboutusComponent } from './Components/cpn-aboutus/cpn-aboutus.component';
 import { CpnContactUsComponent } from './Components/cpn-contact-us/cpn-contact-us.component';
-import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
+import { CpnItemRTRComponent } from './Components/cpn-item-rtr/cpn-item-rtr.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegitsterComponent } from './Components/regitster/regitster.component';
 
@@ -22,9 +22,10 @@ import { AgmCoreModule } from '@agm/core';
 import { NgbdRatingEvents } from './Components/login/rating.component';
 
 import {NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
-import { PracticesComponent } from './Components/tester/test.component';
 import { CommonModule } from '@angular/common';
 import { CheckverifyComponent } from './Components/regitster/checkverify.component';
+import { TicketComponent } from './Components/ticket/ticket.component';
+import {PracticesComponent} from './Components/tester/test.component';
 const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
@@ -62,8 +63,10 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
     LoginComponent,
     RegitsterComponent,
     NgbdRatingEvents,
-    PracticesComponent,
-    CheckverifyComponent
+    CheckverifyComponent,
+    TicketComponent,
+    PracticesComponent
+
 
 
   ],

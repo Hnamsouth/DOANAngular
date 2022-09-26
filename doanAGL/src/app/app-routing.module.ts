@@ -11,7 +11,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { CheckverifyComponent } from './Components/regitster/checkverify.component';
 import { RegitsterComponent } from './Components/regitster/regitster.component';
 import { PracticesComponent } from './Components/tester/test.component';
-import { CpnItemRTRComponent } from './cpn-item-rtr/cpn-item-rtr.component';
+import { CpnItemRTRComponent } from './Components/cpn-item-rtr/cpn-item-rtr.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},

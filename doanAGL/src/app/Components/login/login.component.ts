@@ -4,6 +4,7 @@ import { FormBuilder,Validators } from '@angular/forms';
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Location } from '@angular/common'
+import { CpnHeaderComponent,checklogin } from '../cpn-header/cpn-header.component';
 
 @Component({
   selector: 'app-login',
@@ -25,19 +26,34 @@ export class LoginComponent implements OnInit {
 
 // check user login
 checkuser=false;
+
   constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location) {
+
   }
   // exclamation check
   loginSubmit(){
     let data = this.FormLogin.value
     console.log(data.email +" "+data.password )
-    this.http.post<any>('http://localhost:1234/checkUer',{emailorphone:data.email,password:data.password}).subscribe(vl=>{
+    this.http.post<any>('http://localhost:1234/checkUerlogin',{emailorphone:data.email,password:data.password}).subscribe(vl=>{
       console.log(vl)
-      if(vl.status){this.location.back()}else{
-        alert("user not found")
+      if(vl.status==101){
+        localStorage.setItem("user",JSON.stringify({user:data.email,id:1}));
+        this.location.back();
+        // this.location.go()
+      }else if(vl.status==303){
+        // new CpnHeaderComponent()
+    new checklogin(data);
+
+        alert("user name or password incorrect")
+        this.checkuser=true;
+      }else{
+        alert("Unverified account")
       }
 
     })
+  }
+  addtest(){
+    new checklogin(1);
   }
 //   checkurl(){
 // // check url current
