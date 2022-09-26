@@ -25,6 +25,7 @@ export class AppComponent {
     //   console.log(vl)
     // })
   }
+
   check=500
 
   onActivate(event:any) {

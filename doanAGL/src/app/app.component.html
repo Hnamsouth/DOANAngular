@@ -1,6 +1,9 @@
-<app-cpn-header></app-cpn-header>
 <div>
+    <app-cpn-header></app-cpn-header>
     <router-outlet></router-outlet>
     <!-- (activate)="onActivate($event)" -->
+    <app-con-footer></app-con-footer>
 </div>
-<app-con-footer></app-con-footer>
+<div>
+    <router-outlet name="login"></router-outlet>
+</div>

@@ -20,7 +20,7 @@ export class CpnHomeComponent implements OnInit {
   playPause() {
     var myVideo: any = document.getElementById("my_video_1");
     if (myVideo.paused){
-       myVideo.play();this.icon_play_pause='bi bi-pause-circle '
+       myVideo.play();this.icon_play_pause='bi bi-pause-circle'
       }else {
         myVideo.pause();this.icon_play_pause='bi bi-play-circle'
       };

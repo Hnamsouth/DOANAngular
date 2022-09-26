@@ -10,6 +10,194 @@ var datauser:any
 })
 
 export class CpnHeaderComponent implements OnInit {
+  navbar={
+    items:[
+      // {
+      //   navname:"",
+      //   icon:"",
+      //   navitems:[
+      //     {
+      //       title:"",
+      //       child_items:[
+      //         {
+      //           icon:"",name:""
+      //         },
+      //         {icon:"",name:""}
+      //       ]
+      //     }
+      //   ],
+      //   FeaturedItems:[],
+      // routelink:
+      //   {
+      //     main:''
+      //   }
+      //
+      // }
+      {
+        navname:"Ticket",
+        icon:"",
+        navitems:[
+          {
+            title:"Items 1",
+            child_items:[
+              {
+                icon:"bi bi-info-circle",name:"Ticket InformatiWon"
+              },
+              {icon:"fa-solid fa-horse",name:" Ride Height & Ticketing"}
+            ]
+          },{
+            title:"Items 2",
+            child_items:[
+              {icon:"bi bi-stars",name:" Discount & Specials"},
+              {icon:"bi bi-bag-plus",name:" Buy Ticket"}
+            ]
+          }
+        ],
+        FeaturedItems:[],
+        routelink:
+          {
+            main:''
+          }
+
+      },{
+          navname:"Ride & Attractions",
+          icon:"",
+          navitems:[
+            {
+              title:"Games",
+              child_items:[
+                {icon:"",name:"Runaway Rapids"},
+                {icon:"",name:"Hollowgraves Haunted Manor"},
+                {icon:"",name:"Batting Cages"},
+                {icon:"",name:"Keansburg Games"},
+                {icon:"",name:"Arcades"},
+              ]
+            },{
+              title:"Water",
+              child_items:[
+                {icon:"",name:"Keansburg Amusement Park"},
+                {icon:"",name:"Fishing Pier"},
+                {icon:"",name:"Beach"},
+              ]
+            },
+            {
+              title:"Kids",
+              child_items:[
+                {icon:"",name:"Go Karts"},
+              ]
+            }
+          ],
+          FeaturedItems:[],
+          routelink:
+            {
+              main:''
+            }
+
+        },
+         {
+        navname:"Foods",
+        icon:"",
+        navitems:[
+          {
+            title:"Popular",
+            child_items:[
+              {icon:"",name:"Nickerson’s Ice Cream"},
+              {icon:"",name:"Pizza V"},
+              {icon:"",name:"Girardi’s Kabobs"},
+              {icon:"",name:"CJ’s Spot"},
+              {icon:"",name:"Coastal Ice Cream"},
+              {icon:"",name:"view detail"},
+            ]
+          }
+        ],
+        FeaturedItems:[],
+        routelink:
+          {
+            main:'/restaurant'
+          }
+
+      },
+      {
+        navname:"Information",
+        icon:"",
+        navitems:[
+          {
+            title:"",
+            child_items:[
+              {icon:"",name:"General Information"},
+              {icon:"",name:"History"},
+              {icon:"",name:"Service Animals"},
+            ]
+          },
+          {
+            title:"News",
+            child_items:[
+              {icon:"",name:"Operating Calendar"},
+              {icon:"",name:"Events"},
+              {icon:"",name:"Fundraising"},
+            ]
+          },
+          {
+            title:"Location",
+            child_items:[
+              {icon:"",name:"Accommodations"},
+              {icon:"",name:"Location Shoots"},
+              {icon:"",name:"Directions & Parking"},
+              {icon:"",name:"Park Map"},
+            ]
+          }
+        ],
+        FeaturedItems:[],
+        routelink:
+          {
+            main:''
+          }
+
+      },
+      {
+        navname:"Shop",
+        icon:"",
+        navitems:[
+          {
+            title:"",
+            child_items:[
+              {
+                icon:"",name:"Toys"
+              },
+              {icon:"",name:"Clothes"}
+            ]
+          }
+        ],
+        FeaturedItems:[],
+        routelink:
+          {
+            main:''
+          }
+
+      },
+      {
+        navname:"Groups & Parties",
+        icon:"",
+        navitems:[
+          {
+            title:"",
+            child_items:[
+              {
+                icon:"",name:"Group Packages"
+              },
+              {icon:"",name:"Brithday Packages"}
+            ]
+          }
+        ],
+        FeaturedItems:[],
+        routelink:
+          {
+            main:''
+          }
+
+      }
+    ]
+  }
    user:number=CpnHeaderComponent.addtest;
    static addtest:number=0;
   array =[1,2,4,2,2]

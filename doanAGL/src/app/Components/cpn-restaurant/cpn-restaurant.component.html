@@ -1,1 +1,92 @@
-<p>cpn-restaurant works!</p>
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <h1>Restaurants &amp; Eateries</h1>
+            <p class="w-lg-50">No trip to the boardwalk is complete without traditional boardwalk fare. Tempt your taste buds with everything from seafood to zeppole's.</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-2 sv-items" *ngFor="let i of items_service">
+            <button type="button" class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
+              <img src="{{i.icon}}" width="25px" class="img-sv-food mb-1" alt="">
+            <span>{{i.name}}</span>
+          </button>
+        </div>
+    </div>
+
+    <div>
+        <select class="" name="sortfooditems" id="">
+        <option value="">Sort by Name</option>
+        <option value="">Sort by Location</option>
+        <option value="">Sort by Featured</option>
+      </select>
+    </div>
+    <div>
+        <div class="row food-items" *ngFor="let i of dinning">
+            <div class="col-4 img-food">
+                <img src="{{i.img}}" alt="" width="280px" height="158px">
+            </div>
+            <div class="col">
+                <h3 style="color:gray ;">{{i.typeoffood|uppercase}}</h3>
+                <h3>{{i.name}}</h3>
+                <span><strong>{{i.typeofservice}}</strong></span><br>
+                <span>location</span><br>
+                <span>{{i.MealPricing}}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+        <div class="col">
+            <div class="d-flex">
+                <div class="px-3">
+                    <h1>Nickerson’s Ice Cream</h1><img src="assets/img/food-2/icecreamwafflecone.jpg" style="width: 100%;">
+                    <p>Nickerson’s Ice cream has been serving freshly made hard ice cream since 1946 . Choose a cone, sundae,milkshake, or our crowd favorite; a famous waffle and ice cream sandwich! The combinations are endless with toppings like hot fudge,
+                        caramel, sprinkles, and more!&nbsp;<br></p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+<style>
+    .icon-sv {
+        background: url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/dining-plan.svg);
+    }
+
+    .sv-items {
+        border: 3px solid rgb(218, 218, 218);
+        border-radius: 8px;
+        margin-left: 8px;
+    }
+
+    .sv-items:hover {
+        border: 3px solid rgb(50, 71, 116);
+    }
+
+    .sv-items button {
+        background: none;
+        border: none;
+    }
+
+    .food-items {
+        padding: 20px 0;
+        border-bottom: 1px solid rgb(209, 209, 209);
+    }
+
+    .img-food {
+        overflow: hidden;
+    }
+
+    .food-items img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 280px;
+        height: 178px;
+        max-height: inherit;
+    }
+
+    .food-items img:hover {
+        transform: scaleX(1) scaleY(1) scaleZ(1);
+        transition: transform 1.6s ease 0s;
+    }
+</style>

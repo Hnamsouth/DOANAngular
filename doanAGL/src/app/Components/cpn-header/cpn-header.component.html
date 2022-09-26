@@ -1,54 +1,112 @@
 <nav class="navbar navbar-light navbar-expand-md py-3 bg-svg">
     <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex  justify-content-end align-items-center mb-1">
-                <div class="col-3 text-center ">
-                    <a routerLink="/login" class="text-light login-p-header">Sign In or Create Account</a>
+        <div class="row w-100">
+            <div class="col-12 row  justify-content-between align-items-center mb-1 ">
+                <div class=" col-md-8 col-xl-3 ">
+                    <a routerLink="/login" class="text-light login-p-header"><i class="bi bi-person-circle"></i>  Sign In or Create Account</a>
                 </div>
-                <div class="nav-hd col-3">
+                <div class=" col-md-4 nav-hd col-xl-3">
                     <i class="bi bi-search text-light fs-6 me-1 ms-1"></i>
                     <input type="text" class="searchbar" placeholder="seach keansburgworld">
                 </div>
-
             </div>
-            <div class="col d-flex justify-content-center ">
-                <img src="https://cdn.discordapp.com/attachments/1017641794202247241/1023594446278897794/uppercase_logoAsset_1.png" width="163" height="67"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle navigationa</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
-                <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg></button>
-                <div class="collapse navbar-collapse nav-text align-items-end" id="navcol-3">
-                    <ul class="list-nav ">
+            <div class="col d-flex justify-content-center row">
+                <div class="me-2 col-2 mb-2">
+                    <img src="https://cdn.discordapp.com/attachments/1017641794202247241/1023594446278897794/uppercase_logoAsset_1.png" width="163" height="67">
+                    <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle navigationa</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                          <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse nav-text justify-content-between col" id="navcol-3">
+                    <div class="list-nav">
+                        <a routerLink="/" class="nav-items1"> <i class="fa-solid fa-house-chimney fs-4"></i> </a>
+                    </div>
+                    <!-- <div class="list-nav">
                         <a routerLink="/" class="nav-items1"> Ticket</a>
-                        <div class="child-items1 p-3 d-flex">
-                            <div class="child-items-left">
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Ticket Information</a>
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Ride Height & Ticketing</a>
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Discount & Specials</a>
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Buy Ticket</a>
-                            </div>
-                            <div class="child-items-right">
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Ticket Information</a>
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Ride Height & Ticketing</a>
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Discount & Specials</a>
-                                <h3>Title 1</h3>
-                                <a routerLink="/">Buy Ticket</a>
+                        <div class="child-items1">
+                            <div class="d-flex" style="width: max-content;">
+                                <div class="child-items-left">
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/"><i class="bi bi-info-circle"></i> Ticket InformatiWon</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/"><i class="fa-solid fa-horse"></i> Ride Height & Ticketing</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/"><i class="bi bi-stars"></i>  Discount & Specials</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/"><i class="bi bi-bag-plus"></i>  Buy Ticket</a>
+                                </div>
+                                <div class="child-items-right">
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Ticket Information</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Ride Height & Ticketing</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Discount & Specials</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Buy Ticket</a>
+                                </div>
                             </div>
                         </div>
-                    </ul>
+                    </div> -->
+                    <div class="list-nav" *ngFor="let i of navbar.items">
+                        <a routerLink="{{i.routelink.main}}" class="nav-items1"> <i class="{{i.icon}}"></i>{{i.navname}}</a>
+                        <div class="child-items1">
+                            <div class="d-flex" style="width: max-content;">
+                                <div class="child-items-left">
+                                    <div class="mb-3" *ngFor="let navitems of i.navitems">
+                                        <h6>{{navitems.title}}</h6>
+                                        <div *ngFor="let childitem of navitems.child_items">
+                                            <a routerLink="/"><i class="{{childitem.icon}}"></i> {{childitem.name}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="child-items-right">
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Ticket Information</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Ride Height & Ticketing</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Discount & Specials</a>
+                                    <h6>Title 1</h6>
+                                    <a routerLink="/">Buy Ticket</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-nav">
+                        <a routerLink="/" class="nav-items1"> <i class="bi bi-cart2 fs-5"></i> Cart</a>
+                    </div>
+                    <div class="list-nav">
+                        <a routerLink="/" class="nav-items1"> <i class="bi bi-person-lines-fill fs-5"></i> My Experience</a>
+                        <div class="child-items1">
+                            <div class="d-flex" style="width: max-content;">
+                                <div class="child-items-left">
+                                    <p>
+                                        <a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/reservations.svg" class="img-my" alt=""><span class="h6 fw-bold"> My Plan </span></a>
+                                    </p>
+                                    <p>
+                                        <a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/magicbands-v2.svg" class="img-my" alt=""><span class="h6 fw-bold"> My MagicBands and Cards </span></a>
+                                    </p>
+                                    <p>
+                                        <a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" class="img-my" alt=""><span class="h6 fw-bold"> My Photos </span></a>
+                                    </p>
+                                    <!-- <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p>
+                                    <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p>
+                                    <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex align-items-center">
+                <!-- login -- register -->
+                <!-- <div class="d-flex align-items-center">
                     <div class="row">
                         <div class="col">
                             <div ngbDropdown class="d-inline-block">
                                 <button type="button" class="button-29 text-light" id="dropdownBasic1" ngbDropdownToggle>Login</button>
                                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                    <h3>Sign in</h3>
+                                    <h6>Sign in</h6>
                                     <hr>
                                     <a ngbDropdownItem type="button" class="button-29 text-light" routerLink="/login">Login</a>
                                     <button ngbDropdownItem>Action - 1</button>
@@ -69,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -79,38 +137,68 @@
     ul li {
         list-style: none;
     }
-    
+
     .list-nav {
         position: relative;
     }
-    
+
     .child-items1 {
         position: absolute;
         display: none;
         z-index: 1000;
     }
-    
-    .list-nav:hover .child-items {
+
+    .list-nav:hover .child-items1 {
         display: block;
     }
-    /*
-    .nav-items {
+
+    .nav-items1 {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        padding: 7px 13px;
     }
 
-    .nav-items,
-    .child-items-left a {
+    .child-items-left {
         background: #012169;
-        color: white;
-        text-decoration: none;
-        font-size: 1.25rem;
-        padding: 0.5rem !important;
+        padding: 10px;
     }
 
     .child-items-right {
         background-color: #FFFBF5;
-    }*/
+        padding: 10px;
+    }
+
+    .nav-items1:hover {
+        background: #012169;
+        text-decoration: underline;
+    }
+
+    .nav-items1,
+    .child-items-left a,
+    .child-items-right a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    .child-items-left h6 {
+        color: white;
+        font-weight: 600;
+    }
+
+    .child-items-left a:hover,
+    .child-items-right a:hover {
+        text-decoration: underline;
+    }
+
+    .child-items-right a {
+        color: #021031b4;
+    }
+
+    .img-my {
+        filter: brightness(0) invert(1);
+        width: 22px;
+    }
 </style>
 <style>
     .nav-hd {
@@ -124,23 +212,24 @@
         height: 30px;
         padding: 4px;
     }
-    
+
     .searchbar {
         background: none;
         border: none;
         border-inline: none;
         outline: none;
     }
-    
+
      ::placeholder {
         color: white;
         opacity: 0.8;
+        text-align: center;
     }
-    
+
     .login-p-header {
         text-decoration: none;
     }
-    
+
     .login-p-header:hover {
         text-decoration: underline;
     }

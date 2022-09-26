@@ -4,7 +4,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
   selector: 'app-cpn-checkverify',
-  template: `<div style="padding: 10px;background:url('https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1920.png'),#f9f9f9;"><div class="container text-center" [style]="main">
+  template: `<div style="padding: 10px;background:url('https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1920.png'),#FFFBF5;"><div class="container text-center" [style]="main">
   <div><i [ngClass]="icon" style="font-size: 102px;" [style.color]="color"></i>
       <h1>Thanks for Subscribe</h1>
       <p class="fs-5" >{{text}}</p>
@@ -14,7 +14,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class CheckverifyComponent implements OnInit {
 // far fa-thumbs-up #2973e1 -- far fa-check-circle color: #1f9323;
-main=`height: 67vh;display: flex;align-items: center;justify-content: center;    padding: 10pxpx;background: white;box-shadow: -5px 5px 8px #bbbaba;`
+main=`height: 67vh;display: flex;align-items: center;justify-content: center;    padding: 10pxpx;background: white;box-shadow:rgb(159 159 159) -5px 5px 8px;`
   constructor(private http:HttpClient,private route:ActivatedRoute,private router: Router) {
     var checkrgt=setInterval(()=>{
       let data:any = this.route.snapshot.params
