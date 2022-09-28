@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cpn-restaurant.component.scss']
 })
 export class CpnRestaurantComponent implements OnInit {
-  dinning=[
+   public dinning=[
     // {
     //   img:'',
     //   typeoffood:'American\Casual Dining',
@@ -58,7 +58,7 @@ export class CpnRestaurantComponent implements OnInit {
       located:'',
       MealPricing:'$15 to $34.99 per adult',
       desciption:{
-        text:'Our original Fresh Grilled 1/4lb. Pork &amp; Chicken Kabobs were established here in the park in 1997.<br>Also serving traditional Sabrett Hotdogs and other boardwalk favorites.'
+        text:'Our original Fresh Grilled 1/4lb. Pork &amp; Chicken Kabobs were established here in the park in 1997.Also serving traditional Sabrett Hotdogs and other boardwalk favorites.'
       }
     },
     {

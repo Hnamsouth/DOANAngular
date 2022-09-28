@@ -1,0 +1,291 @@
+<div style="background-image: linear-gradient(135deg, rgb(255, 246, 239), rgb(235, 246, 252));">
+    <div class="row" style="width:100% ;">
+        <!-- style="max-width:100% ;" col-lg-7 col-12 p-0 -->
+        <div class="col-lg-7 col-12 p-0 slide-food d-flex justify-content-center align-items-center">
+            <div class="slider">
+                <input type="radio" id="slide1" name="slide" checked>
+                <input type="radio" id="slide2" name="slide">
+                <input type="radio" id="slide3" name="slide">
+                <input type="radio" id="slide4" name="slide">
+                <ul>
+                    <li>
+                        <img src="assets/img/food-2/fried-chicken-chicken-fried-crunchy-60616.jpg">
+                    </li>
+                    <li>
+                        <img src="assets/img/food-2/pexels-photo-604660.jpg">
+                    </li>
+                    <li>
+                        <img src="assets/img/food-2/unspecified-1.jpg">
+                    </li>
+                    <li>
+                        <img src="assets/img/food-2/unspecified-2.jpg">
+                    </li>
+                </ul>
+
+            </div>​
+        </div>
+        <div class="col left-ct p-0 d-flex">
+            <div class="d-flex flex-column justify-content-center">
+                <div class="l-hd-ct">
+                    <header class="header1">
+                        <h1 class="title " title="Sebastian's Bistro">Sebastian's Bistro</h1>
+                    </header>
+                    <div>
+                        <a routerLink="/restaurant"> Food </a><span style="color:#253B56 ;"> Location in .... </span>
+                    </div>
+                    <div>
+                        <span style="color:#253B56 ;"> Transport your taste buds to “island time” with delightful family-style dishes infused with rich Latin and Caribbean flavors.</span>
+                    </div>
+                    <div class="inf-items">
+                        <p><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/menu.svg" width="25px" alt=""><a href="/"> View Menu </a></p>
+                        <p><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/dining.svg" width="25px" alt=""><a href="/"> Latin Casual Dining Family Style </a></p>
+                        <p><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/dining-plan-accepted.svg" width="25px" alt=""><a href="/"> View Discounts </a></p>
+                        <p><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/dining-plan-not-accepted.svg" width="25px" alt=""><span style="color:#253B56 ;">  Dining Plans Are Temporarily Unavailable  </span></p>
+                    </div>
+                </div>
+                <div>
+                    <hr class="mb-4">
+                    <div>
+                        <p><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/calendar-month.svg" width="20px" alt=""><a href="/">  Monday, September 26, 2022  </a></p>
+                        <span style="color:#253B56 ;"> Dinner – 4:30 PM to 9:30 PM </span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class=" bt-ck"><strong> Check Availability </strong> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div style="margin: 30px 20px 0;">
+                <div class="mb-4">
+                    <h2 style="color:#253B56 ;"> An Important Message </h2>
+                    <p><a href=""> Review </a>important updates to dining experiences at Walt Keansburgs World Resort</p>
+                    <hr class="mb-4">
+                </div>
+                <div class="mb-4">
+                    <h2 style="color:#253B56 ;"> Meal Pricing </h2>
+                    <p><a href=""> Dinner Menu </a> – $$ ($15 to $34.99 per adult)</p>
+                    <hr class="mb-4">
+                </div>
+                <div class="mb-4">
+                    <h2 style="color:#253B56 ;"> Reservations Now Available </h2>
+                    <p>Advance reservations are highly recommended. <a href=""> Learn when advance reservations can be made. </a></p>
+                    <hr class="mb-4">
+                </div>
+            </div>
+            <div>
+                <h2 style="color:#253B56 ;" class="mb-4"> Another Restaurent </h2>
+                <!--  -->
+                <div class="row justify-content-around ">
+                    <a class=" col-5 d-flex flex-wrap food-items p-3" style="background:#FFFFFF ;" routerLink="/">
+                        <div class="col-4 img-food">
+                            <div class="ov-imgfood">
+                                <img src="{{data[2].img}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col p-2">
+                            <h4 style="color:#253B56 ;"><strong> {{data[2].name}}</strong></h4>
+                            <p>{{data[2].desciption.text}}</p>
+                        </div>
+                    </a>
+                    <a class="col-5 d-flex flex-wrap food-items p-3" style="background:#FFFFFF ;" routerLink="/">
+                        <div class="col-4 img-food">
+                            <div class="ov-imgfood">
+                                <img src="{{data[3].img}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col p-2">
+                            <h4 style="color:#253B56 ;"><strong> {{data[3].name}}</strong></h4>
+                            <p>{{data[3].desciption.text}}</p>
+                        </div>
+                    </a>
+                </div>
+                <br class="mb-4">
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .slide-food {
+        font-size: 100%;
+        background: radial-gradient(circle, #ecf0f5, #e7dfdf, #dfbec3, #9b6046);
+    }
+
+    .slider {
+        box-shadow: 0 4em 3em hsla(0, 0%, 0%, .4);
+        height: 15em;
+        width: 24em;
+        text-align: center;
+        /*left: 50%;
+        margin: -7.5em -12em;
+        position: absolute;
+        top: 50%;*/
+    }
+
+    .slider input {
+        position: relative;
+        top: -6.5em;
+        margin-right: 10px;
+    }
+
+    .slider ul {
+        height: 15em;
+        position: relative;
+        width: 24em;
+        -webkit-transform: perspective(300);
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: 1s;
+    }
+
+    .slider li {
+        left: 0;
+        list-style: none;
+        position: absolute;
+        top: 0;
+        -webkit-transform: translateZ(7.5em);
+        -webkit-transform-origin: 0 0;
+        -webkit-transform-style: preserve-3d;
+    }
+
+    .slider li:nth-child(2) {
+        -webkit-transform: rotateX(-90deg) translateY(-7.5em) translateZ(15em);
+    }
+
+    .slider li:nth-child(3) {
+        -webkit-transform: rotateX(-180deg) translateY(-15em) translateZ(7.5em);
+    }
+
+    .slider li:nth-child(4) {
+        -webkit-transform: rotateX(-270deg) translateY(-7.5em);
+    }
+
+    .slider img {
+        height: 15em;
+        width: 24em;
+        vertical-align: top;
+    }
+
+    #slide2:checked~ul {
+        -webkit-transform: perspective(300) rotateX(90deg);
+    }
+
+    #slide3:checked~ul {
+        -webkit-transform: perspective(300) rotateX(180deg);
+    }
+
+    #slide4:checked~ul {
+        -webkit-transform: perspective(300) rotateX(270deg);
+    }
+
+    ​
+</style>
+
+
+
+<style>
+    .left-ct {
+        background-image: linear-gradient(135deg, rgb(255, 246, 239), rgb(235, 246, 252));
+        font-family: Avenir, Helvetica, Arial, sans-serif !important;
+        letter-spacing: .6px !important;
+        padding: 22px 40px !important;
+    }
+
+    .left-ct div div {
+        margin-bottom: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0079BC;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .bt-ck {
+        border: none;
+        background-color: #0079BC;
+        color: white;
+        padding: 9px;
+    }
+
+    .l-hd-ct div {
+        margin-bottom: 10px;
+    }
+
+    .header1 h1 {
+        color: #253B56;
+    }
+
+    .food-items {
+        padding: 20px 0;
+        border-bottom: 1px solid rgb(209, 209, 209);
+        text-decoration: none;
+        color: black;
+        box-shadow: -5px 5px 8px grey;
+    }
+
+    .img-food {
+        overflow: hidden;
+    }
+
+    .ov-imgfood {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: initial;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .food-items img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 100%;
+        height: 178px;
+        max-height: inherit;
+    }
+
+    .food-items img:hover {
+        transform: scale(1.15);
+        transition: transform 1.6s ease 0s;
+    }
+
+    .inf-items p {
+        margin-bottom: 5px;
+    }
+</style>
+<!--
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+          <img [src]="images[0]" alt="Random first slide" width="100%">
+      </div>
+      <div class="carousel-caption">
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+          <img [src]="images[1]" alt="Random second slide" width="100%">
+      </div>
+      <div class="carousel-caption">
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="Random third slide" width="100%">
+      </div>
+      <div class="carousel-caption">
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+  </ng-template>
+</ngb-carousel> -->

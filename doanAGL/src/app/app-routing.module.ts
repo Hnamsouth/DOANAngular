@@ -12,6 +12,11 @@ import { CheckverifyComponent } from './Components/regitster/checkverify.compone
 import { RegitsterComponent } from './Components/regitster/regitster.component';
 import { PracticesComponent } from './Components/tester/test.component';
 import { CpnItemRTRComponent } from './Components/cpn-item-rtr/cpn-item-rtr.component';
+import { FoodDetailComponent } from './Components/cpn-restaurant/conFoodDetail.component';
+import { RunawayRapidsComponent } from './Components/Ride-Attraction/runaway-rapids/runaway-rapids.component';
+import { TicketComponent } from './Components/ticket/ticket.component';
+import { RideAttractionMainComponent } from './Components/Ride-Attraction/ride-attraction-main/ride-attraction-main.component';
+import { InfomationComponent } from './Components/infomation/infomation.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -20,6 +25,7 @@ const routes: Routes = [
   {path:"booking",component:CpnBookingComponent},
   {path:"enterainment",component:CpnEntertainmentComponent},
   {path:"restaurant",component:CpnRestaurantComponent},
+  {path:'restaurant/shop/:id',component:FoodDetailComponent},
   {path:"RTSitems/:id",component:CpnItemRTRComponent}, //  get id with route params
   {path:"RTSitems2",component:CpnItemRTRComponent,data:{name:'hoang'}}, //  get id with body
   {path:"galley",component:CpnGalleryComponent},
@@ -29,6 +35,10 @@ const routes: Routes = [
   {path:"register",component:RegitsterComponent},
   {path:"test",component:PracticesComponent},
   {path:"checkverify",component:CheckverifyComponent},
+  {path:"0",component:RunawayRapidsComponent},
+  {path:"ticket",component:TicketComponent},
+  {path:"ride-attraction",component:RideAttractionMainComponent},
+  {path:"information",component:InfomationComponent},
 ]
 @NgModule({
   imports: [

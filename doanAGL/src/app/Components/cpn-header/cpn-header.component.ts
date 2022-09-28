@@ -56,7 +56,7 @@ export class CpnHeaderComponent implements OnInit {
         FeaturedItems:[],
         routelink:
           {
-            main:''
+            main:'/ticket'
           }
 
       },{
@@ -90,7 +90,7 @@ export class CpnHeaderComponent implements OnInit {
           FeaturedItems:[],
           routelink:
             {
-              main:''
+              main:'/ride-attraction'
             }
 
         },
@@ -150,7 +150,7 @@ export class CpnHeaderComponent implements OnInit {
         FeaturedItems:[],
         routelink:
           {
-            main:''
+            main:'/information'
           }
 
       },
@@ -185,7 +185,8 @@ export class CpnHeaderComponent implements OnInit {
               {
                 icon:"",name:"Group Packages"
               },
-              {icon:"",name:"Brithday Packages"}
+              {icon:"",name:"Brithday Packages"},
+              {icon:"",name:"Jeep Jam & Truck Show 2022"},
             ]
           }
         ],

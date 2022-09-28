@@ -1,303 +1,240 @@
-<div class="hom-ctl">
-    <div class="body-header bgr">
-        <div class="controls">
-            <video loop autoplay name="media" (volumechange)="volume()" id="my_video_1" preload="none" height="auto" width="100%">
-          <source src="assets/video/keansburg2.mp4" type="video/mp4" >
-        </video>
-            <button (click)="playPause()" class="play-pause-bnt"><i [class]="icon_play_pause"></i></button>
-            <!-- <button (click)="fullscreen()">fullscreen</button> -->
-            <input type="range" name="volume" id="" (change)="volume2($event.target)" class="volum-bnt">
-        </div>
+<div class="pr-rapids">
+    <div class="vid-h">
+        <video loop autoplay name="media" id="my_video_1" preload="none" height="auto" width="100%">
+      <source src="https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-world/campaign/the-magic-is-calling/walt-disney-world-the-magic-is-calling-DIQF7857000H-video-loop.mp4" type="video/mp4" >
+      <!--assets/video/keansburg3.mp4  -->
+    </video>
     </div>
-    <div class="body-header bgr cnt-block">
-        <div class="bgtest">
-            <div class="container test">
-                <div class="container py-4 py-xl-5">
-                    <div class="row mb-5">
-                        <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2 style="font-size: 50px;">ALL FUN, <br>DAY by DAY</h2>
-                        </div>
-                    </div>
-                    <span class="gach"></span><br>
-                    <style>
-                        .gach {
-                            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #b28b33 5%, #b28b33 95%, rgba(255, 255, 255, 0) 100%);
-                            clear: both;
-                            display: block;
-                            -webkit-filter: none;
-                            filter: none;
-                            height: 1px;
-                            margin: 20px 0;
-                            position: relative;
-                            width: 100%;
-                        }
-                    </style>
-                    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/293190654_5244848695579373_3793756305302491128_n.png" width="100%">
-                                    <h4 class="card-title"><a href="#" style="font-family: Satisfy, serif;">Runaway Rapids</a></h4>
-                                    <p>Chilling all day long.</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Runaway Rapid Water Park has over 18 slides with varying speed, heights and splash zones, kiddie lagoon, and separate toddler play area, crazy lazy river, two relaxing spa pools, and more!</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/294566371_5271868706210705_251736752664879415_n.png" style="width: 100%;">
-                                    <h4 class="card-title"><a href="#" style="font-family: 'Faster One', serif;">Go Karts</a></h4>
-                                    <p>Go fast, go Karts!</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Fast Trax Go Karts is a family favorite offering two exciting tracks. The younger children can enjoy their own smaller cars that are carefully supervised on a separate kid-sized track.</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/276200670_4935308973200015_1739612376668616671_n.png" width="100%">
-                                    <h4 class="card-title" style="font-family: Arbutus, serif;"><a href="#" style="font-family: Flavors, serif;">Amusement Park</a></h4>
-                                    <p>Winner winner, chicken dinner!</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Keansburg Amusement Park is filled with dozens of exciting rides, fun games, three large family arcade centers, and an abundance of delicious boardwalk food.</span><br></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="content-rapids">
+        <div class="controls-vd" id="btn-fsc" [style.height]="widthvideo">
+            <div class="btn-fsc d-flex flex-column ">
+                <h1 class="text-light mb-4"><strong>Celebrate Across All 4 Theme Parks and Beyond</strong></h1>
+                <div>
+                    <button type="button" (click)="fullscreen()" class="f-screen me-3">Watch Full Video  <i class="bi bi-arrows-fullscreen"></i>  </button>
+                    <button (click)="playPause()" class="f-screen"> <i [class]="icon_play_pause"> </i></button>
                 </div>
-                <!-- test bg  -->
+            </div>
+            <div class="btn-volumn">
+                <input type="range" name="volume" id="" (change)="volume2($event.target)" class="volumn">
+            </div>
 
-                <div class="carousel slide" data-bs-ride="carousel" id="carousel-1" style="height: 400px;">
-                    <div class="carousel-inner h-100">
-                        <div class="carousel-item active h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="assets/img/BattingCages-Slider-01.jpeg" alt="Slide Image" style="z-index: -1;">
-                            <div class="container d-flex flex-column justify-content-center h-100">
-                                <div class="row">
-                                    <div class="col-md-8 col-lg-8 col-xl-4 offset-md-2">
-                                        <div class="mx-auto" style="max-width: 350px;text-align: center;">
-                                            <h1 class="text-uppercase fw-bold" style="color: var(--bs-white);font-family: 'Delius Unicase', serif;">batting cages</h1>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Open under new management</p>
-                                            <p class="my-3" style="color: var(--bs-white);">Located next to our ALL day parking lot!</p>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Now open every Saturday and Sunday at 10AM</p><a class="btn btn-primary btn-lg text-end me-2" role="button" href="#" style="background: rgb(96,160,255);">JOIN THE MAJORITY!</a>
-                                        </div>
-                                    </div>
+        </div>
+
+        <div class="cnt-rp">
+            <div class="container">
+
+                <section>
+                    <h2 class="title-story">Experiences</h2>
+                    <div class="row">
+                        <div class="row justify-content-center carousel">
+                            <div class="col-12 mb-3 ">
+                                <div class="ov-imgfood2">
+                                    <span class="tt-img">Thrill Rides</span>
+                                    <img class="img-b" width="100%" style="height: 400px;object-fit: cover;" src="assets/img/homepage/experiences/1-1.jpg">
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="assets/img/BattingCages-Slider-01.jpeg" alt="Slide Image" style="z-index: -1;">
-                            <div class="container d-flex flex-column justify-content-center h-100">
-                                <div class="row">
-                                    <div class="col-md-6 col-xl-4 offset-md-2">
-                                        <div style="max-width: 350px;">
-                                            <h1 class="text-uppercase fw-bold" style="color: var(--bs-white);font-family: 'Delius Unicase', serif;">batting cages</h1>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Open under new management</p>
-                                            <p class="my-3" style="color: var(--bs-white);">Located next to our ALL day parking lot!</p>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Now open every Saturday and Sunday at 10AM</p><a class="btn btn-primary btn-lg text-end me-2" role="button" href="#" style="background: rgb(96,160,255);">JOIN THE MAJORITY!</a>
-                                        </div>
+                            <div class="row">
+                                <div class="col-4 img-food">
+                                    <div class="ov-imgfood">
+                                        <span class="tt-img">Sea Serpent Roller Coaster</span>
+                                        <img src="assets/img/homepage/experiences/2-1.jpg" alt="">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="assets/img/BattingCages-Slider-01.jpeg" alt="Slide Image" style="z-index: -1;">
-                            <div class="container d-flex flex-column justify-content-center h-100">
-                                <div class="row">
-                                    <div class="col-md-6 col-xl-4 offset-md-2">
-                                        <div style="max-width: 350px;">
-                                            <h1 class="text-uppercase fw-bold" style="color: var(--bs-white);font-family: 'Delius Unicase', serif;">batting cages</h1>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Open under new management</p>
-                                            <p class="my-3" style="color: var(--bs-white);">Located next to our ALL day parking lot!</p>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Now open every Saturday and Sunday at 10AM</p><a class="btn btn-primary btn-lg text-end me-2" role="button" href="#" style="background: rgb(96,160,255);">JOIN THE MAJORITY!</a>
-                                        </div>
+                                <div class="col-4 img-food">
+                                    <div class="ov-imgfood">
+                                        <span class="tt-img">Food</span>
+                                        <img src="assets/img/homepage/experiences/2-2.jpg" alt="">
                                     </div>
+                                </div>
+                                <div class="col-4 img-food">
+                                    <div class="ov-imgfood">
+                                        <span class="tt-img">Thrill Rides</span>
+                                        <img src="assets/img/homepage/experiences/2-3.jpg" alt="">
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1"
-                            role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
-                    </ol>
-                </div>
-                <div class="container py-4 py-xl-5">
-                    <div class="row mb-5">
-                        <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2 style="font-size: 50px;">ALL FUN, <br>DAY by DAY</h2>
-                        </div>
-                    </div>
-                    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/293190654_5244848695579373_3793756305302491128_n.png" width="100%">
-                                    <h4 class="card-title"><a href="#" style="font-family: Satisfy, serif;">Runaway Rapids</a></h4>
-                                    <p>Chilling all day long.</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Runaway Rapid Water Park has over 18 slides with varying speed, heights and splash zones, kiddie lagoon, and separate toddler play area, crazy lazy river, two relaxing spa pools, and more!</span></p>
+                </section>
+
+                <section>
+                    <h2 class="title-story">Shop, Plan and Play</h2>
+                    <div class="row">
+                        <div class="bod justify-content-center">
+                            <input type="radio" name="position" />
+                            <input type="radio" name="position" />
+                            <input type="radio" name="position" checked/>
+                            <input type="radio" name="position" />
+                            <input type="radio" name="position" />
+                            <div id="carousel">
+                                <div class="item">
+                                    <h2 class="text-light">Keansburg Park</h2>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/294566371_5271868706210705_251736752664879415_n.png" style="width: 100%;">
-                                    <h4 class="card-title"><a href="#" style="font-family: 'Faster One', serif;">Go Karts</a></h4>
-                                    <p>Go fast, go Karts!</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Fast Trax Go Karts is a family favorite offering two exciting tracks. The younger children can enjoy their own smaller cars that are carefully supervised on a separate kid-sized track.</span></p>
+                                <div class="item">
+                                    <h2 class="text-light">Keansburg Park</h2>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/276200670_4935308973200015_1739612376668616671_n.png" width="100%">
-                                    <h4 class="card-title" style="font-family: Arbutus, serif;"><a href="#" style="font-family: Flavors, serif;">Amusement Park</a></h4>
-                                    <p>Winner winner, chicken dinner!</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Keansburg Amusement Park is filled with dozens of exciting rides, fun games, three large family arcade centers, and an abundance of delicious boardwalk food.</span><br></p>
+                                <div class="item">
+                                    <h2 class="text-light">Keansburg Park</h2>
+                                </div>
+                                <div class="item">
+                                    <h2 class="text-light">Keansburg Park</h2>
+                                </div>
+                                <div class="item">
+                                    <h2 class="text-light">Keansburg Park</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--  test 2 bg  -->
-                <div class="carousel slide" data-bs-ride="carousel" id="carousel-1" style="height: 400px;">
-                    <div class="carousel-inner h-100">
-                        <div class="carousel-item active h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="assets/img/BattingCages-Slider-01.jpeg" alt="Slide Image" style="z-index: -1;">
-                            <div class="container d-flex flex-column justify-content-center h-100">
-                                <div class="row">
-                                    <div class="col-md-8 col-lg-8 col-xl-4 offset-md-2">
-                                        <div class="mx-auto" style="max-width: 350px;text-align: center;">
-                                            <h1 class="text-uppercase fw-bold" style="color: var(--bs-white);font-family: 'Delius Unicase', serif;">batting cages</h1>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Open under new management</p>
-                                            <p class="my-3" style="color: var(--bs-white);">Located next to our ALL day parking lot!</p>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Now open every Saturday and Sunday at 10AM</p><a class="btn btn-primary btn-lg text-end me-2" role="button" href="#" style="background: rgb(96,160,255);">JOIN THE MAJORITY!</a>
-                                        </div>
-                                    </div>
-                                </div>
+                </section>
+
+                <section>
+                    <h2 class="title-story">Events</h2>
+                    <div class="container">
+                        <div class="card-column column-0">
+                            <div class="card card-color-0">
+                                <div class="border"></div>
+
+                                <img src="assets/img/homepage/experiences/carshow1-0.jpg" />
+                                <h1>Car Show</h1>
+                            </div>
+                            <div class="card card-color-2">
+                                <div class="border"></div>
+                                <img src="assets/img/homepage/experiences/jstshow1-0.jpg" />
+                                <h1>Jeep Jam & Truck Show</h1>
                             </div>
                         </div>
-                        <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="assets/img/BattingCages-Slider-01.jpeg" alt="Slide Image" style="z-index: -1;">
-                            <div class="container d-flex flex-column justify-content-center h-100">
-                                <div class="row">
-                                    <div class="col-md-6 col-xl-4 offset-md-2">
-                                        <div style="max-width: 350px;">
-                                            <h1 class="text-uppercase fw-bold" style="color: var(--bs-white);font-family: 'Delius Unicase', serif;">batting cages</h1>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Open under new management</p>
-                                            <p class="my-3" style="color: var(--bs-white);">Located next to our ALL day parking lot!</p>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Now open every Saturday and Sunday at 10AM</p><a class="btn btn-primary btn-lg text-end me-2" role="button" href="#" style="background: rgb(96,160,255);">JOIN THE MAJORITY!</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card-column column-1">
+                            <div class="card card-color-1">
+                                <div class="border"></div>
+                                <img src="assets/img/homepage/experiences/doge1-0.jpg" />
+                                <h1>Bark in the Park by Kara Donnelly</h1>
                             </div>
-                        </div>
-                        <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="assets/img/BattingCages-Slider-01.jpeg" alt="Slide Image" style="z-index: -1;">
-                            <div class="container d-flex flex-column justify-content-center h-100">
-                                <div class="row">
-                                    <div class="col-md-6 col-xl-4 offset-md-2">
-                                        <div style="max-width: 350px;">
-                                            <h1 class="text-uppercase fw-bold" style="color: var(--bs-white);font-family: 'Delius Unicase', serif;">batting cages</h1>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Open under new management</p>
-                                            <p class="my-3" style="color: var(--bs-white);">Located next to our ALL day parking lot!</p>
-                                            <p class="my-3" style="color: var(--bs-cyan);">Now open every Saturday and Sunday at 10AM</p><a class="btn btn-primary btn-lg text-end me-2" role="button" href="#" style="background: rgb(96,160,255);">JOIN THE MAJORITY!</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="card card-color-3">
+                                <div class="border"></div>
+                                <img src="assets/img/homepage/experiences/eeh1-0.jpg" />
+                                <h1>Easter Egg Hunt</h1>
                             </div>
                         </div>
                     </div>
-                    <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1"
-                            role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
-                    </ol>
-                </div>
-                <div class="container py-4 py-xl-5">
-                    <div class="row mb-5">
-                        <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2 style="font-size: 50px;">ALL FUN, <br>DAY by DAY</h2>
+
+                    <div id="cover" class="cover"></div>
+
+                    <div id="open-content" class="open-content">
+                        <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+                        <img id="open-content-image" src="" />
+                        <div class="text" id="open-content-text">
                         </div>
                     </div>
-                    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/293190654_5244848695579373_3793756305302491128_n.png" width="100%">
-                                    <h4 class="card-title"><a href="#" style="font-family: Satisfy, serif;">Runaway Rapids</a></h4>
-                                    <p>Chilling all day long.</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Runaway Rapid Water Park has over 18 slides with varying speed, heights and splash zones, kiddie lagoon, and separate toddler play area, crazy lazy river, two relaxing spa pools, and more!</span></p>
-                                </div>
+                </section>
+
+                <section>
+                    <h1 class="title-story">Our amazing people</h1>
+                    <div class="container">
+                        <div class="items">
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/294566371_5271868706210705_251736752664879415_n.png" style="width: 100%;">
-                                    <h4 class="card-title"><a href="#" style="font-family: 'Faster One', serif;">Go Karts</a></h4>
-                                    <p>Go fast, go Karts!</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Fast Trax Go Karts is a family favorite offering two exciting tracks. The younger children can enjoy their own smaller cars that are carefully supervised on a separate kid-sized track.</span></p>
-                                </div>
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body p-4"><img src="assets/img/276200670_4935308973200015_1739612376668616671_n.png" width="100%">
-                                    <h4 class="card-title" style="font-family: Arbutus, serif;"><a href="#" style="font-family: Flavors, serif;">Amusement Park</a></h4>
-                                    <p>Winner winner, chicken dinner!</p>
-                                    <p class="card-text"><span style="color: rgb(1, 1, 1);">Keansburg Amusement Park is filled with dozens of exciting rides, fun games, three large family arcade centers, and an abundance of delicious boardwalk food.</span><br></p>
-                                </div>
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
+                            </div>
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
+                            </div>
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
+                            </div>
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
+                            </div>
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
+                            </div>
+                            <div class="entry">
+                                <p class="name">John Doe</p>
+                                <img src="assets/img/homepage/experiences/people1.jpg" alt="Smiling chick">
+                                <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                </section>
+
+
 
             </div>
+            <br><br><br><br><br><br><br>
+
         </div>
     </div>
 </div>
+
 <style>
-    .hom-ctl {}
-
-    .cnt-block {
-        /*position: absolute;
-        left: 0%;
-        right: 0%;*/
-        transform: translateY(-360px);
+    section {
+        margin-bottom: 10vh;
     }
 
-    .html5VideoPlayer {
-        height: auto;
-        background: transparent;
-        z-index: 0;
+    .title-story {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        color: rgb(211, 134, 18);
     }
 
-    .controls {
+    * {
+        box-sizing: border-box;
+    }
+
+    .ov-imgfood,
+    .ov-imgfood2 {
         position: relative;
-    }
-
-    .play-pause-bnt {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        background: none;
-        border: none;
-        font-size: 85px;
-        color: white;
-        opacity: 0.9;
-        display: none;
-    }
-
-    .controls:hover .play-pause-bnt,
-    .controls:hover .volum-bnt {
         display: block;
+        width: 100%;
+        height: 100%;
+        max-width: initial;
+        overflow: hidden;
+        /*box-shadow: 5px 5px 8px #7a6f6f;*/
     }
 
-    .bgr {
-        background: #FFFBF5;
+    .ov-imgfood img {
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+        max-height: inherit;
     }
 
-    .volum-bnt {
+    .ov-imgfood img:hover,
+    .ov-imgfood2 img:hover,
+    img:hover {
+        transform: scale(1.1);
+        transition: all 1.6s ease-in-out;
+    }
+
+    .tt-img {
         position: absolute;
-        left: 20px;
-        bottom: 60px;
-        background: none;
-        border: none;
-        font-size: 85px;
         color: white;
-        opacity: 1;
-        display: none;
+        top: 0;
+        z-index: 2;
+        font-size: 18px;
+        font-weight: 600;
+        text-shadow: 0 0 3px black;
+        margin-top: 5px;
+        margin-left: 5px;
     }
 </style>

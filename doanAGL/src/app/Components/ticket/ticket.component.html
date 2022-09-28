@@ -1,1 +1,156 @@
-<p>ticket works!</p>
+<div class="pr-rapids">
+    <div class="vid-h">
+        <video loop autoplay name="media" id="my_video_1" preload="none" height="auto" width="100%">
+    <source src="https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-world/campaign/the-magic-is-calling/walt-disney-world-the-magic-is-calling-DIQF7857000H-video-loop.mp4" type="video/mp4" >
+    <!--assets/video/keansburg3.mp4  -->
+  </video>
+    </div>
+    <div class="content-rapids">
+        <div class="controls-vd" id="btn-fsc" [style.height]="widthvideo">
+            <div class="btn-fsc d-flex flex-column ">
+                <h1 class="text-light mb-4"><strong>Celebrate Across All 4 Theme Parks and Beyond</strong></h1>
+                <div>
+                    <button type="button" (click)="fullscreen()" class="f-screen me-3">Watch Full Video  <i class="bi bi-arrows-fullscreen"></i>  </button>
+                    <button (click)="playPause()" class="f-screen"> <i [class]="icon_play_pause"> </i></button>
+                </div>
+            </div>
+            <div class="btn-volumn">
+                <input type="range" name="volume" id="" (change)="volume2($event.target)" class="volumn">
+            </div>
+
+        </div>
+
+        <div class="cnt-rp main-cnt">
+            <!--  -->
+            <div class="container">
+                <div class="cnt-1">
+                    <div class="text-center">
+                        <div class="title-s"></div>
+                        <h2 class="title-story">Most Beloved Attractions</h2>
+                        <div class="hr"></div>
+                    </div>
+                    <div class="mcnt3">
+                        <!-- <div class="ov-imgfood2">
+                        <img class="img-h-1" src="assets/img/homepage/experiences/kb1-0.jpg" alt="">
+                    </div> -->
+
+                        <a href="https://front.codes/" class="logo hover-target" target="_blank">
+                            <img src="https://assets.codepen.io/1462889/fcb.png" alt="">
+                        </a>
+
+                        <div class="section  over-hide px-4 px-sm-0">
+                            <div class="container">
+                                <div class="row  justify-content-center">
+                                    <div class="col-lg-12 col-xl-12 align-self-center padding-tb">
+                                        <div class="section mx-auto text-center slider-height-padding">
+                                            <input class="checkbox frst" type="radio" id="slide-1" name="slider" checked/>
+                                            <label for="slide-1"></label>
+                                            <input class="checkbox scnd" type="radio" name="slider" id="slider-2" />
+                                            <label for="slider-2"></label>
+                                            <input class="checkbox thrd" type="radio" name="slider" id="slider-3" />
+                                            <label for="slider-3"></label>
+                                            <input class="checkbox foth" type="radio" name="slider" id="slider-4" />
+                                            <label for="slider-4"></label>
+                                            <ul>
+                                                <li>
+                                                    <span>MALE GOOFY FACE</span>
+                                                </li>
+                                                <li>
+                                                    <span>TOY PIG</span>
+                                                </li>
+                                                <li>
+                                                    <span>SHY PORTRAIT</span>
+                                                </li>
+                                                <li>
+                                                    <span>SKATEBOARD FACE</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cnt-1 mcnt2">
+                <div class="container">
+                    <h1>The World’s Most Magical Celebration</h1>
+                    <div class="row">
+                        <div class="col-6 p-0">
+                            <div class="ov-imgfood2">
+                                <span class="tt-img">Thrill Rides</span>
+                                <img class="img-bd-1" src="assets/img/homepage/experiences/1-1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-6 p-0">
+                            <div class="ov-imgfood2">
+                                <span class="tt-img">Thrill Rides</span>
+                                <img class="img-bd-1" src="assets/img/homepage/experiences/2-2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-6 p-0">
+                            <div class="ov-imgfood2">
+                                <span class="tt-img">Thrill Rides</span>
+                                <img class="img-bd-1" src="assets/img/homepage/experiences/2-3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-6 p-0">
+                            <div class="ov-imgfood2">
+                                <span class="tt-img">Thrill Rides</span>
+                                <img class="img-bd-1" src="assets/img/homepage/experiences/3-0.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="container">
+                <div class="cnt-1 hd-mcnt4">
+                    <div class="text-center">
+                        <div class="title-s"></div>
+                        <h2 class="title-story">Walt Keansburg Park Anniversary Celebration Merchandise</h2>
+                        <div class="hr"></div>
+                    </div>
+                    <div class="mcnt4">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="ov-imgfood2">
+                                    <img class="img-mcnt4" src="assets/img/homepage/experiences/kb1-0.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 text">
+                                <span class="descrip">Discover new merchandise collections created for The World’s Most Magical Celebration—a once-in-a-lifetime event honoring the 50th anniversary of Walt Disney World Resort.</span>
+                                <button class="bnt-mcnt4"> <a routerLink="/"> Learn More </a> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="container mb-5">
+                <div class="cnt-1 hd-mcnt4">
+                    <div class="text-center">
+                        <div class="title-s"></div>
+                        <h2 class="title-story">Walt Keansburg Park Anniversary Celebration Merchandise</h2>
+                        <div class="hr"></div>
+                    </div>
+                    <div class="mcnt4">
+                        <div class="row">
+                            <div class="col-6 text">
+                                <span class="descrip">Discover new merchandise collections created for The World’s Most Magical Celebration—a once-in-a-lifetime event honoring the 50th anniversary of Walt Disney World Resort.</span>
+                                <button class="bnt-mcnt4"> <a routerLink="/"> Learn More </a> </button>
+                            </div>
+                            <div class="col-6">
+                                <div class="ov-imgfood2">
+                                    <img class="img-mcnt4" src="assets/img/homepage/experiences/kb1-0.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

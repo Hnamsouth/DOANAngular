@@ -26,6 +26,20 @@ import { CommonModule } from '@angular/common';
 import { CheckverifyComponent } from './Components/regitster/checkverify.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
 import {PracticesComponent} from './Components/tester/test.component';
+import { FoodDetailComponent } from './Components/cpn-restaurant/conFoodDetail.component';
+import { RunawayRapidsComponent } from './Components/Ride-Attraction/runaway-rapids/runaway-rapids.component';
+import { KBgameComponent } from './Components/Ride-Attraction/kbgame/kbgame.component';
+import { HollowgravesHauntedComponent } from './Components/Ride-Attraction/hollowgraves-haunted/hollowgraves-haunted.component';
+import { ArcadesComponent } from './Components/Ride-Attraction/arcades/arcades.component';
+import { FishingPierComponent } from './Components/Ride-Attraction/fishing-pier/fishing-pier.component';
+import { BeachComponent } from './Components/Ride-Attraction/beach/beach.component';
+import { GokartsComponent } from './Components/Ride-Attraction/gokarts/gokarts.component';
+import { InfomationComponent } from './Components/infomation/infomation.component';
+import { EventsComponent } from './Components/infomation/events/events.component';
+import { NewsComponent } from './Components/infomation/news/news.component';
+import { QuickBtnComponent } from './Components/cpn-header/quickbtn.component';
+import { RideAttractionMainComponent } from './Components/Ride-Attraction/ride-attraction-main/ride-attraction-main.component';
+import { GrouppartiesComponent } from './Components/groupparties/groupparties.component';
 const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
@@ -65,7 +79,21 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
     NgbdRatingEvents,
     CheckverifyComponent,
     TicketComponent,
-    PracticesComponent
+    PracticesComponent,
+    FoodDetailComponent,
+    RunawayRapidsComponent,
+    KBgameComponent,
+    HollowgravesHauntedComponent,
+    ArcadesComponent,
+    FishingPierComponent,
+    BeachComponent,
+    GokartsComponent,
+    InfomationComponent,
+    EventsComponent,
+    NewsComponent,
+    QuickBtnComponent,
+    RideAttractionMainComponent,
+    GrouppartiesComponent
 
 
 

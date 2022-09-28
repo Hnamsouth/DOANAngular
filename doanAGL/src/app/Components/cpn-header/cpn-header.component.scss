@@ -183,3 +183,94 @@
     box-shadow: #3c4fe0 0 3px 7px inset;
     transform: translateY(2px);
 }
+
+// ----------------------------------
+@import '~compass-mixins/lib/compass/css3';
+// can touch this!
+$items: 6;
+$size: 100;
+$bgcolor: #F6717F;
+// can't touch this!
+$deg: 360/$items;
+$unrotate: - (90 - $deg)/2;
+$skew: 90 - $deg;
+html {
+    background: #44384E;
+    margin: 70px;
+}
+
+ul {
+    @include transform(scale(0.3));
+    @include transition(.3s ease-out all);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    width: #{$size*2}px;
+    height: #{$size*2}px;
+    li {
+        position: absolute;
+        width: #{$size}px;
+        height: #{$size}px;
+        -webkit-transform-origin: 100% 100%;
+        overflow: hidden;
+        display: none;
+        a {
+            color: white;
+            display: block;
+            width: #{$size*2}px;
+            height: #{$size*2}px;
+            border-radius: 50%;
+            text-align: center;
+            background: linear-gradient(182deg, #3a3cb7, #d37777, #a1a1a1);
+            font-size: 25px;
+        }
+        &:nth-child(odd) {
+            a {
+                // background: lighten($bgcolor, 2%);
+                background: linear-gradient(182deg, #141562, #ff9dc7, #a1a1a1);
+            }
+        }
+        @for $i from 1 through $items {
+            &:nth-child(#{$i}) {
+                display: block;
+                @include transform(rotate(#{$i*$deg}deg) skew(#{$skew}deg));
+                a {
+                    line-height: #{$size/2}px;
+                    @include transform(skew(#{-$skew}deg) rotate(-#{$deg}deg));
+                    &:hover {
+                        background: white;
+                        color: black;
+                    }
+                }
+            }
+        }
+        &.close {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            left: calc(50% - 25px);
+            top: calc(50% - 25px);
+            display: block;
+            @include transform(scale(3.6) rotate(45deg));
+            @include transition(.3s ease-in-out all);
+            -webkit-transform-origin: 50% 50%;
+            a {
+                background: none;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                color: #ccc;
+            }
+        }
+    }
+    &.active {
+        @include transform(scale(1));
+        .close {
+            @include transform(rotate(0deg));
+        }
+    }
+}
