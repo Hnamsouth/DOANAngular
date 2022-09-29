@@ -131,20 +131,20 @@
         box-sizing: border-box;
         -webkit-transition: all 0.2s ease;
         transition: all 0.2s ease;
-        background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/3-0.jpg');
         animation: border-transform 6s linear infinite alternate forwards;
         -webkit-animation-play-state: paused;
         -moz-animation-play-state: paused;
         animation-play-state: paused;
     }
     .checkbox.scnd+label {
-        background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/people2.jpg');
     }
     .checkbox.thrd+label {
-        background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/if12.jpg');
     }
     .checkbox.foth+label {
-        background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/if13.jpg');
     }
     .checkbox:checked+label {
         box-shadow: 0 8px 25px 0 rgba(16, 39, 112, .3);
@@ -205,7 +205,7 @@
         border: 5px solid #bdc3c7;
         background-size: cover;
         background-position: center;
-        background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/3-0.jpg');
         border-radius: 50%;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
@@ -225,13 +225,13 @@
         mix-blend-mode: difference;
     }
     ul li:nth-child(2) {
-        background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/people2.jpg');
     }
     ul li:nth-child(3) {
-        background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/if12.jpg');
     }
     ul li:nth-child(4) {
-        background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+        background-image: url('https://hnamsouth.github.io/Webpractice.github.io/html-css-js/img/doanAGL/if13.jpg');
     }
     .checkbox.frst:checked~ul li:nth-child(1) {
         opacity: 1;

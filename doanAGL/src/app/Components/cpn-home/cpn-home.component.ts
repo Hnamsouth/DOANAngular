@@ -41,7 +41,8 @@ export class CpnHomeComponent implements OnInit {
    }
   }
   ngOnInit(): void {
-
+    var myVideo: any = document.getElementById("my_video_1");
+    myVideo.play()
   }
 
 }

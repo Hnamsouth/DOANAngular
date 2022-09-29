@@ -5,13 +5,7 @@
                 <div class=" col-md-4 col-xl-3 ">
                     <a routerLink="/login" class="text-light login-p-header"><i class="bi bi-person-circle"></i>  Sign In or Create Account</a>
                 </div>
-                <div class="me-2 col-2 mb-2">
-                    <img src="https://cdn.discordapp.com/attachments/1017641794202247241/1023594446278897794/uppercase_logoAsset_1.png" width="163" height="67">
-                    <!-- <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle navigationa</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
-                        <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </button> -->
-                </div>
+
                 <div class=" col-md-4 nav-hd col-xl-3">
                     <i class="bi bi-search text-light fs-6 me-1 ms-1"></i>
                     <input type="text" class="searchbar" placeholder="seach keansburgworld">
@@ -20,6 +14,10 @@
             <div class="col d-flex justify-content-center row">
 
                 <div class="collapse navbar-collapse nav-text justify-content-between col" id="navcol-3">
+                    <div class="me-2 col-2 mb-2 text-center">
+                        <img src="assets/svg/logo.svg" width="163" height="50" style="filter: drop-shadow(0 1px 2px #35181f);">
+                        <!-- https://cdn.discordapp.com/attachments/1017641794202247241/1023594446278897794/uppercase_logoAsset_1.png -->
+                    </div>
                     <div class="list-nav">
                         <a routerLink="" class="nav-items1"> <i class="fa-solid fa-house-chimney fs-4"></i> </a>
                     </div>
@@ -111,42 +109,42 @@
     ul li {
         list-style: none;
     }
-    
+
     .list-nav {
         position: relative;
     }
-    
+
     .child-items1 {
         position: absolute;
         display: none;
         z-index: 1000;
     }
-    
+
     .list-nav:hover .child-items1 {
         display: block;
     }
-    
+
     .nav-items1 {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding: 7px 13px;
     }
-    
+
     .child-items-left {
         background: #012169;
         padding: 10px;
     }
-    
+
     .child-items-right {
         background-color: #FFFBF5;
         padding: 10px;
     }
-    
+
     .nav-items1:hover {
         background: #012169;
         text-decoration: underline;
     }
-    
+
     .nav-items1,
     .child-items-left a,
     .child-items-right a {
@@ -154,21 +152,21 @@
         text-decoration: none;
         font-size: 15px;
     }
-    
+
     .child-items-left h6 {
         color: white;
         font-weight: 600;
     }
-    
+
     .child-items-left a:hover,
     .child-items-right a:hover {
         text-decoration: underline;
     }
-    
+
     .child-items-right a {
         color: #021031b4;
     }
-    
+
     .img-my {
         filter: brightness(0) invert(1);
         width: 22px;
@@ -186,24 +184,24 @@
         height: 30px;
         padding: 4px;
     }
-    
+
     .searchbar {
         background: none;
         border: none;
         border-inline: none;
         outline: none;
     }
-    
+
      ::placeholder {
         color: white;
         opacity: 0.8;
         text-align: center;
     }
-    
+
     .login-p-header {
         text-decoration: none;
     }
-    
+
     .login-p-header:hover {
         text-decoration: underline;
     }

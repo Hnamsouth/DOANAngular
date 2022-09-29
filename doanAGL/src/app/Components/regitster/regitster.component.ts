@@ -30,34 +30,36 @@ export class RegitsterComponent implements OnInit {
    registerSubmit(){
     let data = this.FormRegister.value
     // check email
+    console.log(data)
     if(data.Password!==data.repeatpassword || !data.Password || !data.repeatpassword){
       this.checkpw=true;this.iconcheck='bi bi-exclamation-circle text-danger'}
       else{
       this.iconcheck='bi bi-check-circle text-success';
-    }
-  let stt =Math.floor(Math.random() * 86423)+12345;
-  let cverifystt=stt;
+      let stt =Math.floor(Math.random() * 86423)+12345;
+      let cverifystt=stt;
 
-  this.http.post<any>('http://localhost:1234/createUser',{
-    firstname:data.Firstname,
-    lastname:data.Lastname,
-    emailorphone:data.Email,
-    password:data.Password,
-    cverify:cverifystt
-  }).subscribe(vl=>{
-      console.log(cverifystt)
-      console.log(vl)
-      if(vl.status===101){ // chua verify
-        this.http.post('http://localhost:1234/sendmail',{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
-        this.rt.navigate([`/checkverify`,{user:`${data.Email}`}]);
-      }else if(vl.status===202){ // create n
-        this.http.post('http://localhost:1234/sendmail',{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
-        this.rt.navigate([`/checkverify`,{user:`${data.Email}`}]);
-      }else{ // user registed
-        this.ckemail=true;
+      this.http.post<any>('http://localhost:1234/createUser',{
+        firstname:data.Firstname,
+        lastname:data.Lastname,
+        emailorphone:data.Email,
+        password:data.Password,
+        cverify:cverifystt
+      }).subscribe(vl=>{
+          console.log(cverifystt)
+          console.log(vl)
+          if(vl.status===101){ // chua verify
+            this.http.post('http://localhost:1234/sendmail',{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
+            this.rt.navigate([`/checkverify`,{user:`${data.Email}`}]);
+          }else if(vl.status===202){ // create n
+            this.http.post('http://localhost:1234/sendmail',{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
+            this.rt.navigate([`/checkverify`,{user:`${data.Email}`}]);
+          }else{ // user registed
+            this.ckemail=true;
+          }
+      });
       }
-  });
-  }
+    }
+
 
   onchange(){
     let data = this.FormRegister.value
