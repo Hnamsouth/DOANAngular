@@ -22,7 +22,9 @@
                         <a routerLink="" class="nav-items1"> <i class="fa-solid fa-house-chimney fs-4"></i> </a>
                     </div>
                     <div class="list-nav" *ngFor="let i of navbar.items">
-                        <a routerLink="{{i.routelink.main}}" class="nav-items1"> <i class="{{i.icon}}"></i>{{i.navname}}</a>
+                        <div>
+                            <a routerLink="{{i.routelink.main}}" class="nav-items1"> <i class="{{i.icon}}"></i>{{i.navname}}</a>
+                        </div>
                         <div class="child-items1">
                             <div class="d-flex" style="width: max-content;">
                                 <div class="child-items-left">
@@ -112,6 +114,9 @@
 
     .list-nav {
         position: relative;
+        /*height: 100%;
+        display: flex;
+        align-items: center;*/
     }
 
     .child-items1 {

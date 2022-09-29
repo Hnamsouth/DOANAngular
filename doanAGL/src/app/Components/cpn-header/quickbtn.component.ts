@@ -25,12 +25,12 @@ import { Component, OnInit } from '@angular/core';
           </a>
       </li>
       <li>
-          <a href="/information">
+          <a routerLink="/information">
               <i class="bi bi-info-circle-fill"></i>
           </a>
       </li>
       <li>
-          <a href="/ride-attraction">
+          <a routerLink="/ride-attraction">
               <i class="fa fa-gamepad"></i>
           </a>
       </li>

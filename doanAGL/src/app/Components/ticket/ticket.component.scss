@@ -330,3 +330,42 @@
         margin-bottom: 35px;
     }
 }
+
+//  ---items-tickets
+.items-tickets {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 1rem;
+    a {
+        text-decoration: none;
+        color: black;
+        button {
+            background: none;
+            border: 2px solid #0470AB;
+            color: #0470AB;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 2px;
+        }
+    }
+    a:hover {
+        color: #0470AB;
+        button {
+            background: #0470AB;
+            color: white;
+        }
+    }
+    // --------------------
+}
+
+.item-tk-center {
+    // border-left: 2px solid gray;
+    // border-right: 2px solid gray;
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient( to top, rgb(223 223 223), rgba(0, 0, 0, 0)) 1 50%;
+    ;
+}

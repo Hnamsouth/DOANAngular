@@ -3,7 +3,7 @@
     // url('https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1920.png'),
     background-repeat: repeat-y;
     // background-size: cover;
-    border-bottom: 3px solid #e2b77a;
+    border-bottom: 2px solid #e2b77a;
     padding-bottom: 0 !important;
 }
 
@@ -191,7 +191,7 @@
 // can touch this!
 $items: 6;
 $size: 100;
-$bgcolor: #F6717F;
+$bgcolor: #a31a28;
 // can't touch this!
 $deg: 60;
 $unrotate: 60;
@@ -202,7 +202,7 @@ html {
 }
 
 ul {
-    @include transform(scale(0.2));
+    @include transform(scale(0.3));
     @include transition(.3s ease-out all);
     list-style-type: none;
     margin: 0;
@@ -219,18 +219,18 @@ ul {
         overflow: hidden;
         display: none;
         a {
-            color: lighten($bgcolor, 20%);
+            color: white;
             display: block;
             width: 200px;
             height: 200px;
             border-radius: 50%;
             text-align: center;
-            background: $bgcolor;
+            background: #343434;
             font-size: 25px;
         }
         &:nth-child(odd) {
             a {
-                background: lighten($bgcolor, 2%);
+                background: #2e2e2e;
             }
         }
         @for $i from 1 through 6 {
@@ -241,7 +241,7 @@ ul {
                     line-height: 50px;
                     @include transform(skew(#{-$skew}deg) rotate(-#{$deg}deg));
                     &:hover {
-                        background: darken($bgcolor, 5%);
+                        background-image: linear-gradient(90deg, #F2D49D, #b38633);
                         color: white;
                     }
                 }
@@ -250,7 +250,7 @@ ul {
         &.close {
             width: 50px;
             height: 50px;
-            background: white;
+            background-image: linear-gradient(90deg, #F2D49D, #b38633);
             border-radius: 50%;
             position: absolute;
             left: calc(50% - 25px);
@@ -264,7 +264,7 @@ ul {
                 width: 50px;
                 height: 50px;
                 line-height: 50px;
-                color: #ccc;
+                color: rgb(255, 255, 255);
             }
         }
     }

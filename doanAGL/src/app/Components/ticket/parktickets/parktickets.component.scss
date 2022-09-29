@@ -1,0 +1,72 @@
+.park-ticket {
+    position: relative;
+    max-width: 825px !important;
+    margin: 0 auto !important;
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+    overflow: hidden;
+    .ptk-right {
+        padding: 0 22px;
+        display: flex;
+        flex-direction: column;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        position: relative;
+        button {
+            border: none;
+            background: #1993D5;
+            padding: 10px 17px;
+            border-radius: 28px;
+             :hover {
+                background: #0470AA;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: larger;
+                font-weight: 600;
+            }
+        }
+    }
+    .ptk-left {
+        padding: 56px 24px 56px 56px;
+    }
+    .ptk-right::before {
+        content: '';
+        height: 152px;
+        width: 2px;
+        background: linear-gradient(180deg, #FFFFFF 5%, #EEEEEE 54%, #FFFFFF 100%);
+        position: absolute;
+        left: 0;
+    }
+}
+
+.park-ticket::after {
+    content: "";
+    background: rgb(255, 255, 255);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    border-radius: 50%;
+    left: -20px;
+    border: 1px solid #c5c0c0;
+    z-index: 1100;
+}
+
+.park-ticket::before {
+    content: "";
+    background: rgb(255, 255, 255);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    border-radius: 50%;
+    right: -20px;
+    border: 1px solid #c5c0c0;
+    z-index: 1100;
+}

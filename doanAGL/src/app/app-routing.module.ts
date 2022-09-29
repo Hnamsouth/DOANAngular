@@ -17,6 +17,8 @@ import { RunawayRapidsComponent } from './Components/Ride-Attraction/runaway-rap
 import { TicketComponent } from './Components/ticket/ticket.component';
 import { RideAttractionMainComponent } from './Components/Ride-Attraction/ride-attraction-main/ride-attraction-main.component';
 import { InfomationComponent } from './Components/infomation/infomation.component';
+import { ParkticketsComponent } from './Components/ticket/parktickets/parktickets.component';
+import { SelectTicketsComponent } from './Components/ticket/parktickets/select-tickets/select-tickets.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -36,7 +38,13 @@ const routes: Routes = [
   {path:"test",component:PracticesComponent},
   {path:"checkverify",component:CheckverifyComponent},
   {path:"0",component:RunawayRapidsComponent},
-  {path:"ticket",component:TicketComponent},
+  {path:"ticket", children:[
+    {path:"",component:TicketComponent},
+    {path:'park-tickets',children:[
+      {path:'',component:ParkticketsComponent},
+      {path:'select-tickets',component:SelectTicketsComponent}
+    ]}
+  ]},
   {path:"ride-attraction",component:RideAttractionMainComponent},
   {path:"information",component:InfomationComponent},
 ]

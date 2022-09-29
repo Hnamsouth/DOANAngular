@@ -40,6 +40,8 @@ import { NewsComponent } from './Components/infomation/news/news.component';
 import { QuickBtnComponent } from './Components/cpn-header/quickbtn.component';
 import { RideAttractionMainComponent } from './Components/Ride-Attraction/ride-attraction-main/ride-attraction-main.component';
 import { GrouppartiesComponent } from './Components/groupparties/groupparties.component';
+import { ParkticketsComponent } from './Components/ticket/parktickets/parktickets.component';
+import { SelectTicketsComponent } from './Components/ticket/parktickets/select-tickets/select-tickets.component';
 const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
@@ -93,7 +95,9 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
     NewsComponent,
     QuickBtnComponent,
     RideAttractionMainComponent,
-    GrouppartiesComponent
+    GrouppartiesComponent,
+    ParkticketsComponent,
+    SelectTicketsComponent
 
 
 
