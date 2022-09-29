@@ -186,63 +186,63 @@
 }
 
 // ----------------------------------
+// can touch this!
 @import '~compass-mixins/lib/compass/css3';
 // can touch this!
 $items: 6;
 $size: 100;
 $bgcolor: #F6717F;
 // can't touch this!
-$deg: 360/$items;
-$unrotate: - (90 - $deg)/2;
-$skew: 90 - $deg;
+$deg: 60;
+$unrotate: 60;
+$skew: 30;
 html {
     background: #44384E;
     margin: 70px;
 }
 
 ul {
-    @include transform(scale(0.3));
+    @include transform(scale(0.2));
     @include transition(.3s ease-out all);
     list-style-type: none;
     margin: 0;
     padding: 0;
     position: relative;
     display: inline-block;
-    width: #{$size*2}px;
-    height: #{$size*2}px;
+    width: 200px;
+    height: 200px;
     li {
         position: absolute;
-        width: #{$size}px;
-        height: #{$size}px;
+        width: 100px;
+        height: 100px;
         -webkit-transform-origin: 100% 100%;
         overflow: hidden;
         display: none;
         a {
-            color: white;
+            color: lighten($bgcolor, 20%);
             display: block;
-            width: #{$size*2}px;
-            height: #{$size*2}px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             text-align: center;
-            background: linear-gradient(182deg, #3a3cb7, #d37777, #a1a1a1);
+            background: $bgcolor;
             font-size: 25px;
         }
         &:nth-child(odd) {
             a {
-                // background: lighten($bgcolor, 2%);
-                background: linear-gradient(182deg, #141562, #ff9dc7, #a1a1a1);
+                background: lighten($bgcolor, 2%);
             }
         }
-        @for $i from 1 through $items {
+        @for $i from 1 through 6 {
             &:nth-child(#{$i}) {
                 display: block;
                 @include transform(rotate(#{$i*$deg}deg) skew(#{$skew}deg));
                 a {
-                    line-height: #{$size/2}px;
+                    line-height: 50px;
                     @include transform(skew(#{-$skew}deg) rotate(-#{$deg}deg));
                     &:hover {
-                        background: white;
-                        color: black;
+                        background: darken($bgcolor, 5%);
+                        color: white;
                     }
                 }
             }
@@ -256,7 +256,7 @@ ul {
             left: calc(50% - 25px);
             top: calc(50% - 25px);
             display: block;
-            @include transform(scale(3.6) rotate(45deg));
+            @include transform(scale(3.8) rotate(45deg));
             @include transition(.3s ease-in-out all);
             -webkit-transform-origin: 50% 50%;
             a {
