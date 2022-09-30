@@ -1,24 +1,28 @@
 <div>
     <section>
-        <div class="text-center">
+        <div style="margin:46px 0 ;height:1px;width:100%"></div>
+        <div class="text-center mglo">
             <h1>Standard Theme Park Ticket</h1>
             <p>Visit 1 park per day or add an option to visit multiple parks per day and/or a water park or other Walt Disney World fun. View Details</p>
         </div>
-        <div class="container">
+        <div class="container mglo">
             <div class="check-calendar">
-                <h2> <i class="bi bi-exclamation-triangle-fill text-warning"></i> Check Park Reservation Availability Before Purchasing </h2>
-                <p> Check the Keansburgs Park Pass system to see if your desired theme park reservation is available before purchasing your ticket or Annual Pass. </p>
-                <button type="button"><a routerLink="/check-calendar"> View Calendar </a></button>
+                <div><i class="bi bi-exclamation-triangle-fill me-3"></i></div>
+                <div class="">
+                    <h3 class=" fw-bold"> Check Park Reservation Availability Before Purchasing </h3>
+                    <p> Check the Keansburgs Park Pass system to see if your desired theme park reservation is available before purchasing your ticket or Annual Pass. </p>
+                    <button type="button"><a routerLink="/check-calendar"> View Calendar </a></button>
+                </div>
             </div>
         </div>
     </section>
-
+    <span class="gach"></span>
     <section>
-        <div class="text-center">
+        <div class="text-center mglo">
             <h1>Select the Ticket Type</h1>
             <p>Choose to visit one park or multiple parks per day, or multiple parks plus more fun!</p>
         </div>
-        <div class="container">
+        <div class="container mglo">
             <div class="select-ticket">
                 <div class="row">
                     <!-- ------ -->
@@ -47,10 +51,6 @@
                                     <h4><strong> Pick Date </strong></h4>
                                     <div><input type="date" name="date-rides-TK" id="" (change)="DridesTK($event.target,0)"></div>
                                 </div>
-                                <div class="">
-                                    <h4><strong> Cost </strong></h4>
-                                    <div><span style="padding:10px ;">cd 10$</span></div>
-                                </div>
                                 <div><button type="button" class="add-ticket" (click)="pickticket(0)">Add</button></div>
                             </div>
 
@@ -60,7 +60,7 @@
                                 <div>
                                     <h4><strong> Type of Ticket </strong></h4>
                                     <div>
-                                        <select class="select-gokart" name="gokart" id="" (change)="TKtype($event,1)">
+                                        <select class="select-gokart" name="gokart" id="" (change)="TKtype($event.target,0)">
                                   <option value="0">Adult Track</option>
                                   <option value="1">Double Seater</option>
                                   <option value="2">Kiddie Track</option>
@@ -84,11 +84,6 @@
                                         <button type="button" (click)="addticket(10,1)">+ 10</button>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <h4><strong> Cost </strong></h4>
-                                    <div><span style="padding:10px ;">cd 10$</span></div>
-
-                                </div>
                                 <div><button type="button" class="add-ticket" (click)="pickticket(1)">Add</button></div>
                             </div>
                         </div>
@@ -97,7 +92,7 @@
                                 <div>
                                     <h4><strong> Type of Ticket </strong></h4>
                                     <div>
-                                        <select class="select-gokart" name="waterpark" id="" (change)="TKtype($event.target,2)">
+                                        <select class="select-gokart" name="waterpark" id="" (change)="TKtype($event.target,1)">
                               <option value="0">Water park for Adult </option>
                               <option value="1">Water park for Kids </option>
                             </select>
@@ -118,15 +113,44 @@
                                         <button type="button" (click)="addticket(10,2)">+ 10</button>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <h4><strong> Cost </strong></h4>
-                                    <div><span style="padding:10px ;">cd 10$</span></div>
-                                </div>
+                                <!-- <div class="">
+                                    <h4><strong> {{10|currency}} </strong></h4>
+                                    <div><span style="padding:10px ;"> {{data.waterP.amount|currency}} </span></div>
+                                </div> -->
                                 <div><button type="button" class="add-ticket" (click)="pickticket(2)">Add</button></div>
                             </div>
 
                         </div>
                         <div class="tab-pane fade" id="nav-combo" role="tabpanel" aria-labelledby="nav-combo-tab" tabindex="0">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Crt-selections mglo">
+            <div class="container">
+                <div class="selections-items">
+                    <div>
+                        <h2><strong>Current Selections</strong></h2>
+                    </div>
+                    <div class="">
+                        <p style="font-weight: 550;font-size: 23px;">Keansburg amusement park ticket</p>
+                        <p>Valid for 1 day</p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="d-flex  justify-content-between" *ngFor="let i of ticketPickDone">
+                                <div><strong>x <span> {{i[0].amount+ "  " + i[0].name}} </span></strong><span style="margin-left:50px"> {{i[0].date}} </span></div>
+                                <div>{{i[0].cost|currency}}</div>
+                                <div><button type="button" class="delete-bnt"> <i class="bi bi-trash2-fill "></i></button></div>
+                            </li>
+                        </ul>
+                        <span class="gach"></span>
+                        <div class="subtotal">
+                            <div>Tax {{ Subtotal*15/100|currency }}</div>
+                            <div> <span class="fs-4 fw-bold"> Subtotal </span> <span class="fs-2 fw-bold"> {{ Subtotal+Subtotal*15/100|currency }} </span> <span class="fs-4">USD</span></div>
+                            <div><button type="button" class="btn-submit" (click)="submitTK()"> Go to your cart </button></div>
+                        </div>
                     </div>
                 </div>
             </div>

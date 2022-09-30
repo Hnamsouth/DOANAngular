@@ -1,92 +1,188 @@
-    .select-ticket {
-        .nav-link {
-            display: block;
-            padding: 8px 16px;
-            font-size: 16px;
+* {}
+
+.select-ticket {
+    .nav-link {
+        display: block;
+        padding: 8px 16px;
+        font-size: 19px;
+        color: #253B56;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    }
+    .nav-tabs .active {}
+    .inpamount {
+        background: url(https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/150/130/75/dam/wdpro-assets/tickets/ThemeParkTickets.png?1664291338509);
+        background-size: contain;
+        background-repeat: no-repeat;
+        text-align: center;
+        border: none;
+        outline: none;
+        padding: 15px;
+    }
+    .pickAMTK {
+        button {
+            width: 46px;
+            height: 46px;
+            margin-left: 5px;
+            border-radius: 50%;
+            border: 2px solid #d9ac4c;
             color: #253B56;
-            text-decoration: none;
-            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-        }
-        .inpamount {
-            background: url(https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/150/130/75/dam/wdpro-assets/tickets/ThemeParkTickets.png?1664291338509);
-            background-size: contain;
-            background-repeat: no-repeat;
-            text-align: center;
-            border: none;
-            outline: none;
-            padding: 15px;
-        }
-        .pickAMTK {
-            button {
-                width: 46px;
-                height: 46px;
-                margin-left: 5px;
-                border-radius: 50%;
-                border: 2px solid #d9ac4c;
-                color: #253B56;
-                padding: 2px;
-                font-weight: 600;
-            }
-            button:hover {
-                border: 2px solid #ce951a;
-                color: #c59b58;
-                transform: scale(1.1);
-                transition: all 0.1s ease-in-out;
-            }
-            input {
-                border-bottom: 1px solid #253B56;
-                padding: 10px;
-            }
-        }
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-calendar-picker-indicator {
-            display: none;
-            -webkit-appearance: none;
-        }
-        .select-gokart {
-            border: none;
-            outline: none;
-            background: linear-gradient(191deg, #f3d4ab, #9d7239);
-            box-shadow: inset 2px -3px 9px #505050, 0px 2px 4px 0px grey;
-            color: white;
-            font-size: 18px;
-            padding: 8px;
-            border-radius: 20px;
-            text-align: center;
-            text-shadow: 0 0 2px black;
-        }
-        .add-ticket {
-            border: none;
-            outline: none;
-            background: linear-gradient(191deg, #f3d4ab, #9d7239);
-            box-shadow: inset 2px -3px 9px #505050, 0px 2px 4px 0px grey;
-            color: white;
-            font-size: 18px;
-            padding: 8px 20px;
-            border-radius: 20px;
-            text-align: center;
-            text-shadow: 0 0 2px black;
-        }
-        .select-gokart option {
-            color: #253B56;
-        }
-        .inpdate input {
-            padding: 10px;
-            border: none;
-            outline: none;
-            border-bottom: 1px solid #253B56;
-            color: #253B56;
-            text-align: center;
+            padding: 2px;
             font-weight: 600;
         }
-        .layo {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            margin: 25px 0;
-            h4 {
-                text-align: center;
-            }
+        button:hover {
+            border: 2px solid #ce951a;
+            color: #c59b58;
+            transform: scale(1.1);
+            transition: all 0.1s ease-in-out;
+        }
+        input {
+            border-bottom: 1px solid #253B56;
+            padding: 10px;
         }
     }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+    .select-gokart {
+        border: none;
+        outline: none;
+        background: linear-gradient(191deg, #f3d4ab, #9d7239);
+        box-shadow: inset 2px -3px 9px #6c6c6c, 0px 2px 4px 0px #a3a3a3;
+        color: white;
+        font-size: 18px;
+        padding: 8px;
+        border-radius: 20px;
+        text-align: center;
+        text-shadow: 0 0 2px black;
+    }
+    .add-ticket {
+        border: none;
+        outline: none;
+        background: linear-gradient(191deg, #f3d4ab, #9d7239);
+        box-shadow: inset 2px -3px 9px #6c6c6c, 0px 2px 4px 0px #a3a3a3;
+        color: white;
+        font-size: 18px;
+        padding: 8px 20px;
+        border-radius: 20px;
+        text-align: center;
+        text-shadow: 0 0 2px black;
+    }
+    .select-gokart option {
+        color: #253B56;
+    }
+    .inpdate input {
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #253B56;
+        color: #253B56;
+        text-align: center;
+        font-weight: 600;
+    }
+    .layo {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 25px 0;
+        h4 {
+            text-align: center;
+        }
+    }
+}
+
+.Crt-selections {
+    background: #EBF6FC;
+    padding: 36px 0 48px;
+    .selections-items {
+        padding: 0 70px;
+        color: #253B56;
+        font-size: 18px;
+        p {
+            font-size: 18px;
+        }
+    }
+    .subtotal {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        div {
+            margin-bottom: 18px;
+        }
+        .btn-submit {
+            border: none;
+            background: #61941B;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 25px;
+            padding: 10px 25px;
+            color: white;
+        }
+    }
+    .delete-bnt {
+        background: none;
+        border: none;
+        text-shadow: 0 0 3px;
+        font-size: 25px;
+        i {
+            color: #56848f;
+        }
+    }
+    .delete-bnt:hover i {
+        color: #126577;
+    }
+}
+
+.check-calendar {
+    max-width: 700px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    display: flex;
+    margin: 0 auto;
+    padding: 21px;
+    color: #253B56;
+    border-left: inset 21px #F09219;
+    i {
+        font-size: 25px;
+        color: #F09219;
+    }
+    button {
+        border: 2px solid #1994D7;
+        background: none;
+        padding: 5px 15px;
+        font-size: 17px;
+        font-weight: 600;
+        border-radius: 25px;
+        a {
+            text-decoration: none;
+            color: #1994D7;
+        }
+    }
+    button:hover {
+        border: 2px solid #0470AB;
+        background: #0470AB;
+        a {
+            color: white;
+        }
+    }
+}
+
+.mglo {
+    margin: 0 auto 40px auto;
+}
+
+.gach {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fbd5d5 5%, #bbdde7 95%, rgba(255, 255, 255, 0) 100%);
+    clear: both;
+    display: block;
+    -webkit-filter: none;
+    filter: none;
+    height: 1px;
+    margin: 46px 0;
+    position: relative;
+    width: 100%;
+}

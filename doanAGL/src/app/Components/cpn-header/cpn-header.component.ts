@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {Injectable}             from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ServiService } from '../servi.service';
 var datauser:any
 @Component({
   selector: 'app-cpn-header',
@@ -205,11 +206,18 @@ export class CpnHeaderComponent implements OnInit {
   myGroup=new FormGroup({
     checkadd:new FormControl(),
   })
+  ticket:any[]=[];
+  getticket(data:any[]){
+    this.ticket=data;
+    // console.log('123')
+    this.ngOnInit()
+  }
   constructor() {
+    var gticket:any[];
     const list = document.querySelectorAll('.list');
     list.forEach(item=>{
           item.addEventListener('click',()=>{
-            console.log('1')
+            console.log('11')
             });
           })
           let user =localStorage.getItem("user")
@@ -217,14 +225,16 @@ export class CpnHeaderComponent implements OnInit {
           // console.log(user)
           // console.log(localStorage.getItem("user"))
           // this.test({email:'', password: ''});
-          console.log("1","asd",this.user)
+          console.log("1")
+          let check:any=localStorage.getItem('currentTicket')
+      let test=JSON.parse(check)
+      console.log("-----" + JSON.stringify(test[0]) + JSON.stringify(test[1]))
   }
 
   ngOnInit(): void {
-    // setInterval(() => {
-    //   this.cliiii()
-    // },1000);
-    console.log("2")
+
+    console.log('2')
+
   }
   test(users:any){
     console.log("3",users)
@@ -262,6 +272,11 @@ export class checklogin{
     // new CpnHeaderComponent().test(user)
     new CpnHeaderComponent().addcheck(user)
     CpnHeaderComponent.addtest
+  }
+}
+export class checkTicket{
+  constructor(public data:any[]){
+
   }
 }
 
