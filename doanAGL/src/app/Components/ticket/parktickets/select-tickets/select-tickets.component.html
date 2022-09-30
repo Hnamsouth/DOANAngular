@@ -4,10 +4,12 @@
             <h1>Standard Theme Park Ticket</h1>
             <p>Visit 1 park per day or add an option to visit multiple parks per day and/or a water park or other Walt Disney World fun. View Details</p>
         </div>
-        <div class="check-calendar">
-            <h2> <i class="bi bi-exclamation-triangle-fill text-warning"></i> Check Park Reservation Availability Before Purchasing </h2>
-            <p> Check the Keansburgs Park Pass system to see if your desired theme park reservation is available before purchasing your ticket or Annual Pass. </p>
-            <button type="button"><a routerLink="/check-calendar"> View Calendar </a></button>
+        <div class="container">
+            <div class="check-calendar">
+                <h2> <i class="bi bi-exclamation-triangle-fill text-warning"></i> Check Park Reservation Availability Before Purchasing </h2>
+                <p> Check the Keansburgs Park Pass system to see if your desired theme park reservation is available before purchasing your ticket or Annual Pass. </p>
+                <button type="button"><a routerLink="/check-calendar"> View Calendar </a></button>
+            </div>
         </div>
     </section>
 
@@ -16,11 +18,121 @@
             <h1>Select the Ticket Type</h1>
             <p>Choose to visit one park or multiple parks per day, or multiple parks plus more fun!</p>
         </div>
-        <div class="select-ticket-type">
-            <div class="row">
-                <button type="reset">asd</button>
+        <div class="container">
+            <div class="select-ticket">
+                <div class="row">
+                    <!-- ------ -->
+                    <div class="d-flex justify-content-center">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active item-ticket" id="nav-rides-tab" data-bs-toggle="tab" data-bs-target="#nav-rides" type="button" role="tab" aria-controls="nav-rides" aria-selected="true"> Rides </button>
+                            <button class="nav-link item-ticket" id="nav-gokart-tab" data-bs-toggle="tab" data-bs-target="#nav-gokart" type="button" role="tab" aria-controls="nav-gokart" aria-selected="false"> Go Kart </button>
+                            <button class="nav-link item-ticket" id="nav-water-tab" data-bs-toggle="tab" data-bs-target="#nav-water" type="button" role="tab" aria-controls="nav-water" aria-selected="false"> Water Park </button>
+                            <button class="nav-link item-ticket" id="nav-combo-tab" data-bs-toggle="tab" data-bs-target="#nav-combo" type="button" role="tab" aria-controls="nav-combo" aria-selected="false"> Combo </button>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-rides" role="tabpanel" aria-labelledby="nav-rides-tab" tabindex="0">
+                            <div class="layo">
+                                <div class="pickAMTK">
+                                    <h4><strong>Number of Tickets</strong></h4>
+                                    <div>
+                                        <input type="number" name="amountTKrides" min="0" [(ngModel)]="data.rides.amount" class="inpamount">
+                                        <button type="button" (click)="subticket(10,0)">- 10</button>
+                                        <button type="button" (click)="subticket(1,0)">- 1</button>
+                                        <button type="button" (click)="addticket(1,0)">+ 1</button>
+                                        <button type="button" (click)="addticket(10,0)">+ 10</button>
+                                    </div>
+                                </div>
+                                <div class="inpdate">
+                                    <h4><strong> Pick Date </strong></h4>
+                                    <div><input type="date" name="date-rides-TK" id="" (change)="DridesTK($event.target,0)"></div>
+                                </div>
+                                <div class="">
+                                    <h4><strong> Cost </strong></h4>
+                                    <div><span style="padding:10px ;">cd 10$</span></div>
+                                </div>
+                                <div><button type="button" class="add-ticket" (click)="pickticket(0)">Add</button></div>
+                            </div>
 
+                        </div>
+                        <div class="tab-pane fade" id="nav-gokart" role="tabpanel" aria-labelledby="nav-gokart-tab" tabindex="0">
+                            <div class="layo">
+                                <div>
+                                    <h4><strong> Type of Ticket </strong></h4>
+                                    <div>
+                                        <select class="select-gokart" name="gokart" id="" (change)="TKtype($event,1)">
+                                  <option value="0">Adult Track</option>
+                                  <option value="1">Double Seater</option>
+                                  <option value="2">Kiddie Track</option>
+                                  <option value="3">Book of 4 Adult Rides</option>
+                                  <option value="4">Book of 8 Adult Rides</option>
+                                </select>
+                                    </div>
+                                </div>
+                                <div class="inpdate">
+                                    <h4><strong> Pick Date </strong></h4>
+                                    <div><input type="date" name="date-rides-TK" id="" (change)="DridesTK($event.target,1)"></div>
+
+                                </div>
+                                <div class="pickAMTK">
+                                    <h4><strong>Number of Tickets</strong></h4>
+                                    <div class="">
+                                        <input type="number" name="amountTKgokart" min="0" [(ngModel)]="data.gokart.amount" class="inpamount">
+                                        <button type="button" (click)="subticket(10,1)">- 10</button>
+                                        <button type="button" (click)="subticket(1,1)">- 1</button>
+                                        <button type="button" (click)="addticket(1,1)">+ 1</button>
+                                        <button type="button" (click)="addticket(10,1)">+ 10</button>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <h4><strong> Cost </strong></h4>
+                                    <div><span style="padding:10px ;">cd 10$</span></div>
+
+                                </div>
+                                <div><button type="button" class="add-ticket" (click)="pickticket(1)">Add</button></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-water" role="tabpanel" aria-labelledby="nav-water-tab" tabindex="0">
+                            <div class="layo">
+                                <div>
+                                    <h4><strong> Type of Ticket </strong></h4>
+                                    <div>
+                                        <select class="select-gokart" name="waterpark" id="" (change)="TKtype($event.target,2)">
+                              <option value="0">Water park for Adult </option>
+                              <option value="1">Water park for Kids </option>
+                            </select>
+                                    </div>
+                                </div>
+                                <div class="inpdate">
+                                    <h4><strong> Pick Date </strong></h4>
+                                    <div><input type="date" name="date-rides-TK" id="" (change)="DridesTK($event.target,2)"></div>
+
+                                </div>
+                                <div class="pickAMTK">
+                                    <h4><strong>Number of Tickets</strong></h4>
+                                    <div class="">
+                                        <input type="number" name="amountTKwaterpark" min="0" [(ngModel)]="data.waterP.amount" class="inpamount">
+                                        <button type="button" (click)="subticket(10,2)">- 10</button>
+                                        <button type="button" (click)="subticket(1,2)">- 1</button>
+                                        <button type="button" (click)="addticket(1,2)">+ 1</button>
+                                        <button type="button" (click)="addticket(10,2)">+ 10</button>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <h4><strong> Cost </strong></h4>
+                                    <div><span style="padding:10px ;">cd 10$</span></div>
+                                </div>
+                                <div><button type="button" class="add-ticket" (click)="pickticket(2)">Add</button></div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-combo" role="tabpanel" aria-labelledby="nav-combo-tab" tabindex="0">...</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </div>
+<style>
+
+</style>
