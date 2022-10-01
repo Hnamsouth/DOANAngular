@@ -23,7 +23,7 @@ export class RegitsterComponent implements OnInit {
     Password:['', Validators.required],
     repeatpassword:['', Validators.required],
    })
-  url='/http://localhost:4200/login';
+  url='https://app-t2204m-eprojet.herokuapp.com';
   checkpw=false;ckemail=false;
   iconcheck='bi bi-exclamation-circle danger';
 
@@ -38,7 +38,7 @@ export class RegitsterComponent implements OnInit {
       let stt =Math.floor(Math.random() * 86423)+12345;
       let cverifystt=stt;
 
-      this.http.post<any>('http://localhost:1234/createUser',{
+      this.http.post<any>(`${this.url}/createUser`,{
         firstname:data.Firstname,
         lastname:data.Lastname,
         emailorphone:data.Email,
@@ -48,10 +48,10 @@ export class RegitsterComponent implements OnInit {
           console.log(cverifystt)
           console.log(vl)
           if(vl.status===101){ // chua verify
-            this.http.post('http://localhost:1234/sendmail',{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
+            this.http.post(`${this.url}/sendmail`,{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
             this.rt.navigate([`/checkverify`,{user:`${data.Email}`}]);
           }else if(vl.status===202){ // create n
-            this.http.post('http://localhost:1234/sendmail',{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
+            this.http.post(`${this.url}/sendmail`,{User:data.Email,Stt:cverifystt}).subscribe(vl=>{});
             this.rt.navigate([`/checkverify`,{user:`${data.Email}`}]);
           }else{ // user registed
             this.ckemail=true;

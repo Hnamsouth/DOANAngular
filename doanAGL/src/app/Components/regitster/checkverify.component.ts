@@ -18,7 +18,7 @@ main=`height: 67vh;display: flex;align-items: center;justify-content: center;   
   constructor(private http:HttpClient,private route:ActivatedRoute,private router: Router) {
     var checkrgt=setInterval(()=>{
       let data:any = this.route.snapshot.params
-      this.http.post<any>(`http://localhost:1234/checkverify`,{emailorphone:data.user}).subscribe(vl=>{
+      this.http.post<any>(`https://app-t2204m-eprojet.herokuapp.com/checkverify`,{emailorphone:data.user}).subscribe(vl=>{
         console.log(vl.data)
         if(vl.data==1){
           clearInterval(checkrgt);
