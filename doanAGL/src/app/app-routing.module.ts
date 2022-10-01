@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'',component:CpnHomeComponent},
   {path:"aboutus",component:CpnAboutusComponent},
   {path:"contactus",component:CpnContactUsComponent},
-  {path:"booking",component:CpnBookingComponent},
+  {path:"checkout-booking",component:CpnBookingComponent},
   {path:"enterainment",component:CpnEntertainmentComponent},
   {path:"restaurant",component:CpnRestaurantComponent},
   {path:'restaurant/shop/:id',component:FoodDetailComponent},

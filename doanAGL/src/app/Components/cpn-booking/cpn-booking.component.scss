@@ -1,0 +1,31 @@
+.CK-inf-user {
+    color: #233C57;
+    position: relative;
+    justify-content: space-evenly;
+    .header-cko {
+        height: auto;
+    }
+    .userleft {
+        background: #EBF6FC;
+    }
+    .userright {
+        height: fit-content;
+        background: #EBF6FC;
+        padding: 25px 30px 30px;
+        position: fixed;
+        position: sticky;
+        top: 0;
+        right: 0;
+        box-shadow: 0 0 4px #cfcfcf;
+    }
+    .gach {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fbd5d5 5%, #bbdde7 95%, rgba(255, 255, 255, 0) 100%);
+        clear: both;
+        display: block;
+        -webkit-filter: none;
+        filter: none;
+        height: 1px;
+        margin: 20px 0;
+        width: 100%;
+    }
+}

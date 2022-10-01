@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cpn-booking.component.scss']
 })
 export class CpnBookingComponent implements OnInit {
-
+  public isCollapsed = false;
   constructor() { }
 
   ngOnInit(): void {
