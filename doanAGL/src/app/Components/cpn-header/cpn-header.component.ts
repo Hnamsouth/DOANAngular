@@ -225,15 +225,15 @@ export class CpnHeaderComponent implements OnInit {
           // console.log(user)
           // console.log(localStorage.getItem("user"))
           // this.test({email:'', password: ''});
-          console.log("1")
+          // console.log("1")
           let check:any=localStorage.getItem('currentTicket')
       let test=JSON.parse(check)
-      console.log("-----" + JSON.stringify(test[0]) + JSON.stringify(test[1]))
+      // console.log("-----" + JSON.stringify(test[0]) + JSON.stringify(test[1]))
   }
 
   ngOnInit(): void {
 
-    console.log('2')
+    // console.log('2')
 
   }
   test(users:any){

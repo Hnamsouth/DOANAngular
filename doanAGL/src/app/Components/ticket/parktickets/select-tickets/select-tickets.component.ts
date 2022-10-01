@@ -12,8 +12,7 @@ export class SelectTicketsComponent implements OnInit {
   curentDate:any|undefined
 
   constructor(private router: Router) {
-    // this.router.navigate(['/your-path'])
-    // this.router.navigate(['/user', 5])
+
    }
 
   ngOnInit(): void {
@@ -21,20 +20,20 @@ export class SelectTicketsComponent implements OnInit {
   }
   Subtotal:number=0;
   data={
-    rides:{amount:0,date:'',stdCost:1.25,C50TK:0.9,C100TK:0.79,C200TK:0.745,cost:0},
-    gokart:{amount:0,date:'',typePick:0,type:[
+    rides:{id:0,amount:0,date:'',stdCost:1.25,C50TK:0.9,C100TK:0.79,C200TK:0.745,cost:0},
+    gokart:{id:1,amount:0,date:'',typePick:0,type:[
       {id:0,name:'Adult Track',cost:7.95},
       {id:1,name:'Double Seater',cost:9.95},
       {id:2,name:'Kiddie Track',cost:4.95},
       {id:3,name:'Book of 4 Adult Rides',cost:29.95},
       {id:4,name:'Book of 8 Adult Rides',cost:49.95}
     ],cost:0},
-    waterP:{amount:0,date:'',typePick:0,type:[
+    waterP:{id:2,amount:0,date:'',typePick:0,type:[
       {id:0,name:'Water park for Adult',cost:37},
       {id:1,name:'Water park for Kids',cost:19},
       {id:2,name:'Dry Spectators',cost:15},
     ],cost:0},
-    combo:{amount:0,date:new Date().toLocaleDateString()}
+    combo:{id:3,amount:0,date:new Date().toLocaleDateString()}
   }
   ticketPickDone:any[]=[];
 
@@ -54,9 +53,11 @@ if(index==2){this.data.waterP.amount+=amount;}else{
 }
   }
   DridesTK(date:any,index:number){
-    if(index==0){this.data.rides.date=date.value;}else
-    if(index==1){this.data.gokart.date=date.value;}else
-    if(index==2){this.data.waterP.date=date.value;}else{
+    let fcdate=new Date(date.value).toDateString()
+
+    if(index==0){this.data.rides.date=fcdate;}else
+    if(index==1){this.data.gokart.date=fcdate;}else
+    if(index==2){this.data.waterP.date=fcdate;}else{
       this.data.combo.date=date.value;
     }
   }
@@ -74,26 +75,26 @@ if(index==2){this.data.waterP.amount+=amount;}else{
         let  rides=this.data.rides
         if(rides.amount!==0 && rides.date!==''){
           if(rides.amount>=50 && rides.amount<100){
-            var data:any[]=[{amount:rides.amount,costper1:rides.C50TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C50TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
+            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.C50TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C50TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
           }else
           if(rides.amount>=100 && rides.amount<200){
-            var data:any[]=[{amount:rides.amount,costper1:rides.C100TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C100TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
+            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.C100TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C100TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
           }else
           if(rides.amount>=200){
-            var data:any[]=[{amount:rides.amount,costper1:rides.C200TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C200TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
+            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.C200TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C200TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
           }else{
-            var data:any[]=[{amount:rides.amount,costper1:rides.stdCost,name:'Rides',datepick:rides.date,cost:rides.amount*rides.stdCost}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;}
+            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.stdCost,name:'Rides',datepick:rides.date,cost:rides.amount*rides.stdCost}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;}
         }else{ alert("faild rides")}
       }else if(index==1){
       var gokart1=this.data.gokart
       if(this.data.gokart.amount!==0 && this.data.gokart.date!==''){
-        var data:any[]=[{amount:gokart1.amount,costper1:gokart1.type[gokart1.typePick].cost,name:gokart1.type[gokart1.typePick].name,datepick:gokart1.date,cost:gokart1.amount*gokart1.type[gokart1.typePick].cost}]
+        var data:any[]=[{id:1,amount:gokart1.amount,costper1:gokart1.type[gokart1.typePick].cost,name:gokart1.type[gokart1.typePick].name,datepick:gokart1.date,cost:gokart1.amount*gokart1.type[gokart1.typePick].cost,typeindex:gokart1.typePick}]
         this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
       }else{ alert("faild gokart")}}
       else if(index==2){
       var waterP=this.data.waterP
       if(this.data.waterP.amount!==0 && this.data.waterP.date!==''){
-        var data:any[]=[{amount:waterP.amount, costper1:waterP.type[waterP.typePick].cost, name:waterP.type[waterP.typePick].name,datepick:waterP.date,cost:waterP.amount*waterP.type[waterP.typePick].cost}]
+        var data:any[]=[{id:2,amount:waterP.amount, costper1:waterP.type[waterP.typePick].cost, name:waterP.type[waterP.typePick].name,datepick:waterP.date,cost:waterP.amount*waterP.type[waterP.typePick].cost,typeindex:waterP.typePick}]
           this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
       }else{ alert("faild waterP")}}
       else{
@@ -116,7 +117,8 @@ if(index==2){this.data.waterP.amount+=amount;}else{
       localStorage.setItem('currentTicket',JSON.stringify(data))
       let test = new ServiService().getticket(data)
       new CpnHeaderComponent()
-
+ this.router.navigate(['/cart'])
+    // this.router.navigate(['/user', 5])
       // let check:any=localStorage.getItem('currentTicket')
       // let test=JSON.parse(check)
       // test.push(data)

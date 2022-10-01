@@ -1,1 +1,74 @@
-<p>cart works!</p>
+<div class="cart-body">
+    <div class="container">
+        <div class="route">
+            <div> <a routerLink="/home" class=" text-decoration-none "><i class="bi bi-house-heart-fill"></i>  Home </a></div>
+            <div> <a routerLink="/cart" class=" text-decoration-none "><i class="bi bi-printer-fill"></i>  Print </a></div>
+        </div>
+    </div>
+    <div class="container pay">
+        <div class="pay-items">
+            <div class="d-flex justify-content-between align-items-center" style="padding: 0 30px;">
+                <h1 class="">Your Card</h1>
+                <a routerLink="/" class="">Retrieve a Different Cart </a>
+            </div>
+            <div class="img-1 mb-5">
+                <img src="assets/img/ALL/unf01.jpg" alt="">
+            </div>
+
+            <div>
+                <div>
+                    <table id="customers">
+                        <tr>
+                            <th style="width:10% ;"></th>
+                            <th style="width:40% ;"> Type Ticket</th>
+                            <th>Unit Price </th>
+                            <th>Count</th>
+                            <th>Price</th>
+                            <th style="width:10% ;"></th>
+                        </tr>
+                        <tr *ngFor="let i of userTicket;let j=index">
+                            <td></td>
+                            <td>
+                                <div>
+                                    <h5>Name : <strong> {{i.name}} </strong></h5>
+                                    <p>Valid 1 day : <strong>{{i.datepick}}</strong></p>
+                                </div>
+                            </td>
+                            <td>{{i.costper1|currency}}</td>
+                            <td>
+                                <div><input type="number" value="{{i.amount}}" (change)="changeamountTK($event.target,j)"></div>
+                            </td>
+                            <td>{{i.cost|currency}}</td>
+                            <td><button type="button" class=""><i class="bi bi-x-circle-fill"></i></button></td>
+                        </tr>
+                    </table>
+                </div>
+                <span class="gach "></span>
+                <div class="subtotal">
+                    <div>
+                        <p class="fs-4 m-0">Tax <span class="ms-3">{{ Subtotal*15/100|currency }}</span></p>
+                    </div>
+                    <div> <span class="fs-4 fw-bold"> Subtotal </span> <span class="fs-2 fw-bold"> {{ Subtotal+Subtotal*15/100|currency }} </span> <span class="fs-4">USD</span></div>
+                    <div><a type="button" class="savecart">Save Cart</a> <button type="button" class="btn-submit" id="checkout" (click)="Checkout($event)" data-bs-toggle="modal" data-bs-target="#exampleModal"> Check Out </button></div>
+                    <p><i class="bi bi-check-circle-fill checkicon"></i> See Important Details above.</p>
+                    <p>Vacation Questions? Call (407) 939-7702</p>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [style.display]="checkout1">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <app-login class="login-1">
+                                </app-login>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+
+</div>
