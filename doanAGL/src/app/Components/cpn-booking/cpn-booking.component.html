@@ -1,4 +1,4 @@
-<div>
+<div style="height:fit-content ;">
     <div class="container">
         <div class="header-cko">
             <h1>Checkout</h1>
@@ -11,8 +11,158 @@
             <div class="row CK-inf-user">
                 <span></span>
                 <div class="col-7 userleft">
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <!--  -->
+                    <div>
+                        <div class="text-header1">
+                            <h2><strong>Delivery & Contact Info</strong></h2>
+                        </div>
+                        <div class="sendticket">
+                            <h3>How will you get the tickets?</h3>
+                            <div>
+                                <div>
+
+                                    <div class="d-flex flex-column">
+                                        <!--  -->
+                                        <div>
+                                            <div class="radio">
+                                                <input id="radio-1" type="radio" checked name="sendticket" (click)="collapsetoggle(0)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                                                <label for="radio-1" class="radio-label">Email ($0.00)</label>
+                                            </div>
+                                            <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <p>Go to the park entrance and scan your Disney MagicMobile pass using an iPhone, Apple Watch or Google Pay-enabled Android phone to enter.</p><br>
+                                                        <p>To access Disney MagicMobile service download the My Disney Experience app.</p><br>
+                                                        <p>If you do not have Disney MagicMobile pass, a MagicBand or a card linked to your Disney account, you’ll need to show the following items at a Walt Disney World park ticket window:</p>
+                                                        <p>1. Your ticket confirmation email.</p>
+                                                        <p>2. The original credit card, PayPal transaction receipt, Disney Gift Card or Disney Rewards Redemption Card used to purchase the tickets.</p>
+                                                        <p>3. A valid government-issued photo ID.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--  -->
+                                        <div>
+                                            <div class="radio">
+                                                <input id="radio-2" type="radio" name="sendticket" (click)="collapsetoggle(1)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample1">
+                                                <label for="radio-2" class="radio-label"> Domestic Standard ($0.00)</label>
+                                            </div>
+                                            <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <p>Delivery after Oct 15, 2022 (shipped via the U.S. Postal Service)</p>
+                                                        <p><strong>Shipping Information</strong></p>
+                                                        <form method="get">
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                                                                <label for="firstname">First Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                                                                <label for="lastname">Last Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address" placeholder="Address">
+                                                                <label for="address">Address</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address2" placeholder="Address 2">
+                                                                <label for="address2">Address 2</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
+                                                                <label for="zipcode">Zip Code</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-floating col-9">
+                                                                    <input type="text" class="form-control" id="city" placeholder="City">
+                                                                    <label for="city"> City</label>
+                                                                </div>
+                                                                <div class="col-2 float-end">
+                                                                    <select name="State" id="" class="form-control">
+                                                                <option value="0">AL</option>
+                                                                <option value="1">AK</option>
+                                                                <option value="2">AZ</option>
+                                                              </select>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--  -->
+                                        <div>
+                                            <div class="radio">
+                                                <input id="radio-3" type="radio" name="sendticket" (click)="collapsetoggle(2)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample2">
+                                                <label for="radio-3" class="radio-label"> Domestic Express ($15.00)</label>
+                                            </div>
+                                            <div #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <p>Delivery after Oct 15, 2022 (shipped via the U.S. Postal Service)</p>
+                                                        <p><strong>Shipping Information</strong></p>
+                                                        <form method="get">
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                                                                <label for="firstname">First Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                                                                <label for="lastname">Last Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address" placeholder="Address">
+                                                                <label for="address">Address</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address2" placeholder="Address 2">
+                                                                <label for="address2">Address 2</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
+                                                                <label for="zipcode">Zip Code</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-floating col-9">
+                                                                    <input type="text" class="form-control" id="city" placeholder="City">
+                                                                    <label for="city"> City</label>
+                                                                </div>
+                                                                <div class="col-2 float-end">
+                                                                    <select name="State" id="" class="form-control">
+                                                              <option value="0">AL</option>
+                                                              <option value="1">AK</option>
+                                                              <option value="2">AZ</option>
+                                                            </select>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--  -->
+                                        <div>
+                                            <div class="radio">
+                                                <input id="radio-4" type="radio" name="sendticket" (click)="collapsetoggle(3)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExampl3">
+                                                <label for="radio-4" class="radio-label">  International Express ($25.00)</label>
+                                            </div>
+                                            <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        You can collapse this card by clicking Toggle33333333333
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-4 userright">
                     <h4><strong>Order Summary</strong></h4>
@@ -37,17 +187,3 @@
         </div>
     </div>
 </div>
-<!-- <div>
-                        <p>
-                            <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-                          Toggle
-                        </button>
-                        </p>
-                        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-                            <div class="card">
-                                <div class="card-body">
-                                    You can collapse this card by clicking Toggle
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
