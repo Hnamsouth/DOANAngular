@@ -2,8 +2,14 @@
     <div class="container">
         <div class="row w-100">
             <div class="col-12 row  justify-content-between align-items-center mb-1 ">
-                <div class=" col-md-4 col-xl-3 ">
+                <div *ngIf="!usercheck" class=" col-md-3 col-xl-3 ">
                     <a routerLink="/login" class="text-light login-p-header"><i class="bi bi-person-circle"></i>  Sign In or Create Account</a>
+                </div>
+                <div *ngIf="usercheck" class=" col-md-3 col-xl-3 ">
+                    <a routerLink="/profile" class="text-light login-p-header"><i class="bi bi-person-circle"></i>  Welcome, User name</a>
+                </div>
+                <div *ngIf="usercheck" class=" col-md-2 col-xl-2 ">
+                    <a class="text-light login-p-header" (click)="signout()" type="button" href="/"><i class="bi bi-person-circle"></i>  Sign Out</a>
                 </div>
                 <div class=" col-md-4 nav-hd col-xl-3">
                     <i class="bi bi-search text-light fs-6 me-1 ms-1"></i>
@@ -49,12 +55,59 @@
                     </div>
                     <div class="list-nav">
                         <a routerLink="/cart" class="nav-items1"> <i class="bi bi-cart2 fs-5"></i> Cart</a>
+                        <div class="child-items1">
+                            <div class="d-flex" style="width: max-content;">
+
+                                <div *ngIf="!cartcheck" class="child-items-left cart-item">
+                                    <span><strong>Your Cart</strong></span>
+                                    <div class=" pt-3 pb-3 " style="border-top:1px solid white ;">
+                                        <p class="text-center">Your cart is empty</p>
+                                        <div class="row ctnShop">
+                                            <div class="col-5 shopitem me-3">
+                                                <div><i class="bi bi-stars"></i></div><strong>Resorts</strong></div>
+                                            <div class="col-5 shopitem">
+                                                <div><i class="bi bi-stars"></i></div><strong>Resorts</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Total</span>
+                                        <span> <span class="fs-5 fw-bold">$0.00</span>USD</span>
+                                    </div>
+                                </div>
+
+
+                                <div *ngIf="cartcheck" class="child-items-left cart-item">
+                                    <span><strong>Your Cart</strong></span>
+                                    <div class=" pt-3 pb-3 " style="border-top:1px solid white; border-bottom:1px solid white;">
+                                        <p>Theme Park Tickets</p>
+                                        <p>Quantity: 1</p>
+                                    </div>
+                                    <div class=" pt-3 pb-3 ">
+                                        <div class="d-flex justify-content-between">
+                                            <p>Order Subtotal</p>
+                                            <h5 class=" fw-bold">{{555|currency}}</h5>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <a routerLink="/cart">View  Cart Details</a>
+                                            <a routerLink="/cart" type="button" class="btn-submit">Check Out</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                     <div class="list-nav">
                         <a routerLink="/" class="nav-items1"> <i class="bi bi-person-lines-fill fs-5"></i> My Experience</a>
                         <div class="child-items1">
                             <div class="d-flex" style="width: max-content;">
                                 <div class="child-items-left">
+                                    <div *ngIf="usercheck">
+                                        <a routerLink="/profile">
+                                            <i class="bi bi-person-circle"></i> Profile
+                                        </a>
+                                    </div>
                                     <p>
                                         <a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/reservations.svg" class="img-my" alt=""><span class="h6 fw-bold"> My Plan </span></a>
                                     </p>
@@ -64,6 +117,10 @@
                                     <p>
                                         <a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" class="img-my" alt=""><span class="h6 fw-bold"> My Photos </span></a>
                                     </p>
+                                    <hr class="mt-2 mb-2">
+                                    <div *ngIf="usercheck">
+                                        <a type="button" (click)="signout()" href="/">Sign Out</a>
+                                    </div>
                                     <!-- <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p>
                                     <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p>
                                     <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p> -->
@@ -136,12 +193,12 @@
 
     .child-items-left {
         background: #012169;
-        padding: 10px;
+        padding: 17px;
     }
 
     .child-items-right {
         background-color: #FFFBF5;
-        padding: 10px;
+        padding: 17px;
     }
 
     .nav-items1:hover {

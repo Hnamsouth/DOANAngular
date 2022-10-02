@@ -31,19 +31,25 @@ checkuser=false;
 
   }
   // exclamation check
+  url='https://app-t2204m-eprojet.herokuapp.com/'
+  urltest='http://localhost:1234/'
+  urlpagetest='http://localhost:4200/'
+  urlWeb='https://eproject-team.web.app/'
   loginSubmit(){
+
     let data = this.FormLogin.value
     console.log(data.email +" "+data.password )
-    this.http.post<any>('https://app-t2204m-eprojet.herokuapp.com/checkUerlogin',{emailorphone:data.email,password:data.password}).subscribe(vl=>{
+    this.http.post<any>(`${this.url}checkUerlogin`,{emailorphone:data.email,password:data.password}).subscribe(vl=>{
       console.log(vl)
       if(vl.status==101){
         localStorage.setItem("user",JSON.stringify({user:data.email,id:1}));
-        this.location.back();
-        // this.location.go()
+        // go back not reload page
+        // this.location.back();
+        // go to url and load page
+        window.location.replace(this.urlWeb);
+        // go to path , not reload page
+        // this.rt.navigate(['/'])
       }else if(vl.status==303){
-        // new CpnHeaderComponent()
-    new checklogin(data);
-
         alert("user name or password incorrect")
         this.checkuser=true;
       }else{

@@ -25,8 +25,9 @@ main=`height: 67vh;display: flex;align-items: center;justify-content: center;   
           this.color='#1f9323'
           this.icon='far fa-check-circle'
           this.text='Wish you have a happy and enjoyable journey with your family and loved ones';
+          localStorage.setItem('user',JSON.stringify({id:1,user:data.user}))
           setTimeout(() => {
-            this.router.navigate(['/login'])
+            this.router.navigate(['/'])
           },5000);
         }else{
         }

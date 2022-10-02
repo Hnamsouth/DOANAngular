@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CpnHeaderComponent } from 'src/app/Components/cpn-header/cpn-header.component';
@@ -11,9 +12,26 @@ import { ServiService } from 'src/app/Components/servi.service';
 export class SelectTicketsComponent implements OnInit {
   curentDate:any|undefined
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private http:HttpClient) {
 
    }
+
+
+   widthvideo=`70vh`
+   fullscreen(){
+     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+     let heiight=document.getElementById('img-hd')?.offsetHeight;
+     //  heiight/2 = 190
+     // vh = 889  himg = 380
+     console.log(vh +"2" +heiight)
+    if(this.widthvideo=='70vh'){
+      this.widthvideo='100vh'
+    }else{
+      this.widthvideo='70vh'
+    }
+   }
+
+
 
   ngOnInit(): void {
     this.curentDate= new Date().toLocaleDateString()
@@ -104,7 +122,10 @@ if(index==2){this.data.waterP.amount+=amount;}else{
       let combo=this.data.combo
     }
   }
-
+  url='https://app-t2204m-eprojet.herokuapp.com/'
+  urltest='http://localhost:1234/'
+  urlpagetest='http://localhost:4200/'
+  urlWeb='https://eproject-team.web.app/'
   submitTK(){
     // save into local storage
     // send data to card component & header cpn
@@ -116,8 +137,9 @@ if(index==2){this.data.waterP.amount+=amount;}else{
       })
       localStorage.setItem('currentTicket',JSON.stringify(data))
       let test = new ServiService().getticket(data)
-      new CpnHeaderComponent()
- this.router.navigate(['/cart'])
+      new CpnHeaderComponent(this.http)
+      window.location.replace(`${this.urlWeb}/cart`);
+//  this.router.navigate(['/cart'])
     // this.router.navigate(['/user', 5])
       // let check:any=localStorage.getItem('currentTicket')
       // let test=JSON.parse(check)
@@ -126,5 +148,6 @@ if(index==2){this.data.waterP.amount+=amount;}else{
       // console.log("-----" + JSON.stringify(test[0]) + JSON.stringify(test[1]))
     }
   }
+
 
 }

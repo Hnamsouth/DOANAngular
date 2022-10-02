@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectTicketsComponent } from '../ticket/parktickets/select-tickets/select-tickets.component';
@@ -13,7 +14,7 @@ export class CartComponent implements OnInit {
   userTicket:any[]=[];
   Subtotal:number=0.0;
   statusUser=false;
-  constructor( private route:Router) {
+  constructor( private route:Router,private http:HttpClient) {
     this.getTK();
     this.Subtotalall();
     this.checkUseRLogin()
@@ -27,19 +28,25 @@ export class CartComponent implements OnInit {
   }
   getTK(){
     let check:any=localStorage.getItem('currentTicket')
-    let test=JSON.parse(check)
-    this.userTicket=test;
-    return test;
+    if(check){
+      let test=JSON.parse(check)
+      this.userTicket=test;
+      return test;
+    }
+
   }
   Subtotalall(){
    let data:any[] = this.getTK()
-   data.forEach(item=>{
-    this.Subtotal+=item.cost
-   })
+   if(data){
+    data.forEach(item=>{
+      this.Subtotal+=item.cost
+     })
+   }
+
   }
   changeamountTK(amount:any,index:any){
     let dataTK=this.getTK()
-    let test=new SelectTicketsComponent(this.route).data
+    let test=new SelectTicketsComponent(this.route,this.http).data
     console.log(amount.value + " --"+ index)
     console.log(dataTK)
     if(dataTK[index].id==0){
@@ -56,12 +63,12 @@ export class CartComponent implements OnInit {
           dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*dataTK[index].costper1
          }
     }else if(dataTK[index].id==1){
-      let test=new SelectTicketsComponent(this.route).data
+      let test=new SelectTicketsComponent(this.route,this.http).data
       dataTK[index].amount=amount.value;
       dataTK[index].cost=amount.value*test.gokart.type[dataTK[index].typeindex].cost;
       // dataTK[index].cost=dataTK[index].amount
     }else {
-      let test=new SelectTicketsComponent(this.route).data
+      let test=new SelectTicketsComponent(this.route,this.http).data
       dataTK[index].amount=amount.value;
       dataTK[index].cost=amount.value*test.waterP.type[dataTK[index].typeindex].cost;
     }

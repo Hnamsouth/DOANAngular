@@ -24,6 +24,7 @@ export class RegitsterComponent implements OnInit {
     repeatpassword:['', Validators.required],
    })
   url='https://app-t2204m-eprojet.herokuapp.com';
+  urltest='http://localhost:1234'
   checkpw=false;ckemail=false;
   iconcheck='bi bi-exclamation-circle danger';
 

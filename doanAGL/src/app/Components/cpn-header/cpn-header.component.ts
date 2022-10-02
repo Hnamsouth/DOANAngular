@@ -212,28 +212,48 @@ export class CpnHeaderComponent implements OnInit {
     // console.log('123')
     this.ngOnInit()
   }
-  constructor() {
-    var gticket:any[];
-    const list = document.querySelectorAll('.list');
-    list.forEach(item=>{
-          item.addEventListener('click',()=>{
-            console.log('11')
-            });
-          })
-          let user =localStorage.getItem("user")
-          // JSON.parse(user)
-          // console.log(user)
-          // console.log(localStorage.getItem("user"))
-          // this.test({email:'', password: ''});
-          // console.log("1")
-          let check:any=localStorage.getItem('currentTicket')
-      let test=JSON.parse(check)
-      // console.log("-----" + JSON.stringify(test[0]) + JSON.stringify(test[1]))
+  usercheck=false
+  url='https://app-t2204m-eprojet.herokuapp.com';
+  urltest='http://localhost:1234'
+  checkuser(){
+      let user:any =localStorage.getItem("user");
+      if(user){
+        let test=JSON.parse(user);
+        this.http.post<any>(`${this.url}/checkverify`,{emailorphone:test.user}).subscribe(vl=>{
+          console.log(vl)
+                if(vl.data==1){
+                  this.usercheck=true
+
+                }
+              })
+      }
+  }
+  cartcheck=false;
+  cartdata:any[]=[];
+
+  checkCart(){
+    let cart:any =localStorage.getItem("currentTicket");
+    if(cart){
+      let test=JSON.parse(cart);
+      if(test.length!==0){
+        this.cartdata=test;
+        this.cartcheck=true;
+        console.log(test)
+      }
+    }
+  }
+
+  signout(){
+    localStorage.removeItem('user')
+    this.usercheck=false
+  }
+
+  constructor(private http:HttpClient) {
+    this.checkuser()
+    this.checkCart()
   }
 
   ngOnInit(): void {
-
-    // console.log('2')
 
   }
   test(users:any){
@@ -270,7 +290,6 @@ export class checklogin{
     // console.log("test export", user)
     // this.data=user
     // new CpnHeaderComponent().test(user)
-    new CpnHeaderComponent().addcheck(user)
     CpnHeaderComponent.addtest
   }
 }

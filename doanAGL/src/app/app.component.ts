@@ -24,6 +24,7 @@ export class AppComponent {
     // this.route.children.forEach(vl=>{
     //   console.log(vl)
     // })
+    console.log("run test")
   }
 
   check=500
