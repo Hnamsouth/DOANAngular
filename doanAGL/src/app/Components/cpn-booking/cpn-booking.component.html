@@ -1,32 +1,32 @@
 <div style="height:fit-content ;">
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <div class="header-cko">
-            <h1>Checkout</h1>
-            <div>
-                <span><i class="bi bi-exclamation-circle"></i></span> <strong>Reminder</strong>
-                <p>To enter one of the parks, in addition to valid admission, each Guest is required to make a theme park reservation via the Keansburgs system. You can do so immediately after purchasing.</p>
+            <h1 class="">Checkout</h1>
+            <div style="color:#2C415B ;">
+                <h5><i class="bi bi-exclamation-circle"></i> <strong>  Reminder</strong></h5>
+                <p style="    margin: 10px 0 45px 45px;
+                line-height: 21px;
+                max-width: 701px;">To enter one of the parks, in addition to valid admission, each Guest is required to make a theme park reservation via the Keansburgs system. You can do so immediately after purchasing.</p>
             </div>
         </div>
         <div class="">
             <div class="row CK-inf-user">
                 <span></span>
-                <div class="col-7 userleft">
+                <div class="col-7 userleft p-0">
                     <!--  -->
-                    <div>
-                        <div class="text-header1">
+                    <div class="info-left mb-5">
+                        <div class="text-header1 p-3">
                             <h2><strong>Delivery & Contact Info</strong></h2>
                         </div>
                         <div class="sendticket">
                             <h3>How will you get the tickets?</h3>
                             <div>
-                                <div>
-
+                                <div class="mb-5">
                                     <div class="d-flex flex-column">
-                                        <!--  -->
                                         <div>
                                             <div class="radio">
                                                 <input id="radio-1" type="radio" checked name="sendticket" (click)="collapsetoggle(0)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-                                                <label for="radio-1" class="radio-label">Email ($0.00)</label>
+                                                <label for="radio-1" class="radio-label fs-5"><strong> Email ($0.00)</strong> </label>
                                             </div>
                                             <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed">
                                                 <div class="card">
@@ -45,7 +45,7 @@
                                         <div>
                                             <div class="radio">
                                                 <input id="radio-2" type="radio" name="sendticket" (click)="collapsetoggle(1)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample1">
-                                                <label for="radio-2" class="radio-label"> Domestic Standard ($0.00)</label>
+                                                <label for="radio-2" class="radio-label fs-5"><strong> Domestic Standard ($0.00)</strong> </label>
                                             </div>
                                             <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
                                                 <div class="card">
@@ -54,15 +54,15 @@
                                                         <p><strong>Shipping Information</strong></p>
                                                         <form method="get">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                                                                <input type="text" class="form-control" id="firstname" required placeholder="First Name">
                                                                 <label for="firstname">First Name</label>
                                                             </div>
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                                                                <input type="text" class="form-control" id="lastname" required placeholder="Last Name">
                                                                 <label for="lastname">Last Name</label>
                                                             </div>
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="address" placeholder="Address">
+                                                                <input type="text" class="form-control" id="address" required placeholder="Address">
                                                                 <label for="address">Address</label>
                                                             </div>
                                                             <div class="form-floating">
@@ -70,12 +70,12 @@
                                                                 <label for="address2">Address 2</label>
                                                             </div>
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
+                                                                <input type="text" class="form-control" id="zipcode" required placeholder="Zip Code">
                                                                 <label for="zipcode">Zip Code</label>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="form-floating col-9">
-                                                                    <input type="text" class="form-control" id="city" placeholder="City">
+                                                                    <input type="text" class="form-control" id="city" required placeholder="City">
                                                                     <label for="city"> City</label>
                                                                 </div>
                                                                 <div class="col-2 float-end">
@@ -95,7 +95,7 @@
                                         <div>
                                             <div class="radio">
                                                 <input id="radio-3" type="radio" name="sendticket" (click)="collapsetoggle(2)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample2">
-                                                <label for="radio-3" class="radio-label"> Domestic Express ($15.00)</label>
+                                                <label for="radio-3" class="radio-label fs-5"><strong> Domestic Express ($15.00)</strong> </label>
                                             </div>
                                             <div #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
                                                 <div class="card">
@@ -104,29 +104,29 @@
                                                         <p><strong>Shipping Information</strong></p>
                                                         <form method="get">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="firstname" placeholder="First Name">
-                                                                <label for="firstname">First Name</label>
+                                                                <input type="text" class="form-control" name="input" id="firstname1" required placeholder="First Name">
+                                                                <label for="firstname1">First Name</label>
                                                             </div>
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
-                                                                <label for="lastname">Last Name</label>
+                                                                <input type="text" class="form-control" name="input" id="lastname1" required placeholder="Last Name">
+                                                                <label for="lastname1">Last Name</label>
                                                             </div>
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="address" placeholder="Address">
-                                                                <label for="address">Address</label>
+                                                                <input type="text" class="form-control" id="address1" required placeholder="Address">
+                                                                <label for="address1">Address</label>
                                                             </div>
                                                             <div class="form-floating">
                                                                 <input type="text" class="form-control" id="address2" placeholder="Address 2">
                                                                 <label for="address2">Address 2</label>
                                                             </div>
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
-                                                                <label for="zipcode">Zip Code</label>
+                                                                <input type="text" class="form-control" id="zipcode1" required placeholder="Zip Code">
+                                                                <label for="zipcode1">Zip Code</label>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="form-floating col-9">
-                                                                    <input type="text" class="form-control" id="city" placeholder="City">
-                                                                    <label for="city"> City</label>
+                                                                    <input type="text" class="form-control" id="city1" required placeholder="City">
+                                                                    <label for="city1"> City</label>
                                                                 </div>
                                                                 <div class="col-2 float-end">
                                                                     <select name="State" id="" class="form-control">
@@ -145,24 +145,217 @@
                                         <div>
                                             <div class="radio">
                                                 <input id="radio-4" type="radio" name="sendticket" (click)="collapsetoggle(3)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExampl3">
-                                                <label for="radio-4" class="radio-label">  International Express ($25.00)</label>
+                                                <label for="radio-4" class="radio-label fs-5"><strong> International Express ($25.00)</strong>  </label>
                                             </div>
                                             <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
                                                 <div class="card">
                                                     <div class="card-body">
-                                                        You can collapse this card by clicking Toggle33333333333
+                                                        <p>Delivery after Oct 15, 2022 (shipped via the U.S. Postal Service)</p>
+                                                        <p><strong>Shipping Information</strong></p>
+                                                        <form method="get">
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" name="input" id="firstname1" required placeholder="First Name">
+                                                                <label for="firstname1">First Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" name="input" id="lastname1" required placeholder="Last Name">
+                                                                <label for="lastname1">Last Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <select name="State" id="" class="form-control">
+                                                                    <option value="0">AL</option>
+                                                                    <option value="1">AK</option>
+                                                                    <option value="2">AZ</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address1" required placeholder="Address">
+                                                                <label for="address1">Address</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address2" placeholder="Address 2">
+                                                                <label for="address2">Address 2</label>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-
-
+                                </div>
+                                <h3 class="mb-3">Please provide contact information.</h3>
+                                <div class="contact-inf">
+                                    <h5 class=" fw-bold mb-3">Email (to send confirmation to)</h5>
+                                    <div *ngIf="!changeemail1" class="d-flex justify-content-between">
+                                        <span>hnamafm17397@gmail.com</span>
+                                        <a type="button" title="Change Email" (click)="changeemail(0)">change</a>
+                                    </div>
+                                    <div *ngIf="changeemail1" class="form-floating">
+                                        <input type="email" class="form-control" id="changeemail" required placeholder="Your Email">
+                                        <label for="changeemail">Your Email</label>
+                                    </div>
+                                    <hr class="mb-3">
+                                    <h5 class=" fw-bold mb-3">Phone (in case questions arise)</h5>
+                                    <div class="row">
+                                        <div class="form-floating col-5">
+                                            <select name="countrycode" class="form-control" id="ctrycode" placeholder="Country Code">
+                                              <option value="0">+84</option>
+                                              <option value="1">+1</option>
+                                              <option value="2">+25</option>
+                                            </select>
+                                            <label for="Country Code">Country Code</label>
+                                        </div>
+                                        <div class="form-floating col-6">
+                                            <input type="number" class="form-control" id="phone" placeholder="Phone">
+                                            <label for="phone">Phone</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="info-left mb-5">
+                        <div class="text-header1 p-3">
+                            <h2><strong>Delivery & Contact Info</strong></h2>
+                        </div>
+                        <div class="sendticket">
+                            <h3 class="">How would you like to pay?</h3>
+                            <div>
+                                <div>
+                                    <div class="radio">
+                                        <input id="radio-5" type="radio" checked name="payment" (click)="collapsetoggle(4)" [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseExample">
+                                        <label for="radio-5" class="radio-label fs-5"><strong> Credit or Debit Card</strong> </label>
+                                    </div>
+                                    <div #collapse4="ngbCollapse" [(ngbCollapse)]="isCollapsed4">
+                                        <div class="card">
+                                            <div class="card-body inf-user-card">
+                                                <div class="d-flex justify-content-around">
+                                                    <div class="iconB" *ngFor="let i of iconBank">
+                                                        <img src="{{i}}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-floating col-5">
+                                                        <input type="text" class="form-control" id="cardnumber" required placeholder="Card Number">
+                                                        <label class=" text-align-center" for="cardnumber-MMYY-securityC">Card Number</label>
+                                                    </div>
+                                                    <div class="form-floating col-3">
+                                                        <input type="text" class="form-control" id="MMYY" required placeholder="MM/YY">
+                                                        <label class=" text-align-center" for="MMYY">MM/YY</label>
+                                                    </div>
+                                                    <div class="form-floating col-4">
+                                                        <input type="text" class="form-control" id="securityC" required placeholder="Security Code">
+                                                        <label class=" text-align-center" for="securityC">Security Code</label>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" id="namecard" required placeholder="Name on Card">
+                                                        <label for="namecard">Name on Card</label>
+                                                    </div>
+                                                </div>
+                                                <hr class="mt-3 mb-3">
+                                                <div>
+                                                    <div *ngIf="!changeAddress">
+                                                        <div class="d-flex justify-content-between">
+                                                            <h5> <strong>Billing Address</strong></h5>
+                                                            <a type="button" title="Change Address" (click)="changeemail(1)">change</a>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <span>thanh tri</span>
+                                                            <span>ha noi , ta thanh oai 100000</span>
+                                                            <span>Vietnam</span>
+                                                        </div>
+                                                    </div>
+                                                    <div *ngIf="changeAddress" class="">
+                                                        <form method="get">
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="firstname" required placeholder="First Name">
+                                                                <label for="firstname">First Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="lastname" required placeholder="Last Name">
+                                                                <label for="lastname">Last Name</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address" required placeholder="Address">
+                                                                <label for="address">Address</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="address2" placeholder="Address 2">
+                                                                <label for="address2">Address 2</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control" id="zipcode" required placeholder="Zip Code">
+                                                                <label for="zipcode">Zip Code</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-floating col-9">
+                                                                    <input type="text" class="form-control" id="city" required placeholder="City">
+                                                                    <label for="city"> City</label>
+                                                                </div>
+                                                                <div class="col-2 float-end">
+                                                                    <select name="State" id="" class="form-control">
+                                                        <option value="0">AL</option>
+                                                        <option value="1">AK</option>
+                                                        <option value="2">AZ</option>
+                                                      </select>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span> <input type="checkbox" name="savecard" > <strong> Save this card to my profile. </strong></span>
+                                                    <p>Store my payment information for use across the Walt Disney Family of Companies. Learn more</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="radio">
+                                        <input id="radio-6" type="radio" name="payment" (click)="collapsetoggle(5)" [attr.aria-expanded]="!isCollapsed5" aria-controls="collapseExample">
+                                        <label for="radio-6" class="radio-label fs-5"><strong> Click to Pay</strong> </label>
+
+                                    </div>
+                                    <div #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <p class="ms-3">Log into your Click to Pay profile to begin payment. You'll be returned here to review and submit your order.</p>
+                                                <div class="d-flex justify-content-center">
+                                                    <img src="https://assets.secure.checkout.visa.com/wallet-services-web/xo/button.png?height=47&width=267&animation=true&legacy=false&svg=true&orderedCardBrands=VISA%2CMASTERCARD%2CAMEX%2CDISCOVER" width="100%" height="50" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="radio">
+                                        <input id="radio-7" type="radio" name="payment" (click)="collapsetoggle(6)" [attr.aria-expanded]="!isCollapsed6" aria-controls="collapseExample">
+                                        <label for="radio-7" class="radio-label fs-5"><strong> PayPal / PayPal - Pay Later</strong> </label>
+                                    </div>
+                                    <div #collapse6="ngbCollapse" [(ngbCollapse)]="isCollapsed6">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <p class="ms-3">By clicking "Pay with PayPal" or "Pay Later," you will be directed outside of Disneyworld.com, where a different privacy policy and terms of use will apply.</p>
+                                                <div class="d-flex justify-content-center">
+                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAxcHgiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMDEgMzIiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiIHhtbG5zPSJodHRwOiYjeDJGOyYjeDJGO3d3dy53My5vcmcmI3gyRjsyMDAwJiN4MkY7c3ZnIj48cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDEyLjIzNyAyLjggTCA0LjQzNyAyLjggQyAzLjkzNyAyLjggMy40MzcgMy4yIDMuMzM3IDMuNyBMIDAuMjM3IDIzLjcgQyAwLjEzNyAyNC4xIDAuNDM3IDI0LjQgMC44MzcgMjQuNCBMIDQuNTM3IDI0LjQgQyA1LjAzNyAyNC40IDUuNTM3IDI0IDUuNjM3IDIzLjUgTCA2LjQzNyAxOC4xIEMgNi41MzcgMTcuNiA2LjkzNyAxNy4yIDcuNTM3IDE3LjIgTCAxMC4wMzcgMTcuMiBDIDE1LjEzNyAxNy4yIDE4LjEzNyAxNC43IDE4LjkzNyA5LjggQyAxOS4yMzcgNy43IDE4LjkzNyA2IDE3LjkzNyA0LjggQyAxNi44MzcgMy41IDE0LjgzNyAyLjggMTIuMjM3IDIuOCBaIE0gMTMuMTM3IDEwLjEgQyAxMi43MzcgMTIuOSAxMC41MzcgMTIuOSA4LjUzNyAxMi45IEwgNy4zMzcgMTIuOSBMIDguMTM3IDcuNyBDIDguMTM3IDcuNCA4LjQzNyA3LjIgOC43MzcgNy4yIEwgOS4yMzcgNy4yIEMgMTAuNjM3IDcuMiAxMS45MzcgNy4yIDEyLjYzNyA4IEMgMTMuMTM3IDguNCAxMy4zMzcgOS4xIDEzLjEzNyAxMC4xIFoiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDM1LjQzNyAxMCBMIDMxLjczNyAxMCBDIDMxLjQzNyAxMCAzMS4xMzcgMTAuMiAzMS4xMzcgMTAuNSBMIDMwLjkzNyAxMS41IEwgMzAuNjM3IDExLjEgQyAyOS44MzcgOS45IDI4LjAzNyA5LjUgMjYuMjM3IDkuNSBDIDIyLjEzNyA5LjUgMTguNjM3IDEyLjYgMTcuOTM3IDE3IEMgMTcuNTM3IDE5LjIgMTguMDM3IDIxLjMgMTkuMzM3IDIyLjcgQyAyMC40MzcgMjQgMjIuMTM3IDI0LjYgMjQuMDM3IDI0LjYgQyAyNy4zMzcgMjQuNiAyOS4yMzcgMjIuNSAyOS4yMzcgMjIuNSBMIDI5LjAzNyAyMy41IEMgMjguOTM3IDIzLjkgMjkuMjM3IDI0LjMgMjkuNjM3IDI0LjMgTCAzMy4wMzcgMjQuMyBDIDMzLjUzNyAyNC4zIDM0LjAzNyAyMy45IDM0LjEzNyAyMy40IEwgMzYuMTM3IDEwLjYgQyAzNi4yMzcgMTAuNCAzNS44MzcgMTAgMzUuNDM3IDEwIFogTSAzMC4zMzcgMTcuMiBDIDI5LjkzNyAxOS4zIDI4LjMzNyAyMC44IDI2LjEzNyAyMC44IEMgMjUuMDM3IDIwLjggMjQuMjM3IDIwLjUgMjMuNjM3IDE5LjggQyAyMy4wMzcgMTkuMSAyMi44MzcgMTguMiAyMy4wMzcgMTcuMiBDIDIzLjMzNyAxNS4xIDI1LjEzNyAxMy42IDI3LjIzNyAxMy42IEMgMjguMzM3IDEzLjYgMjkuMTM3IDE0IDI5LjczNyAxNC42IEMgMzAuMjM3IDE1LjMgMzAuNDM3IDE2LjIgMzAuMzM3IDE3LjIgWiI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDMwODciIGQ9Ik0gNTUuMzM3IDEwIEwgNTEuNjM3IDEwIEMgNTEuMjM3IDEwIDUwLjkzNyAxMC4yIDUwLjczNyAxMC41IEwgNDUuNTM3IDE4LjEgTCA0My4zMzcgMTAuOCBDIDQzLjIzNyAxMC4zIDQyLjczNyAxMCA0Mi4zMzcgMTAgTCAzOC42MzcgMTAgQyAzOC4yMzcgMTAgMzcuODM3IDEwLjQgMzguMDM3IDEwLjkgTCA0Mi4xMzcgMjMgTCAzOC4yMzcgMjguNCBDIDM3LjkzNyAyOC44IDM4LjIzNyAyOS40IDM4LjczNyAyOS40IEwgNDIuNDM3IDI5LjQgQyA0Mi44MzcgMjkuNCA0My4xMzcgMjkuMiA0My4zMzcgMjguOSBMIDU1LjgzNyAxMC45IEMgNTYuMTM3IDEwLjYgNTUuODM3IDEwIDU1LjMzNyAxMCBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny43MzcgMi44IEwgNTkuOTM3IDIuOCBDIDU5LjQzNyAyLjggNTguOTM3IDMuMiA1OC44MzcgMy43IEwgNTUuNzM3IDIzLjYgQyA1NS42MzcgMjQgNTUuOTM3IDI0LjMgNTYuMzM3IDI0LjMgTCA2MC4zMzcgMjQuMyBDIDYwLjczNyAyNC4zIDYxLjAzNyAyNCA2MS4wMzcgMjMuNyBMIDYxLjkzNyAxOCBDIDYyLjAzNyAxNy41IDYyLjQzNyAxNy4xIDYzLjAzNyAxNy4xIEwgNjUuNTM3IDE3LjEgQyA3MC42MzcgMTcuMSA3My42MzcgMTQuNiA3NC40MzcgOS43IEMgNzQuNzM3IDcuNiA3NC40MzcgNS45IDczLjQzNyA0LjcgQyA3Mi4yMzcgMy41IDcwLjMzNyAyLjggNjcuNzM3IDIuOCBaIE0gNjguNjM3IDEwLjEgQyA2OC4yMzcgMTIuOSA2Ni4wMzcgMTIuOSA2NC4wMzcgMTIuOSBMIDYyLjgzNyAxMi45IEwgNjMuNjM3IDcuNyBDIDYzLjYzNyA3LjQgNjMuOTM3IDcuMiA2NC4yMzcgNy4yIEwgNjQuNzM3IDcuMiBDIDY2LjEzNyA3LjIgNjcuNDM3IDcuMiA2OC4xMzcgOCBDIDY4LjYzNyA4LjQgNjguNzM3IDkuMSA2OC42MzcgMTAuMSBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5MC45MzcgMTAgTCA4Ny4yMzcgMTAgQyA4Ni45MzcgMTAgODYuNjM3IDEwLjIgODYuNjM3IDEwLjUgTCA4Ni40MzcgMTEuNSBMIDg2LjEzNyAxMS4xIEMgODUuMzM3IDkuOSA4My41MzcgOS41IDgxLjczNyA5LjUgQyA3Ny42MzcgOS41IDc0LjEzNyAxMi42IDczLjQzNyAxNyBDIDczLjAzNyAxOS4yIDczLjUzNyAyMS4zIDc0LjgzNyAyMi43IEMgNzUuOTM3IDI0IDc3LjYzNyAyNC42IDc5LjUzNyAyNC42IEMgODIuODM3IDI0LjYgODQuNzM3IDIyLjUgODQuNzM3IDIyLjUgTCA4NC41MzcgMjMuNSBDIDg0LjQzNyAyMy45IDg0LjczNyAyNC4zIDg1LjEzNyAyNC4zIEwgODguNTM3IDI0LjMgQyA4OS4wMzcgMjQuMyA4OS41MzcgMjMuOSA4OS42MzcgMjMuNCBMIDkxLjYzNyAxMC42IEMgOTEuNjM3IDEwLjQgOTEuMzM3IDEwIDkwLjkzNyAxMCBaIE0gODUuNzM3IDE3LjIgQyA4NS4zMzcgMTkuMyA4My43MzcgMjAuOCA4MS41MzcgMjAuOCBDIDgwLjQzNyAyMC44IDc5LjYzNyAyMC41IDc5LjAzNyAxOS44IEMgNzguNDM3IDE5LjEgNzguMjM3IDE4LjIgNzguNDM3IDE3LjIgQyA3OC43MzcgMTUuMSA4MC41MzcgMTMuNiA4Mi42MzcgMTMuNiBDIDgzLjczNyAxMy42IDg0LjUzNyAxNCA4NS4xMzcgMTQuNiBDIDg1LjczNyAxNS4zIDg1LjkzNyAxNi4yIDg1LjczNyAxNy4yIFoiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDA5Y2RlIiBkPSJNIDk1LjMzNyAzLjMgTCA5Mi4xMzcgMjMuNiBDIDkyLjAzNyAyNCA5Mi4zMzcgMjQuMyA5Mi43MzcgMjQuMyBMIDk1LjkzNyAyNC4zIEMgOTYuNDM3IDI0LjMgOTYuOTM3IDIzLjkgOTcuMDM3IDIzLjQgTCAxMDAuMjM3IDMuNSBDIDEwMC4zMzcgMy4xIDEwMC4wMzcgMi44IDk5LjYzNyAyLjggTCA5Ni4wMzcgMi44IEMgOTUuNjM3IDIuOCA5NS40MzcgMyA5NS4zMzcgMy4zIFoiPjwvcGF0aD48L3N2Zz4"
+                                                        width="auto" height="50" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft-text">
+                        <p>(Các) thẻ của bạn sẽ không bị tính phí cho đến khi bạn chấp nhận <a href="">Điều khoản & Điều kiện</a> và chọn "Mua" trong bước tiếp theo.</p>
+                        <button type="button" class="btn-submit-payTK"> Next </button>
+                    </div>
+
                 </div>
                 <div class="col-4 userright">
                     <h4><strong>Order Summary</strong></h4>

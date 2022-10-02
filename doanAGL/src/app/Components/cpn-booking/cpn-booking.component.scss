@@ -5,9 +5,7 @@
     .header-cko {
         height: auto;
     }
-    .userleft {
-        background: #EBF6FC;
-    }
+    .userleft {}
     .userright {
         height: fit-content;
         background: #EBF6FC;
@@ -29,7 +27,7 @@
         width: 100%;
     }
     $color1: #f4f4f4;
-    $color2: #3197EE;
+    $color2: #61941B;
     .radio {
         margin: 0.5rem;
         input[type="radio"] {
@@ -90,6 +88,58 @@
     .card-body {
         .form-floating {
             margin-bottom: 18px;
+        }
+    }
+    .userleft {
+        .info-left {
+            border: 1px solid gray;
+            margin-bottom: 35px;
+            background: #FAFAFA;
+            .text-header1 {
+                background: white;
+                border-bottom: 1px solid gray;
+            }
+            .sendticket {
+                padding: 24px;
+            }
+        }
+        .contact-inf {
+            padding: 30px 20px;
+            background: white;
+            box-shadow: 0 0 5px #ababab;
+        }
+        .ft-text {
+            max-width: 500px;
+            margin: 0 auto;
+            .btn-submit-payTK {
+                width: 100%;
+                margin: 0 10px;
+                height: 50px;
+                background-color: #0079bc;
+                border: 2px solid #0079bc;
+                border-radius: 30px;
+                color: white;
+            }
+        }
+    }
+    .iconB {
+        max-width: 46px!important;
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        margin-right: 7px;
+        img {
+            width: 100%;
+            height: auto;
+            display: inline-block;
+            transition-property: opacity;
+            transition-duration: .3s;
+            transition-timing-function: cubic-bezier(.165, .84, .44, 1);
+            font-size: 10px;
+        }
+    }
+    .inf-user-card {
+        div {
+            margin-bottom: 10px;
         }
     }
 }
