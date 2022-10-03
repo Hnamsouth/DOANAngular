@@ -85,8 +85,8 @@
                     <div> <span class="fs-4 fw-bold"> Subtotal </span> <span class="fs-2 fw-bold"> {{ Subtotal+Subtotal*15/100|currency }} </span> <span class="fs-4">USD</span></div>
                     <div>
                         <a type="button" class="savecart">Save Cart</a>
-                        <a [hidden]="statusUser" type="button" class="btn-submit" id="checkout" (click)="Checkout($event)" data-bs-toggle="modal" data-bs-target="#exampleModal"> Check Out </a>
-                        <a [hidden]="!statusUser" type="button" class="btn-submit" routerLink="/checkout-booking"> Check Out </a>
+                        <a *ngIf="statusUser" type="button" class="btn-submit" id="checkout" (click)="Checkout($event)" data-bs-toggle="modal" data-bs-target="#exampleModal"> Check Out </a>
+                        <a *ngIf="!statusUser" type="button" class="btn-submit" routerLink="/checkout-booking"> Check Out </a>
                     </div>
                     <p><i class="bi bi-check-circle-fill checkicon"></i> See Important Details above.</p>
                     <p>Vacation Questions? Call (407) 939-7702</p>
@@ -97,7 +97,7 @@
                                 <div>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <app-login class="login-1">
+                                <app-login class="login-1" [datacheckout]="statusUser">
                                 </app-login>
 
                             </div>

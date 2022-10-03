@@ -13,7 +13,7 @@ interface ticket{
 export class CartComponent implements OnInit {
   userTicket:any[]=[];
   Subtotal:number=0.0;
-  statusUser=false;
+  statusUser=true;
   constructor( private route:Router,private http:HttpClient) {
     this.getTK();
     this.Subtotalall();
@@ -24,7 +24,11 @@ export class CartComponent implements OnInit {
   }
 
   checkUseRLogin(){
-    this.statusUser=true
+    let user:any=localStorage.getItem('user')
+    if(user){
+      this.statusUser=false
+      console.log('cart111')
+    }
   }
   getTK(){
     let check:any=localStorage.getItem('currentTicket')
@@ -80,6 +84,7 @@ export class CartComponent implements OnInit {
     // let check:any=localStorage.getItem('currentTicket')
     // let test2=JSON.parse(check)
     // console.log(test2)
+    window.location.replace(`${this.urlWeb}cart`);
   }
   checkout1=''
   Checkout(prt:any){
@@ -94,6 +99,11 @@ export class CartComponent implements OnInit {
     }
     // console.log(prt.target.attributes[2])
   }
+
+  url='https://app-t2204m-eprojet.herokuapp.com/'
+  urltest='http://localhost:1234/'
+  urlpagetest='http://localhost:4200/'
+  urlWeb='https://eproject-team.web.app/'
 
   deleteTicket:ticket={
     id: 0,
@@ -121,9 +131,10 @@ export class CartComponent implements OnInit {
         let check:any=localStorage.getItem('currentTicket')
         let test2=JSON.parse(check)
         console.log(test2)
+
         break;
       }
     }
-
+    window.location.replace(`${this.urlWeb}cart`);
   }
 }

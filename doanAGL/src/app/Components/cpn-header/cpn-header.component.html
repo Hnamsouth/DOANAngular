@@ -1,19 +1,24 @@
 <nav class="navbar navbar-light navbar-expand-md py-3 bg-svg">
     <div class="container">
         <div class="row w-100">
-            <div class="col-12 row  justify-content-between align-items-center mb-1 ">
-                <div *ngIf="!usercheck" class=" col-md-3 col-xl-3 ">
-                    <a routerLink="/login" class="text-light login-p-header"><i class="bi bi-person-circle"></i>  Sign In or Create Account</a>
-                </div>
+            <div class="col-12 row justify-content-between align-items-center mb-1 ">
+                <div *ngIf="!usercheck" class="d-block col-md-3 col-xl-3 "></div>
                 <div *ngIf="usercheck" class=" col-md-3 col-xl-3 ">
-                    <a routerLink="/profile" class="text-light login-p-header"><i class="bi bi-person-circle"></i>  Welcome, User name</a>
+                    <a routerLink="/profile" class="text-light login-p-header" title="Your Profile"><i class="bi bi-person-circle"></i>  Welcome, User name</a>
                 </div>
-                <div *ngIf="usercheck" class=" col-md-2 col-xl-2 ">
-                    <a class="text-light login-p-header" (click)="signout()" type="button" href="/"><i class="bi bi-person-circle"></i>  Sign Out</a>
-                </div>
-                <div class=" col-md-4 nav-hd col-xl-3">
-                    <i class="bi bi-search text-light fs-6 me-1 ms-1"></i>
-                    <input type="text" class="searchbar" placeholder="seach keansburgworld">
+
+                <div class=" col-md-8  col-xl-7 row justify-content-end ">
+                    <div *ngIf="!usercheck" class=" col-md-4 col-xl-4 d-flex align-items-center" style="width: fit-content;">
+                        <a routerLink="/login" class="text-light login-p-header "><i class="bi bi-person-circle" ></i>  Sign In or Create Account</a>
+                    </div>
+
+                    <div *ngIf="usercheck" class="col-md-4 col-xl-4 d-flex align-items-center" style="width:fit-content ;">
+                        <a class="text-light login-p-header" (click)="signout()" type="button" href="/"> Sign Out</a>
+                    </div>
+                    <div class="nav-hd col-xl-4 col-4">
+                        <i class="bi bi-search text-light fs-6 me-1 ms-1"></i>
+                        <input type="text" class="searchbar" placeholder="seach keansburgworld">
+                    </div>
                 </div>
             </div>
             <div class="col d-flex justify-content-center row">
@@ -57,7 +62,7 @@
                         <a routerLink="/cart" class="nav-items1"> <i class="bi bi-cart2 fs-5"></i> Cart</a>
                         <div class="child-items1">
                             <div class="d-flex" style="width: max-content;">
-
+                                <!--  -->
                                 <div *ngIf="!cartcheck" class="child-items-left cart-item">
                                     <span><strong>Your Cart</strong></span>
                                     <div class=" pt-3 pb-3 " style="border-top:1px solid white ;">
@@ -74,18 +79,22 @@
                                         <span> <span class="fs-5 fw-bold">$0.00</span>USD</span>
                                     </div>
                                 </div>
-
-
+                                <!--  -->
                                 <div *ngIf="cartcheck" class="child-items-left cart-item">
                                     <span><strong>Your Cart</strong></span>
                                     <div class=" pt-3 pb-3 " style="border-top:1px solid white; border-bottom:1px solid white;">
-                                        <p>Theme Park Tickets</p>
-                                        <p>Quantity: 1</p>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>{{cartdata[0].name}}</span><span>Quantity: {{cartdata[0].amount}}</span>
+                                        </div>
+                                        <div *ngIf="cartdata[1]" class="d-flex justify-content-between mb-2">
+                                            <span>{{cartdata[1].name}}</span><span>Quantity: {{cartdata[1].amount}}</span>
+                                        </div>
+                                        <a *ngIf="cartdata[2]" routerLink="/cart"><i class="bi bi-chevron-double-down me-1"></i> Veiw Details</a>
                                     </div>
                                     <div class=" pt-3 pb-3 ">
                                         <div class="d-flex justify-content-between">
                                             <p>Order Subtotal</p>
-                                            <h5 class=" fw-bold">{{555|currency}}</h5>
+                                            <h5 class=" fw-bold">{{Subtotalall+Subtotalall*15/100|currency}}</h5>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <a routerLink="/cart">View  Cart Details</a>
@@ -104,8 +113,8 @@
                             <div class="d-flex" style="width: max-content;">
                                 <div class="child-items-left">
                                     <div *ngIf="usercheck">
-                                        <a routerLink="/profile">
-                                            <i class="bi bi-person-circle"></i> Profile
+                                        <a routerLink="/profile" class="d-flex align-items-center" title="Your Profile">
+                                            <span class=" d-block me-3"><i class="bi bi-person-circle fs-1"></i></span> Profile
                                         </a>
                                     </div>
                                     <p>
@@ -117,47 +126,18 @@
                                     <p>
                                         <a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" class="img-my" alt=""><span class="h6 fw-bold"> My Photos </span></a>
                                     </p>
-                                    <hr class="mt-2 mb-2">
+                                    <hr class="mt-2 mb-2 text-light">
                                     <div *ngIf="usercheck">
                                         <a type="button" (click)="signout()" href="/">Sign Out</a>
                                     </div>
-                                    <!-- <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p>
-                                    <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p>
-                                    <p><a routerLink="/"><img src="https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/icons/pep/my-media.svg" width="16px" class="img-my"  alt=""><span class="h6"> My Photos </span></a></p> -->
+                                    <div *ngIf="!usercheck">
+                                        <a type="button" routerLink="/login">Sign in</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- login -- register -->
-                <!-- <div class="d-flex align-items-center">
-                    <div class="row">
-                        <div class="col">
-                            <div ngbDropdown class="d-inline-block">
-                                <button type="button" class="button-29 text-light" id="dropdownBasic1" ngbDropdownToggle>Login</button>
-                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                    <h6>Sign in</h6>
-                                    <hr>
-                                    <a ngbDropdownItem type="button" class="button-29 text-light" routerLink="/login">Login</a>
-                                    <button ngbDropdownItem>Action - 1</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div ngbDropdown class="d-inline-block">
-                                <button type="button" class="button-29 text-dark" id="dropdownBasic1" ngbDropdownToggle>user</button>
-                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                    <a ngbDropdownItem type="button" class="button-30 text-dark" routerLink="/">thong tin chi tet</a>
-                                    <a ngbDropdownItem type="button" class="button-30 text-dark" routerLink="/">Dang xuat</a>
-                                    <a ngbDropdownItem type="button" class="button-30 text-dark" routerLink="/">gio hang cua toi</a>
-                                    <button ngbDropdownItem>Action - 1</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -167,45 +147,45 @@
     ul li {
         list-style: none;
     }
-
+    
     .list-nav {
         position: relative;
         /*height: 100%;
         display: flex;
         align-items: center;*/
     }
-
+    
     .child-items1 {
         position: absolute;
         display: none;
         z-index: 1000;
     }
-
+    
     .list-nav:hover .child-items1 {
         display: block;
     }
-
+    
     .nav-items1 {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding: 7px 13px;
     }
-
+    
     .child-items-left {
         background: #012169;
         padding: 17px;
     }
-
+    
     .child-items-right {
         background-color: #FFFBF5;
         padding: 17px;
     }
-
+    
     .nav-items1:hover {
         background: #012169;
         text-decoration: underline;
     }
-
+    
     .nav-items1,
     .child-items-left a,
     .child-items-right a {
@@ -214,21 +194,21 @@
         font-size: 15px;
         text-shadow: 0 0 3px black;
     }
-
+    
     .child-items-left h6 {
         color: white;
         font-weight: 600;
     }
-
+    
     .child-items-left a:hover,
     .child-items-right a:hover {
         text-decoration: underline;
     }
-
+    
     .child-items-right a {
         color: #021031b4;
     }
-
+    
     .img-my {
         filter: brightness(0) invert(1);
         width: 22px;
@@ -246,25 +226,25 @@
         height: 30px;
         padding: 4px;
     }
-
+    
     .searchbar {
         background: none;
         border: none;
         border-inline: none;
         outline: none;
     }
-
+    
      ::placeholder {
         color: white;
         opacity: 0.8;
         text-align: center;
     }
-
+    
     .login-p-header {
         text-decoration: none;
         text-shadow: 0 0 3px black;
     }
-
+    
     .login-p-header:hover {
         text-decoration: underline;
     }

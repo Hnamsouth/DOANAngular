@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
 import { FormBuilder,Validators } from '@angular/forms';
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Location } from '@angular/common'
 import { CpnHeaderComponent,checklogin } from '../cpn-header/cpn-header.component';
@@ -12,6 +12,7 @@ import { CpnHeaderComponent,checklogin } from '../cpn-header/cpn-header.componen
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @Input()datacheckout:any;
   //check form shows/hide
   testSwitch=1;
   togleform(){
@@ -28,7 +29,10 @@ export class LoginComponent implements OnInit {
 checkuser=false;
 
   constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location) {
-
+  //  let user:any=localStorage.getItem('user')
+  //  if(user){
+  //   window.location.replace(this.urlWeb)
+  //  }
   }
   // exclamation check
   url='https://app-t2204m-eprojet.herokuapp.com/'
@@ -46,7 +50,13 @@ checkuser=false;
         // go back not reload page
         // this.location.back();
         // go to url and load page
-        window.location.replace(this.urlWeb);
+        console.log(this.datacheckout)
+        if(this.datacheckout){
+          window.location.replace(`${this.urlWeb}checkout-booking`);
+        }else{
+          window.location.replace(this.urlWeb);
+
+        }
         // go to path , not reload page
         // this.rt.navigate(['/'])
       }else if(vl.status==303){

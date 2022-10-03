@@ -15,7 +15,14 @@ import { Location } from '@angular/common'
 })
 export class RegitsterComponent implements OnInit {
 
-  constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location) { }
+  constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location) {
+    // let user:any=localStorage.getItem('user')
+    // if(user){
+    //  window.location.replace(this.urlWeb)
+    // }
+
+   }
+
   FormRegister =this.fbd.group({
     Firstname:['', Validators.required],
     Lastname:['', Validators.required],
@@ -24,7 +31,9 @@ export class RegitsterComponent implements OnInit {
     repeatpassword:['', Validators.required],
    })
   url='https://app-t2204m-eprojet.herokuapp.com';
-  urltest='http://localhost:1234'
+  urltest='http://localhost:1234';
+  urlpagetest='http://localhost:4200/';
+  urlWeb='https://eproject-team.web.app/';
   checkpw=false;ckemail=false;
   iconcheck='bi bi-exclamation-circle danger';
 

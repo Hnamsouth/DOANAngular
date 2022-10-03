@@ -207,46 +207,16 @@ export class CpnHeaderComponent implements OnInit {
     checkadd:new FormControl(),
   })
   ticket:any[]=[];
-  getticket(data:any[]){
-    this.ticket=data;
-    // console.log('123')
-    this.ngOnInit()
-  }
+
   usercheck=false
   url='https://app-t2204m-eprojet.herokuapp.com';
   urltest='http://localhost:1234'
-  checkuser(){
-      let user:any =localStorage.getItem("user");
-      if(user){
-        let test=JSON.parse(user);
-        this.http.post<any>(`${this.url}/checkverify`,{emailorphone:test.user}).subscribe(vl=>{
-          console.log(vl)
-                if(vl.data==1){
-                  this.usercheck=true
 
-                }
-              })
-      }
-  }
   cartcheck=false;
   cartdata:any[]=[];
+  Subtotalall=0
 
-  checkCart(){
-    let cart:any =localStorage.getItem("currentTicket");
-    if(cart){
-      let test=JSON.parse(cart);
-      if(test.length!==0){
-        this.cartdata=test;
-        this.cartcheck=true;
-        console.log(test)
-      }
-    }
-  }
 
-  signout(){
-    localStorage.removeItem('user')
-    this.usercheck=false
-  }
 
   constructor(private http:HttpClient) {
     this.checkuser()
@@ -256,32 +226,46 @@ export class CpnHeaderComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  test(users:any){
-    console.log("3",users)
-    // new CpnHeaderComponent()
-    if(!users.email&& !users.password){
-      // datauser=usersx
-      // this.user=datauser
-      // console.log(" test",datauser)
-      console.log("4",users)
-    }else{
-      datauser=users
-      this.user=users
-      console.log("5",datauser)
-      this.cliiii()
+// -----------
+  checkuser(){
+    let user:any =localStorage.getItem("user");
+    if(user){
+      let test=JSON.parse(user);
+      this.http.post<any>(`${this.url}/checkverify`,{emailorphone:test.user}).subscribe(vl=>{
+        console.log(vl)
+              if(vl.data==1){
+                this.usercheck=true
+              }
+            })
+    }
+}
+// -----------
+  checkCart(){
+    let cart:any =localStorage.getItem("currentTicket");
+    if(cart){
+      let test=JSON.parse(cart);
+      if(test.length!==0){
+        this.cartdata=test;
+        this.cartcheck=true;
+        this.Subtotalall=0
+        test.forEach((data:any) => {
+           this.Subtotalall+= data.cost
+        });
+        console.log(test)
+      }
     }
   }
-  cliiii(){
-    this.myGroup.value.checkadd=CpnHeaderComponent.addtest
-    this.user=CpnHeaderComponent.addtest
-    // console.log("check",datauser)
-    console.log("6",this.user)
+// -----------
+  signout(){
+    localStorage.removeItem('user')
+    this.usercheck=false
   }
-  addcheck(vl:number){
-    CpnHeaderComponent.addtest+=vl
-    this.myGroup.value.checkadd=CpnHeaderComponent.addtest
-    console.log("7",this.myGroup.value.checkadd)
-  }
+// --------------------
+   // getticket(data:any[]){
+  //   this.ticket=data;
+  //   // console.log('123')
+  //   this.ngOnInit()
+  // }
 
 }
 export class checklogin{
