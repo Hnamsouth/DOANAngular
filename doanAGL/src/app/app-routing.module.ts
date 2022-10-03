@@ -20,6 +20,7 @@ import { InfomationComponent } from './Components/infomation/infomation.componen
 import { ParkticketsComponent } from './Components/ticket/parktickets/parktickets.component';
 import { SelectTicketsComponent } from './Components/ticket/parktickets/select-tickets/select-tickets.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { ArcadesComponent } from './Components/Ride-Attraction/arcades/arcades.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -47,6 +48,7 @@ const routes: Routes = [
     ]}
   ]},
   {path:"ride-attraction",component:RideAttractionMainComponent},
+  {path:"arcades",component:ArcadesComponent},
   {path:"information",component:InfomationComponent},
   {path:"cart",component:CartComponent},
 ]
