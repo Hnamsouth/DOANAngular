@@ -12,7 +12,7 @@ import { ServiService } from 'src/app/Components/servi.service';
 export class SelectTicketsComponent implements OnInit {
   curentDate:any|undefined
 
-  constructor(private router: Router,private http:HttpClient) {
+  constructor(private router: Router,private http:HttpClient,private servi:ServiService) {
 
    }
 
@@ -136,9 +136,8 @@ if(index==2){this.data.waterP.amount+=amount;}else{
         data.push(item[0])
       })
       localStorage.setItem('currentTicket',JSON.stringify(data))
-      let test = new ServiService().getticket(data)
-      new CpnHeaderComponent(this.http)
-      window.location.replace(`${this.urlWeb}/cart`);
+
+      window.location.replace(`${this.servi.urlWeb}cart`);
 //  this.router.navigate(['/cart'])
     // this.router.navigate(['/user', 5])
       // let check:any=localStorage.getItem('currentTicket')

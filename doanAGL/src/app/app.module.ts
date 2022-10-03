@@ -43,6 +43,7 @@ import { GrouppartiesComponent } from './Components/groupparties/groupparties.co
 import { ParkticketsComponent } from './Components/ticket/parktickets/parktickets.component';
 import { SelectTicketsComponent } from './Components/ticket/parktickets/select-tickets/select-tickets.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { HistoryComponent } from './Components/infomation/history/history.component';
 const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
@@ -99,7 +100,8 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
     GrouppartiesComponent,
     ParkticketsComponent,
     SelectTicketsComponent,
-    CartComponent
+    CartComponent,
+    HistoryComponent
 
 
 

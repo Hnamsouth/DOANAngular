@@ -41,7 +41,7 @@
                                     <div class="mb-3" *ngFor="let navitems of i.navitems">
                                         <h6>{{navitems.title}}</h6>
                                         <div *ngFor="let childitem of navitems.child_items;let j=index">
-                                            <a routerLink="/{{j}}"><i class="{{childitem.icon}}"></i> {{childitem.name}}</a>
+                                            <a routerLink="{{childitem.routelink}}"><i class="{{childitem.icon}}"></i> {{childitem.name}}</a>
                                         </div>
                                     </div>
                                 </div>

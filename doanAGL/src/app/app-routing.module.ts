@@ -21,6 +21,7 @@ import { ParkticketsComponent } from './Components/ticket/parktickets/parkticket
 import { SelectTicketsComponent } from './Components/ticket/parktickets/select-tickets/select-tickets.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { ArcadesComponent } from './Components/Ride-Attraction/arcades/arcades.component';
+import { HistoryComponent } from './Components/infomation/history/history.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path:"ride-attraction",component:RideAttractionMainComponent},
   {path:"arcades",component:ArcadesComponent},
   {path:"information",component:InfomationComponent},
+  {path:'history',component:HistoryComponent},
   {path:"cart",component:CartComponent},
 ]
 @NgModule({

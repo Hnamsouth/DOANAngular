@@ -4,7 +4,7 @@ import { FormBuilder,Validators } from '@angular/forms';
 import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Location } from '@angular/common'
-import { CpnHeaderComponent,checklogin } from '../cpn-header/cpn-header.component';
+import { ServiService } from '../servi.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   //check form shows/hide
   testSwitch=1;
   togleform(){
-    // if(this.route.snapshot.params['register'] == 1){this.testSwitch=2;console.log(this.route.snapshot.params['register'])}else{this.testSwitch=1}
     this.testSwitch=this.testSwitch==1?2:1;
   }
   // form login
@@ -28,37 +27,24 @@ export class LoginComponent implements OnInit {
 // check user login
 checkuser=false;
 
-  constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location) {
-  //  let user:any=localStorage.getItem('user')
-  //  if(user){
-  //   window.location.replace(this.urlWeb)
-  //  }
+  constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location,private servi:ServiService) {
+
   }
   // exclamation check
-  url='https://app-t2204m-eprojet.herokuapp.com/'
-  urltest='http://localhost:1234/'
-  urlpagetest='http://localhost:4200/'
-  urlWeb='https://eproject-team.web.app/'
   loginSubmit(){
 
     let data = this.FormLogin.value
     console.log(data.email +" "+data.password )
-    this.http.post<any>(`${this.url}checkUerlogin`,{emailorphone:data.email,password:data.password}).subscribe(vl=>{
+    this.http.post<any>(`${this.servi.urlapi}checkUerlogin`,{emailorphone:data.email,password:data.password}).subscribe(vl=>{
       console.log(vl)
       if(vl.status==101){
         localStorage.setItem("user",JSON.stringify({user:data.email,id:1}));
-        // go back not reload page
-        // this.location.back();
-        // go to url and load page
-        console.log(this.datacheckout)
         if(this.datacheckout){
-          window.location.replace(`${this.urlWeb}checkout-booking`);
+          window.location.replace(`${this.servi.urlWeb}checkout-booking`);
         }else{
-          window.location.replace(this.urlWeb);
-
+          window.location.replace(this.servi.urlWeb);
         }
-        // go to path , not reload page
-        // this.rt.navigate(['/'])
+
       }else if(vl.status==303){
         alert("user name or password incorrect")
         this.checkuser=true;
@@ -68,17 +54,6 @@ checkuser=false;
 
     })
   }
-  addtest(){
-    new checklogin(1);
-  }
-//   checkurl(){
-// // check url current
-//     // snapshot => test: Route(url:'login', path:'login')
-//     this.route.url.subscribe(vl=>{
-//       console.log("test: " + vl);
-//       })
-//       // this.location.back()
-//   }
   ngOnInit(): void {
   }
 
