@@ -22,6 +22,7 @@ import { SelectTicketsComponent } from './Components/ticket/parktickets/select-t
 import { CartComponent } from './Components/cart/cart.component';
 import { ArcadesComponent } from './Components/Ride-Attraction/arcades/arcades.component';
 import { HistoryComponent } from './Components/infomation/history/history.component';
+import { HollowgravesHauntedComponent } from './Components/Ride-Attraction/hollowgraves-haunted/hollowgraves-haunted.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:'history',component:HistoryComponent},
   {path:"cart",component:CartComponent},
   {path:"runaway-rapids",component:RunawayRapidsComponent},
+  {path:"hollowgraves-haunted",component:HollowgravesHauntedComponent},
 ]
 @NgModule({
   imports: [
