@@ -17,7 +17,9 @@
                     </div>
                     <div class="nav-hd col-xl-4 col-4">
                         <i class="bi bi-search text-light fs-6 me-1 ms-1"></i>
-                        <input type="text" class="searchbar" placeholder="seach keansburgworld">
+                        <!-- <input type="text" class="searchbar" placeholder="seach keansburgworld"> -->
+                        <!-- <input id="typeahead-format" type="text" class="form-control searchbar" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="formatter" /> -->
+                        <input id="typeahead-basic" type="text" class="searchbar text-light" [(ngModel)]="model" [ngbTypeahead]="search" (keydown)="searchbar($event)" />
                     </div>
                 </div>
             </div>
@@ -147,45 +149,45 @@
     ul li {
         list-style: none;
     }
-    
+
     .list-nav {
         position: relative;
         /*height: 100%;
         display: flex;
         align-items: center;*/
     }
-    
+
     .child-items1 {
         position: absolute;
         display: none;
         z-index: 1000;
     }
-    
+
     .list-nav:hover .child-items1 {
         display: block;
     }
-    
+
     .nav-items1 {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding: 7px 13px;
     }
-    
+
     .child-items-left {
         background: #012169;
         padding: 17px;
     }
-    
+
     .child-items-right {
         background-color: #FFFBF5;
         padding: 17px;
     }
-    
+
     .nav-items1:hover {
         background: #012169;
         text-decoration: underline;
     }
-    
+
     .nav-items1,
     .child-items-left a,
     .child-items-right a {
@@ -194,21 +196,21 @@
         font-size: 15px;
         text-shadow: 0 0 3px black;
     }
-    
+
     .child-items-left h6 {
         color: white;
         font-weight: 600;
     }
-    
+
     .child-items-left a:hover,
     .child-items-right a:hover {
         text-decoration: underline;
     }
-    
+
     .child-items-right a {
         color: #021031b4;
     }
-    
+
     .img-my {
         filter: brightness(0) invert(1);
         width: 22px;
@@ -226,25 +228,25 @@
         height: 30px;
         padding: 4px;
     }
-    
+
     .searchbar {
         background: none;
         border: none;
         border-inline: none;
         outline: none;
     }
-    
+
      ::placeholder {
         color: white;
         opacity: 0.8;
         text-align: center;
     }
-    
+
     .login-p-header {
         text-decoration: none;
         text-shadow: 0 0 3px black;
     }
-    
+
     .login-p-header:hover {
         text-decoration: underline;
     }

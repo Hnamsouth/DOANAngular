@@ -69,7 +69,7 @@
                                                 </div>
                                                 <div><button type="button" class="add-ticket" (click)="pickticket(0)">Add</button></div>
                                             </div>
-
+                                            <div *ngIf="dateck" class="text-danger text-center">Ticket prices will increase by 9% on Saturdays and Sundays</div>
                                         </div>
                                         <div class="tab-pane fade" id="nav-gokart" role="tabpanel" aria-labelledby="nav-gokart-tab" tabindex="0">
                                             <div class="layo">
@@ -102,6 +102,7 @@
                                                 </div>
                                                 <div><button type="button" class="add-ticket" (click)="pickticket(1)">Add</button></div>
                                             </div>
+                                            <div *ngIf="dateck" class="text-danger text-center">Ticket prices will increase by 9% on Saturdays and Sundays</div>
                                         </div>
                                         <div class="tab-pane fade" id="nav-water" role="tabpanel" aria-labelledby="nav-water-tab" tabindex="0">
                                             <div class="layo">
@@ -135,7 +136,7 @@
                                           </div> -->
                                                 <div><button type="button" class="add-ticket" (click)="pickticket(2)">Add</button></div>
                                             </div>
-
+                                            <div *ngIf="dateck" class="text-danger text-center">Ticket prices will increase by 9% on Saturdays and Sundays</div>
                                         </div>
                                         <div class="tab-pane fade" id="nav-combo" role="tabpanel" aria-labelledby="nav-combo-tab" tabindex="0">...</div>
                                     </div>

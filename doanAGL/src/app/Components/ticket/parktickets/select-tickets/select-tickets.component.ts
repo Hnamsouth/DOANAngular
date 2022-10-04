@@ -10,8 +10,7 @@ import { ServiService } from 'src/app/Components/servi.service';
   styleUrls: ['./select-tickets.component.scss']
 })
 export class SelectTicketsComponent implements OnInit {
-  curentDate:any|undefined
-
+  dateck=false
   constructor(private router: Router,private http:HttpClient,private servi:ServiService) {
 
    }
@@ -21,8 +20,6 @@ export class SelectTicketsComponent implements OnInit {
    fullscreen(){
      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
      let heiight=document.getElementById('img-hd')?.offsetHeight;
-     //  heiight/2 = 190
-     // vh = 889  himg = 380
      console.log(vh +"2" +heiight)
     if(this.widthvideo=='70vh'){
       this.widthvideo='100vh'
@@ -32,9 +29,7 @@ export class SelectTicketsComponent implements OnInit {
    }
 
 
-
   ngOnInit(): void {
-    this.curentDate= new Date().toLocaleDateString()
   }
   Subtotal:number=0;
   data={
@@ -78,6 +73,8 @@ if(index==2){this.data.waterP.amount+=amount;}else{
     if(index==2){this.data.waterP.date=fcdate;}else{
       this.data.combo.date=date.value;
     }
+    let datecheck=new Date(date.value).getDay()
+    if(datecheck==6 || datecheck==0){this.dateck=true}else{this.dateck=false}
   }
   TKtype(type:any,index:number){
     if(index==0){
@@ -90,31 +87,45 @@ if(index==2){this.data.waterP.amount+=amount;}else{
   }
   pickticket(index:number){
       if(index==0){
-        let  rides=this.data.rides
-        if(rides.amount!==0 && rides.date!==''){
-          if(rides.amount>=50 && rides.amount<100){
-            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.C50TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C50TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
+        let  ridesdata=this.data.rides
+        let test=0
+        if(ridesdata.amount!==0 && ridesdata.date!==''){
+          let datecheck=new Date(ridesdata.date).getDay()
+          if(datecheck==6 || datecheck==0){ test= ridesdata.stdCost*9/100}else{test==0}
+          if(ridesdata.amount>=50 && ridesdata.amount<100){
+            var data:any[]=[{id:0,amount:ridesdata.amount,costper1:ridesdata.C50TK+test,name:'Rides',datepick:ridesdata.date,cost:ridesdata.amount*(ridesdata.C50TK+test)}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
           }else
-          if(rides.amount>=100 && rides.amount<200){
-            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.C100TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C100TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
+          if(ridesdata.amount>=100 && ridesdata.amount<200){
+            var data:any[]=[{id:0,amount:ridesdata.amount,costper1:ridesdata.C100TK+test,name:'Rides',datepick:ridesdata.date,cost:ridesdata.amount*(ridesdata.C100TK+test)}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
           }else
-          if(rides.amount>=200){
-            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.C200TK,name:'Rides',datepick:rides.date,cost:rides.amount*rides.C200TK}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
+          if(ridesdata.amount>=200){
+            var data:any[]=[{id:0,amount:ridesdata.amount,costper1:ridesdata.C200TK+test,name:'Rides',datepick:ridesdata.date,cost:ridesdata.amount*(ridesdata.C200TK+test)}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
           }else{
-            var data:any[]=[{id:0,amount:rides.amount,costper1:rides.stdCost,name:'Rides',datepick:rides.date,cost:rides.amount*rides.stdCost}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;}
+            var data:any[]=[{id:0,amount:ridesdata.amount,costper1:ridesdata.stdCost+test,name:'Rides',datepick:ridesdata.date,cost:ridesdata.amount*(ridesdata.stdCost+test)}];this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;}
         }else{ alert("faild rides")}
       }else if(index==1){
-      var gokart1=this.data.gokart
-      if(this.data.gokart.amount!==0 && this.data.gokart.date!==''){
-        var data:any[]=[{id:1,amount:gokart1.amount,costper1:gokart1.type[gokart1.typePick].cost,name:gokart1.type[gokart1.typePick].name,datepick:gokart1.date,cost:gokart1.amount*gokart1.type[gokart1.typePick].cost,typeindex:gokart1.typePick}]
-        this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
-      }else{ alert("faild gokart")}}
-      else if(index==2){
-      var waterP=this.data.waterP
-      if(this.data.waterP.amount!==0 && this.data.waterP.date!==''){
-        var data:any[]=[{id:2,amount:waterP.amount, costper1:waterP.type[waterP.typePick].cost, name:waterP.type[waterP.typePick].name,datepick:waterP.date,cost:waterP.amount*waterP.type[waterP.typePick].cost,typeindex:waterP.typePick}]
+        let test=0
+        var gokart1=this.data.gokart
+        if(this.data.gokart.amount!==0 && this.data.gokart.date!==''){
+          let datecheck=new Date(gokart1.date).getDay()
+          if(datecheck==6 || datecheck==0){ test= gokart1.type[gokart1.typePick].cost*9/100}else{test==0}
+          var data:any[]=[{id:1,amount:gokart1.amount,costper1:gokart1.type[gokart1.typePick].cost+test,name:gokart1.type[gokart1.typePick].name,datepick:gokart1.date,cost:gokart1.amount*(gokart1.type[gokart1.typePick].cost+test),typeindex:gokart1.typePick}]
           this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
-      }else{ alert("faild waterP")}}
+        }else{ alert("faild gokart")}}
+      else if(index==2){
+        let test=0
+        var waterP=this.data.waterP
+
+        if(this.data.waterP.amount!==0 && this.data.waterP.date!==''){
+          let datecheck=new Date(waterP.date).getDay()
+          if(datecheck==6 || datecheck==0){
+            test=waterP.type[waterP.typePick].cost*9/100
+          }else{
+            test=0
+          }
+          var data:any[]=[{id:2,amount:waterP.amount, costper1:waterP.type[waterP.typePick].cost+test, name:waterP.type[waterP.typePick].name,datepick:waterP.date,cost:waterP.amount*(waterP.type[waterP.typePick].cost+test),typeindex:waterP.typePick}]
+            this.ticketPickDone.push(data);this.Subtotal+=data[0].cost;
+        }else{ alert("faild waterP")}}
       else{
       if(this.data.combo.amount!==0 && this.data.combo.date!==''){
 
@@ -122,14 +133,8 @@ if(index==2){this.data.waterP.amount+=amount;}else{
       let combo=this.data.combo
     }
   }
-  url='https://app-t2204m-eprojet.herokuapp.com/'
-  urltest='http://localhost:1234/'
-  urlpagetest='http://localhost:4200/'
-  urlWeb='https://eproject-team.web.app/'
   submitTK(){
-    // save into local storage
-    // send data to card component & header cpn
-    // redirect cart page & show all card of user at nav item name Cart
+
     if(this.ticketPickDone.length!==0){
       let data:any[]=[]
       this.ticketPickDone.forEach(item=>{
@@ -138,13 +143,6 @@ if(index==2){this.data.waterP.amount+=amount;}else{
       localStorage.setItem('currentTicket',JSON.stringify(data))
 
       window.location.replace(`${this.servi.urlWeb}cart`);
-//  this.router.navigate(['/cart'])
-    // this.router.navigate(['/user', 5])
-      // let check:any=localStorage.getItem('currentTicket')
-      // let test=JSON.parse(check)
-      // test.push(data)
-      // localStorage.setItem('currentTicket',JSON.stringify(test))
-      // console.log("-----" + JSON.stringify(test[0]) + JSON.stringify(test[1]))
     }
   }
 
