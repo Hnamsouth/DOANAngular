@@ -166,27 +166,27 @@ export class ServiService {
             }
 
         },
-        {
-          navname:"Shop",
-          icon:"",
-          navitems:[
-            {
-              title:"",
-              child_items:[
-                {
-                  icon:"",routelink:'',name:"Toys"
-                },
-                {icon:"",routelink:'',name:"Clothes"}
-              ]
-            }
-          ],
-          FeaturedItems:[],
-          routelink:
-            {
-              main:''
-            }
+        // {
+        //   navname:"Shop",
+        //   icon:"",
+        //   navitems:[
+        //     {
+        //       title:"",
+        //       child_items:[
+        //         {
+        //           icon:"",routelink:'',name:"Toys"
+        //         },
+        //         {icon:"",routelink:'',name:"Clothes"}
+        //       ]
+        //     }
+        //   ],
+        //   FeaturedItems:[],
+        //   routelink:
+        //     {
+        //       main:''
+        //     }
 
-        },
+        // },
         {
           navname:"Groups & Parties",
           icon:"",

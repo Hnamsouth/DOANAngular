@@ -11,17 +11,14 @@ var datauser:any
 })
 
 export class CpnHeaderComponent implements OnInit {
+
   navbar:any={}
-   user:number=CpnHeaderComponent.addtest;
-   static addtest:number=0;
-  array =[1,2,4,2,2]
   myGroup=new FormGroup({
     checkadd:new FormControl(),
   })
+
   ticket:any[]=[];
-
   usercheck=false
-
   cartcheck=false;
   cartdata:any[]=[];
   Subtotalall=0
