@@ -237,9 +237,11 @@ export class ServiService {
   Subtotalall(){
     let cost=0.0;
     let data:any=this.getticket()
-    data.forEach((item:any)=>{
-      cost+=item.cost
-    })
+    if(data){
+      data.forEach((item:any)=>{
+        cost+=item.cost
+      })
+    }
     return cost;
   }
 

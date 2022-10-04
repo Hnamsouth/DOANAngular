@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(this.servi.Subtotalall())
   }
 
   checkUseRLogin(){
@@ -34,35 +35,44 @@ export class CartComponent implements OnInit {
 
   changeamountTK(amount:any,index:any){
     let dataTK=this.servi.getticket()
+    let rides=this.servi.typedataticket.rides
+    console.log(dataTK)
     if(dataTK[index].id==0){
       dataTK[index].amount=amount.value
+      let checkdate=new Date(dataTK[index].datepick).getDay()
+      if(checkdate==6 || checkdate ==0){
+        rides.stdCost+=rides.stdCost*9/100
+        rides.C50TK+=rides.C50TK*9/100
+        rides.C100TK+=rides.C100TK*9/100
+        rides.C200TK+=rides.C200TK*9/100
+      }
         if(dataTK[index].amount>=50 && dataTK[index].amount<100){
-          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*dataTK[index].C50TK
+          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*rides.C50TK;dataTK[index].costper1=rides.C50TK
         }else
         if(dataTK[index].amount>=100 && dataTK[index].amount<200){
-          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*dataTK[index].C100TK
+          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*rides.C100TK;dataTK[index].costper1=rides.C100TK
         }else
         if(dataTK[index].amount>=200){
-          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*dataTK[index].C200TK
+          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*rides.C200TK;dataTK[index].costper1=rides.C200TK
         }else{
-          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*dataTK[index].costper1
+          dataTK[index].amount=amount.value;dataTK[index].cost=dataTK[index].amount*rides.stdCost;dataTK[index].costper1=rides.stdCost
          }
     }else if(dataTK[index].id==1){
       let test=this.servi.typedataticket
       dataTK[index].amount=amount.value;
-      dataTK[index].cost=amount.value*test.gokart.type[dataTK[index].typeindex].cost;
+      dataTK[index].cost=amount.value*dataTK[index].costper1;
       // dataTK[index].cost=dataTK[index].amount
     }else {
       let test=this.servi.typedataticket
       dataTK[index].amount=amount.value;
-      dataTK[index].cost=amount.value*test.waterP.type[dataTK[index].typeindex].cost;
+      dataTK[index].cost=amount.value*dataTK[index].costper1;
     }
-  this.Subtotal=0;
-  dataTK.forEach((item: any)=>{
-    this.Subtotal+= item.cost
-  })
-    localStorage.setItem('currentTicket',JSON.stringify(dataTK))
-    window.location.replace(`${this.servi.urlWeb}cart`);
+    this.Subtotal=0;
+    dataTK.forEach((item: any)=>{
+      this.Subtotal+= item.cost
+    })
+      localStorage.setItem('currentTicket',JSON.stringify(dataTK))
+      window.location.replace(`${this.servi.urlWeb}cart`);
   }
   checkout1=''
   Checkout(prt:any){

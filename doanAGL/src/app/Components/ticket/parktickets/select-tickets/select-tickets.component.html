@@ -156,10 +156,10 @@
                                     </div>
                                     <div>
                                         <ul>
-                                            <li class="d-flex  justify-content-between" *ngFor="let i of ticketPickDone">
+                                            <li class="d-flex  justify-content-between" *ngFor="let i of ticketPickDone;let j=index">
                                                 <div><strong>x <span> {{i[0].amount+ "  " + i[0].name}} </span></strong><span style="margin-left:50px"> {{i[0].date}} </span></div>
                                                 <div>{{i[0].cost|currency}}</div>
-                                                <div><button type="button" class="delete-bnt"> <i class="bi bi-trash2-fill "></i></button></div>
+                                                <div><button type="button" class="delete-bnt" (click)="deleteTK(j)"> <i class="bi bi-trash2-fill "></i></button></div>
                                             </li>
                                         </ul>
                                         <span class="gach"></span>

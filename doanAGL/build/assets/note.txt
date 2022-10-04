@@ -1,0 +1,124 @@
+root color
+--bg-cl-1:#02236B
+--bg-cl-2:#A45F6C
+--bg-cl-3:#FFF9F4
+--bg-cl-4:#0079BC
+--text-cl-1:#253B56
+--text-cl-2:#B28B33
+--text-cl-3:#0079BC
+  background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+  background: linear-gradient(90deg, #cfecd0, #ffc5ca);
+  background: linear-gradient(90deg, #f598a8, #f6edb2);
+  background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+  background: linear-gradient(90deg, #b9deed, #efefef);
+  background: linear-gradient(90deg, #aea4e3, #d3ffe8);
+  background: linear-gradient(90deg, #faf0cd, #fab397);
+  background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+
+---------- img header scroll hidden
+
+<div class="img-hd">
+        <img src="assets/img/ALL/udf03.jpg" width="100%" height="100%" alt="">
+    </div>
+    <style>
+        .img-hd {
+            width: 100%;
+            max-height: 600px;
+            overflow: scroll;
+        }
+
+        .img-hd::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+------- img scale
+
+<div class="ov-imgfood">
+    <span class="tt-img">Sea Serpent Roller Coaster</span>
+    <img src="assets/img/homepage/experiences/2-1.jpg" alt="">
+</div>
+
+css-------
+.ov-imgfood{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: initial;
+        overflow: hidden;
+        /*box-shadow: 5px 5px 8px #7a6f6f;*/
+    }
+
+    .ov-imgfood img {
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+        max-height: inherit;
+    }
+
+    .ov-imgfood img:hover {
+        transform: scale(1.1);
+        transition: all 1.6s ease-in-out;
+    }
+
+    .tt-img {
+        position: absolute;
+        color: white;
+        top: 0;
+        z-index: 2;
+        font-size: 18px;
+        font-weight: 600;
+        text-shadow: 0 0 3px black;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+--------- span hr
+<span class=""gach></span>
+css----------
+.gach {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fbd5d5 5%, #bbdde7 95%, rgba(255, 255, 255, 0) 100%);
+        clear: both;
+        display: block;
+        -webkit-filter: none;
+        filter: none;
+        height: 1px;
+        margin: 20px 0;
+        position: relative;
+        width: 100%;
+    }
+
+
+star hr 1--------------
+<div class="decorative" style="background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/435/21/75/dam/disney-world/50th-anniversary/ui/Decorative-rule.png?1663620362566);"></div>
+css--------------
+.decorative {
+        padding: 25px 0;
+        border-bottom: none;
+        background: no-repeat;
+         width: 435px;
+          height: 21px;
+        max-width: 100%;
+        max-width: var(--ct-horizontal-rule-max-width, 100%);
+        background-position: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+star hr 2--------------
+<div  class="decorative" style="background-image: url(&quot;https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/500/40/75/vision-dam/digital/parks-platform/parks-standard-assets/disney-world/promotion/50th/50th_star_rule-1x.jpg?2022-05-04T21:33:07+00:00&quot;);"></div>
+css-----------
+decorative{
+
+  background: no-repeat;
+   width: 500px;
+    height: 40px;
+    border-bottom: none;
+    max-width: 100%;
+    max-width: var(--ct-horizontal-rule-max-width, 100%);
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+

@@ -145,6 +145,13 @@ if(index==2){this.data.waterP.amount+=amount;}else{
       window.location.replace(`${this.servi.urlWeb}cart`);
     }
   }
+  deleteTK(nb:any){
+    this.ticketPickDone.forEach((item,index)=>{
+      if(index==nb){
+        this.ticketPickDone.splice(nb,1)
+      }
+    })
+  }
 
 
 }
