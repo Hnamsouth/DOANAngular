@@ -1,72 +1,224 @@
-<div class="pr-rapids">
-    <div class="vid-h">
-        <video loop autoplay name="media" controls id="my_video_1" preload="none" height="auto" width="100%">
-      <source src="assets/video/keansburg2.mp4" type="video/mp4" >
-    </video>
-    </div>
-    <div class="content-rapids">
-        <div class="controls-vd" id="btn-fsc" [style.height]="widthvideo">
-            <div class="btn-fsc">
-                <button type="button" (click)="fullscreen()">fullscreen</button>
-            </div>
-        </div>
-        <div class="cnt-rp">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <p class="col-2">Free Frontend CATEGORIES HTML CSS Bootstrap JavaScript jQ Jquery React Tailwind Vue --- Books Video 28 CSS Slideshows November 9, 2021 Collection of free HTML and CSS slideshow code: simple, responsive, animated, horizontal, vertical,
-                        etc. Update of March 2019 collection. 4 new example. Table Of Contents Vertical Slideshows Horizontal Slideshows Related Articles CSS Sliders Vertical Slideshows Author Ryan Mulligan January 24, 2020 Links demo and code download
-                        Made with HTML / CSS (SCSS) About a code DOGGIE SCREENSAVER Pretty hacky attempt at recreating the floating screensaver for the photo gallery. Compatible browsers:Chrome, Edge, Firefox, Opera, Safari Responsive:yes Dependencies:-
-                        Author Ryan Mulligan December 5, 2019 Links demo and code download Made with HTML / CSS (SCSS) About a code CSS SLIDESHOW Compatible browsers:Chrome, Edge, Firefox, Opera, Safari Responsive:yes Dependencies:- Demo image: Slideshow
-                        Vanilla JS Author Riley Adair January 1, 2018 Links demo and code Made with HTML CSS JavaScript/Babel About the code SLIDESHOW VANILLA JS Custom slideshow with staggered transitions. Built in vanilla JS. Demo image: Untitled Slider
-                        Author Nathan Taylor December 16, 2017 Links demo and code Made with HTML CSS/SCSS About the code UNTITLED SLIDER A small experiment which quickly turned into something more. Demo image: Parallax Slideshow Author Bruno Carvalho
-                        December 5, 2017 Links demo and code Made with HTML CSS/SCSS JavaScript/Babel (jQuery.js) About the code PARALLAX SLIDESHOW HTML, CSS and JS slideshow with parallax effect. Demo Image: Split Slick Slideshow Demo Image: Split Slick
-                        Slideshow Split Slick Slideshow Vertical slideshow in split screen. Made by Fabio Ottaviani March 29, 2017 download demo and code Demo Image: Slideshow Presentation Demo Image: Slideshow Presentation Slideshow Presentation Navigate
-                        using the up and down arrow keys. Made by Keith Driessen March 9, 2016 download demo and code Demo Image: Dual Slideshow Demo Image: Dual Slideshow Dual Slideshow Just playing around with a dual pane slideshow concept. Made by
-                        Jacob Davidson April 17, 2015 download demo and code Demo Image: A Pure CSS3 Slideshow Demo Image: A Pure CSS3 Slideshow A Pure CSS3 Slideshow The transition treats each part of the photo as a blind, closes them all together, and
-                        when they are open again, a new photo is revealed underneath. Made by Stathis October 3, 2013 download demo and code Horizontal Slideshows Author Johan Lagerqvist December 24, 2018 Links demo and code Made with HTML / CSS (SCSS)
-                        About the code CSS-ONLY SLIDESHOW An idea for a page header slideshow. Compatible browsers:Chrome, Edge, Firefox, Opera, Safari Responsive:yes Dependencies:-
+<!-- img url:
+https://keansburgamusementpark.com/wp-content/uploads/2020/02/lazyriver-1024x721.jpeg
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/lightgreenslide-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/lostlagoon-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/megabungafalls-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/minispapool-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/moonwalk-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/mountainblast-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/nesteaplunge2-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/powertower1-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/powertower3-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/powertower2-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/toddlersreef-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/yellowslide-waterpark.png
+https://keansburgamusementpark.com/wp-content/uploads/2015/03/yellowslides-waterpark.png
 
-                    </p>
+-->
+
+<div class="runaway-rp">
+
+    <div class="img-hd">
+        <img src="assets/img/ALL/udf03.jpg" width="100%" height="100%" alt="">
+    </div>
+    <div class="content">
+        <div class="text-hd">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div>Keansburg Water Park Is Now Open</div>
+                        <span>Purchase a 1-Day Water Park Ticket for just $38!</span>
+                    </div>
+                    <div>
+                        <a class="select-tickets" type="button" routerLink="/select-tickets">Select Ticket</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="main-ct">
+            <div class="container">
+                <div class="m-ct-hd d-flex flex-column align-items-end">
+                    <div><input name="date" class="date1" type="date" (change)="changedate($event.target)"> <span style="color:#0079BC ; ">{{currentdate}}</span></div>
+                    <div>Open 10:00 AM to 5:00 PM</div>
+                </div>
+                <div>
+                    <div class="title">
+                        <h1>Water park</h1>
+                        <a routerLink="/">
+                            <h2>See All Keansburg Attractions</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="cnt-1">
+                <div class="container">
+                    <div>
+                        <div class='imgBx'>
+                            <input type="checkbox">
+                            <span class='bg1'></span>
+                            <span class='bg2'></span>
+                            <div class='bg'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cnt-2">
+                <div class="decorative" style="background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/435/21/75/dam/disney-world/50th-anniversary/ui/Decorative-rule.png?1663620362566);"></div>
+                <div>
+                    <div class="title">
+                        <h1>Water Park Fun</h1>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="item">
+                                <img src="https://keansburgamusementpark.com/wp-content/uploads/2015/03/yellowslide-waterpark.png">
+                                <div class="caption">
+                                    <h2>Yellow Slide</h2>
+                                    <p>
+                                        All attractions in the Runaway Surf section are geared primarily for children. The Yellow slide is located in the Runaway Surf section.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="item">
+                                <img src="https://keansburgamusementpark.com/wp-content/uploads/2015/03/toddlersreef-waterpark.png">
+                                <div class="caption">
+                                    <h2>Toddler’s Reef</h2>
+                                    <p>Suitable for children 4 years old and younger. All children must be accompanied by an adult.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="item">
+                                <img src="https://keansburgamusementpark.com/wp-content/uploads/2015/03/yellowslides-waterpark.png">
+                                <div class="caption">
+                                    <h2>Side by Side Yellow Slides</h2>
+                                    <p>
+                                        Splash pool from 0″ to 12″ of water with all interactive water play. Short slides that sit next to each. Half the fun is climbing and playing your way to the top before sliding down.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cnt-top">
+                <div>
+                    <a href='https://www.youtube.com/watch?v=szLmLFsisbY' target="_blank">
+                        <section class="section">
+                            <div class="container">
+                                <div class="row mt-15">
+                                    <div class="text-center widthset">
+                                        <div class="position-relative rounded-top progress-wrapper" style=" background-image: linear-gradient(to bottom, #f8e739, #f1d42d, #eac222, #e1b019, #d89e10);">
+                                            <div class="wave" style="bottom: 80%;">
+                                                <h1 class="heading-style">L</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center widthset">
+                                        <div class="position-relative rounded-top progress-wrapper" style="background-image: linear-gradient(to bottom, #d89e10, #e28f00, #ec7f00, #f66b00, #ff5200);">
+                                            <div class="wave" style="bottom: 80%;">
+                                                <h1 class="heading-style">I</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center widthset">
+                                        <div class="position-relative rounded-top progress-wrapper" style="background-image: linear-gradient(to bottom, #e2130b, #e1110c, #e00f0d, #df0c0d, #de090e);">
+                                            <div class="wave" style="bottom: 80%;">
+                                                <h1 class="heading-style">Q</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center widthset">
+                                        <div class="position-relative rounded-top progress-wrapper" style="background-image: linear-gradient(to bottom, #ce0061, #d50079, #d60094, #d000b3, #c115d4);">
+                                            <div class="wave" style="bottom: 80%;">
+                                                <h1 class="heading-style">U</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center widthset">
+                                        <div class="position-relative rounded-top progress-wrapper" style="background-image: linear-gradient(to bottom, #6a0ddc, #5f0ddd, #530edd, #450fde, #3210de);">
+                                            <div class="wave" style="bottom: 80%;">
+                                                <h1 class="heading-style">I</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center widthset">
+                                        <div class="position-relative rounded-top progress-wrapper" style="background-image: linear-gradient(to bottom, #0c2fd4, #0045d8, #0056d9, #0065d8, #1b73d5);">
+                                            <div class="wave" style="bottom: 80%;">
+                                                <h1 class="heading-style">D</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </a>
+                </div>
+            </div>
+
+            <div class="test bg-rurn">
+                <h1>Runaway Rapids</h1>
+                <div class="grid">
+                    <div class="grid--item">
+                        <div class="img" style="background-image: url(https://keansburgamusementpark.com/wp-content/uploads/2015/03/nesteaplunge2-waterpark.png);"></div>
+                        <div class="container">
+                            <h2>Nestea Plunge</h2>
+                            <div class="desc">Photo by Ales Krivec</div>
+                        </div>
+                    </div>
+                    <div class="grid--item">
+                        <div class="img" style="background-image: url(https://keansburgamusementpark.com/wp-content/uploads/2015/03/powertower1-waterpark.png);"></div>
+                        <div class="container">
+                            <h2>White Slide</h2>
+                            <div class="desc">Photo by Thomas Lefebvre</div>
+                        </div>
+                    </div>
+                    <div class="grid--item">
+                        <div class="img" style="background-image: url(https://keansburgamusementpark.com/wp-content/uploads/2015/03/watermushroom-waterpark.png);"></div>
+                        <div class="container">
+                            <h2>Water Mushroom</h2>
+                            <div class="desc">Photo by photostockeditor</div>
+                        </div>
+                    </div>
+                    <div class="grid--item">
+                        <div class="img" style="background-image: url(https://keansburgamusementpark.com/wp-content/uploads/2015/03/powertower3-waterpark.png);"></div>
+                        <div class="container">
+                            <h2>Black Slide</h2>
+                            <div class="desc">Photo by Annie Spratt </div>
+                        </div>
+                    </div>
+                    <div class="grid--item">
+                        <div class="img" style="background-image: url(https://keansburgamusementpark.com/wp-content/uploads/2015/03/mountainblast-waterpark.png);"></div>
+                        <div class="container">
+                            <h2>Mountain Blast</h2>
+                            <div class="desc">Photo by Teodor Bjerrang</div>
+                        </div>
+                    </div>
+                    <div class="grid--item">
+                        <div class="img" style="background-image: url(https://keansburgamusementpark.com/wp-content/uploads/2015/03/minispapool-waterpark.png);"></div>
+                        <div class="container">
+                            <h2>Comfort Cove</h2>
+                            <div class="desc">Photo by Ales Krivec</div>
+                        </div>
+                    </div>
+                    <div class="grid--item">
+                        <div class="img" style="background-image: url(https://keansburgamusementpark.com/wp-content/uploads/2015/03/soaringthunder-waterpark.png);"></div>
+                        <div class="container">
+                            <h2>Soaring Thunder
+                            </h2>
+                            <div class="desc">Photo by Mikael Kristenson</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
+
 </div>
-
-
-<style>
-    .pr-rapids {
-        position: relative;
-    }
-
-    .vid-h {
-        position: absolute;
-        top: 0;
-        z-index: -1;
-        width: 100%;
-    }
-
-    .controls-vd {
-        height: 70vh;
-        position: relative;
-        transition: all 1.8s;
-    }
-
-    .btn-fsc {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    }
-
-    .cnt-rp {
-        border-top: 4px solid rgb(224, 176, 43);
-        background: #FFF9F4;
-    }
-</style>

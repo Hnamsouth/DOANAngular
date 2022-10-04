@@ -78,11 +78,11 @@ export class ServiService {
               {
                 title:"Games",
                 child_items:[
-                  {icon:"",routelink:'',name:"Runaway Rapids"},
+                  {icon:"",routelink:'/runaway-rapids',name:"Runaway Rapids"},
                   {icon:"",routelink:'',name:"Hollowgraves Haunted Manor"},
                   {icon:"",routelink:'',name:"Batting Cages"},
                   {icon:"",routelink:'',name:"Keansburg Games"},
-                  {icon:"",routelink:'',name:"Arcades"},
+                  {icon:"",routelink:'/arcades',name:"Arcades"},
                 ]
               },{
                 title:"Water",
@@ -216,8 +216,8 @@ export class ServiService {
     urlapi='https://app-t2204m-eprojet.herokuapp.com/'
     // urltest='http://localhost:1234/'
     // link web
-    // urlWeb='http://localhost:4200/'
-    urlWeb='https://eproject-team.web.app/'
+    urlWeb='http://localhost:4200/'
+    // urlWeb='https://eproject-team.web.app/'
 
   constructor() { }
   setticket(data:any){localStorage.setItem('currentTicket',JSON.stringify(data))}

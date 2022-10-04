@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./runaway-rapids.component.scss']
 })
 export class RunawayRapidsComponent implements OnInit {
+  currentdate:any;
   constructor() {
-
    }
   widthvideo='70vh'
 
@@ -19,6 +19,10 @@ export class RunawayRapidsComponent implements OnInit {
     }
    }
   ngOnInit(): void {
+this.currentdate=new Date().toDateString()
+  }
+  changedate(date:any){
+    this.currentdate= new Date(date.value).toDateString()
   }
 
 }

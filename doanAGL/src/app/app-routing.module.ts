@@ -40,7 +40,6 @@ const routes: Routes = [
   {path:"register",component:RegitsterComponent},
   {path:"test",component:PracticesComponent},
   {path:"checkverify",component:CheckverifyComponent},
-  {path:"0",component:RunawayRapidsComponent},
   {path:"ticket", children:[
     {path:"",component:TicketComponent},
     {path:'park-tickets',children:[
@@ -48,11 +47,13 @@ const routes: Routes = [
       {path:'select-tickets',component:SelectTicketsComponent}
     ]}
   ]},
+  {path:'select-tickets',component:SelectTicketsComponent},
   {path:"ride-attraction",component:RideAttractionMainComponent},
   {path:"arcades",component:ArcadesComponent},
   {path:"information",component:InfomationComponent},
   {path:'history',component:HistoryComponent},
   {path:"cart",component:CartComponent},
+  {path:"runaway-rapids",component:RunawayRapidsComponent},
 ]
 @NgModule({
   imports: [
