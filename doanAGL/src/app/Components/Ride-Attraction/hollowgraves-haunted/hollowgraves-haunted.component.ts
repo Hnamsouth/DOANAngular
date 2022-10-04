@@ -13,3 +13,14 @@ export class HollowgravesHauntedComponent implements OnInit {
   }
 
 }
+
+// need help
+interface Scripts {
+  name: string;
+  src: string;
+}  
+export const ScriptStore: Scripts[] = [
+  {name: 'aos', src: 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js'}
+];
+
+// need help
