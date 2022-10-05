@@ -102,7 +102,7 @@ export class ServiService {
             FeaturedItems:[],
             routelink:
               {
-                main:'/ride-attraction'
+                main:'/runaway-rapids'
               }
 
           },
@@ -216,8 +216,8 @@ tax=9
     urlapi='https://app-t2204m-eprojet.herokuapp.com/'
     // urltest='http://localhost:1234/'
     // link web
-    urlWeb='http://localhost:4200/'
-    // urlWeb='https://eproject-team.web.app/'
+    // urlWeb='http://localhost:4200/'
+    urlWeb='https://eproject-team.web.app/'
 
   constructor() { }
   setticket(data:any){localStorage.setItem('currentTicket',JSON.stringify(data))}
