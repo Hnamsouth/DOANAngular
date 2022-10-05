@@ -26,6 +26,7 @@ import { HollowgravesHauntedComponent } from './Components/Ride-Attraction/hollo
 import { CkOutCplComponent } from './Components/cpn-booking/ckout_complete.component';
 import { BeachComponent } from './Components/Ride-Attraction/beach/beach.component';
 import { FishingPierComponent } from './Components/Ride-Attraction/fishing-pier/fishing-pier.component';
+import { GokartsComponent } from './Components/Ride-Attraction/gokarts/gokarts.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -62,6 +63,7 @@ const routes: Routes = [
   {path:"hollowgraves-haunted",component:HollowgravesHauntedComponent},
   {path:"beach",component:BeachComponent},
   {path:"fishing-pier",component:FishingPierComponent},
+  {path:"go-karts",component:GokartsComponent},
 
 ]
 @NgModule({
