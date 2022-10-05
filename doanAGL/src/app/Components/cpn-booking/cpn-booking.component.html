@@ -370,7 +370,7 @@
                         <p class="d-flex justify-content-between" *ngFor="let i of dataticket">
                             <strong><i class="bi bi-ticket-perforated-fill me-2" ></i> <span>{{i.name}}</span></strong><span> Qty: {{i.amount}}</span></p>
                     </div>
-                    <button type="button" class="btn-view-more-tk" (click)="toggleviewTK()"><i class="bi bi-chevron-double-{{iconview}} me-1"></i> View more</button>
+                    <button *ngIf="dataticket[2]" type="button" class="btn-view-more-tk" (click)="toggleviewTK()"><i class="bi bi-chevron-double-{{iconview}} me-1"></i> View more</button>
 
                     <span class="gach"></span>
                     <div>
