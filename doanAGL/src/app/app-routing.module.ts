@@ -24,6 +24,7 @@ import { ArcadesComponent } from './Components/Ride-Attraction/arcades/arcades.c
 import { HistoryComponent } from './Components/infomation/history/history.component';
 import { HollowgravesHauntedComponent } from './Components/Ride-Attraction/hollowgraves-haunted/hollowgraves-haunted.component';
 import { CkOutCplComponent } from './Components/cpn-booking/ckout_complete.component';
+import { BeachComponent } from './Components/Ride-Attraction/beach/beach.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -58,6 +59,7 @@ const routes: Routes = [
   {path:"cart",component:CartComponent},
   {path:"runaway-rapids",component:RunawayRapidsComponent},
   {path:"hollowgraves-haunted",component:HollowgravesHauntedComponent},
+  {path:"beach",component:BeachComponent},
 ]
 @NgModule({
   imports: [
