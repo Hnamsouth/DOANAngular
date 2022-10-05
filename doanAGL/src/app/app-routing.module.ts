@@ -27,6 +27,7 @@ import { CkOutCplComponent } from './Components/cpn-booking/ckout_complete.compo
 import { BeachComponent } from './Components/Ride-Attraction/beach/beach.component';
 import { FishingPierComponent } from './Components/Ride-Attraction/fishing-pier/fishing-pier.component';
 import { GokartsComponent } from './Components/Ride-Attraction/gokarts/gokarts.component';
+import { KBgameComponent } from './Components/Ride-Attraction/kbgame/kbgame.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -64,6 +65,7 @@ const routes: Routes = [
   {path:"beach",component:BeachComponent},
   {path:"fishing-pier",component:FishingPierComponent},
   {path:"go-karts",component:GokartsComponent},
+  {path:"keansburg-games",component:KBgameComponent},
 
 ]
 @NgModule({
