@@ -142,4 +142,11 @@
             margin-bottom: 10px;
         }
     }
+    .btn-view-more-tk {
+        background: none;
+        border: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

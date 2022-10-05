@@ -353,26 +353,34 @@
                     </div>
                     <div class="ft-text">
                         <p>(Các) thẻ của bạn sẽ không bị tính phí cho đến khi bạn chấp nhận <a href="">Điều khoản & Điều kiện</a> và chọn "Mua" trong bước tiếp theo.</p>
-                        <button type="button" class="btn-submit-payTK"> Next </button>
+                        <a routerLink="/check-out-complete"><button type="button" class="btn-submit-payTK"> Next </button></a>
                     </div>
 
                 </div>
                 <div class="col-4 userright">
                     <h4><strong>Order Summary</strong></h4>
                     <a> Show Order Detail</a>
-                    <div>
-                        <p class="d-flex justify-content-between"><strong><i class="bi bi-ticket-perforated-fill"></i> <span>Theme Park Tickets</span></strong> <span> Qty: 4</span></p>
-                        <p class="d-flex justify-content-between"><strong><i class="bi bi-ticket-perforated-fill"></i> <span>Theme Park Tickets</span></strong> <span> Qty: 2</span></p>
+                    <div *ngIf="viewTK">
+                        <p class="d-flex justify-content-between">
+                            <strong><i class="bi bi-ticket-perforated-fill me-2"></i> <span>{{dataticket[0].name}}</span></strong><span> Qty: {{dataticket[0].amount}}</span></p>
+                        <p class="d-flex justify-content-between">
+                            <strong><i class="bi bi-ticket-perforated-fill me-2"></i> <span>{{dataticket[1].name}}</span></strong><span> Qty: {{dataticket[1].amount}}</span></p>
                     </div>
+                    <div *ngIf="!viewTK">
+                        <p class="d-flex justify-content-between" *ngFor="let i of dataticket">
+                            <strong><i class="bi bi-ticket-perforated-fill me-2" ></i> <span>{{i.name}}</span></strong><span> Qty: {{i.amount}}</span></p>
+                    </div>
+                    <button type="button" class="btn-view-more-tk" (click)="toggleviewTK()"><i class="bi bi-chevron-double-{{iconview}} me-1"></i> View more</button>
+
                     <span class="gach"></span>
                     <div>
                         <p><strong>Price Summary</strong></p>
-                        <div class="d-flex justify-content-between"><span>Subtotal</span> <span>{{123|currency}}</span></div>
-                        <div class="d-flex justify-content-between"><span>Tax</span> <span>{{10|currency}}</span></div>
+                        <div class="d-flex justify-content-between"><span>Subtotal</span> <span>{{subtotal|currency}}</span></div>
+                        <div class="d-flex justify-content-between"><span>Tax</span> <span>{{subtotal*tax/100|currency}}</span></div>
                     </div>
                     <span class="gach"></span>
                     <div>
-                        <p><strong class="d-flex justify-content-between"><span>Total Order Price</span> <span>{{123.5|currency}}</span></strong></p>
+                        <p><strong class="d-flex justify-content-between"><span>Total Order Price</span> <span>{{subtotal+(subtotal*tax/100)|currency}}</span></strong></p>
                     </div>
 
                 </div>

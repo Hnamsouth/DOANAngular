@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiService } from '../servi.service';
 
 @Component({
   selector: 'app-cpn-booking',
@@ -23,10 +24,13 @@ export class CpnBookingComponent implements OnInit {
     'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/195/123/75/dam/global/cards/din-3x.png?1660199125354',
     'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/195/123/75/dam/global/cards/jcb-3x.png?1660199125354'
   ]
-  constructor() { }
+  constructor(private servi:ServiService) { }
 
+  dataticket=this.servi.getticket()
+subtotal=this.servi.Subtotalall()
+tax=this.servi.tax
   ngOnInit(): void {
-
+console.log(this.dataticket)
   }
 
   collapsetoggle(index:any){
@@ -55,6 +59,7 @@ export class CpnBookingComponent implements OnInit {
   }
   changeemail1=false;
   changeAddress=false;
+
   changeemail(index:any){
     if(index==0){
       this.changeemail1=true
@@ -62,6 +67,12 @@ export class CpnBookingComponent implements OnInit {
     }else if(index==1){
       this.changeAddress=true
     }
+  }
+viewTK=true
+iconview='down'
+  toggleviewTK(){
+    this.viewTK=this.viewTK==true?false:true;
+    this.iconview=this.viewTK==true?'down':'up';
   }
 
 }

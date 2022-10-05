@@ -23,12 +23,14 @@ import { CartComponent } from './Components/cart/cart.component';
 import { ArcadesComponent } from './Components/Ride-Attraction/arcades/arcades.component';
 import { HistoryComponent } from './Components/infomation/history/history.component';
 import { HollowgravesHauntedComponent } from './Components/Ride-Attraction/hollowgraves-haunted/hollowgraves-haunted.component';
+import { CkOutCplComponent } from './Components/cpn-booking/ckout_complete.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
   {path:"aboutus",component:CpnAboutusComponent},
   {path:"contactus",component:CpnContactUsComponent},
   {path:"checkout-booking",component:CpnBookingComponent},
+  {path:"check-out-complete",component:CkOutCplComponent},
   {path:"enterainment",component:CpnEntertainmentComponent},
   {path:"restaurant",component:CpnRestaurantComponent},
   {path:'restaurant/shop/:id',component:FoodDetailComponent},
@@ -48,7 +50,7 @@ const routes: Routes = [
       {path:'select-tickets',component:SelectTicketsComponent}
     ]}
   ]},
-  {path:'select-tickets',component:SelectTicketsComponent},
+  {path:'select-tickets',redirectTo:'ticket/park-tickets/select-tickets'},
   {path:"ride-attraction",component:RideAttractionMainComponent},
   {path:"arcades",component:ArcadesComponent},
   {path:"information",component:InfomationComponent},
