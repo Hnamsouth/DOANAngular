@@ -6,15 +6,15 @@
             <p class="w-lg-50">No trip to the boardwalk is complete without traditional boardwalk fare. Tempt your taste buds with everything from seafood to zeppole's.</p>
         </div>
     </div>
-    <div class="row justify-content-center mt-3 mb-3">
-        <div class="col-2 sv-items " *ngFor="let i of items_service">
+    <div class="row  nav-food flex-row flex-nowrap mb-3 overflow-scroll">
+        <div class="col-lg-2 col-md-3 col-4 sv-items " *ngFor="let i of items_service">
             <button type="button" class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
               <img src="{{i.icon}}" width="25px" class="img-sv-food mb-1" alt="">
             <span>{{i.name}}</span>
           </button>
         </div>
     </div>
-
+    <span class="gach"></span>
     <div class="mt-3 mb-3">
         <select class="sortFoodname" name="sortfooditems" id="">
         <option value="">Sort by Name</option>
@@ -24,7 +24,7 @@
     </div>
     <div>
         <a class="row food-items" *ngFor="let i of dinning; let j =index" [routerLink]="['shop',j]">
-            <div class="col-3 img-food">
+            <div class="col-md-3 col-sm-6 col-12 img-food">
                 <div class="ov-imgfood">
                     <img src="{{i.img}}" alt="">
                 </div>

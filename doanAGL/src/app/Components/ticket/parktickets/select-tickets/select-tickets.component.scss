@@ -272,6 +272,13 @@
 .controls-vd {
     position: relative;
     transition: all 1.8s;
+    height: calc(15px + 27vmin + 16vmax);
+}
+
+@media (max-width: 768px) {
+    .controls-vd {
+        height: calc(5px + 13vmin + 16vmax) !important;
+    }
 }
 
 .btn-fsc {

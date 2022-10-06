@@ -31,7 +31,7 @@
 .food-items img {
     border-radius: 10px;
     object-fit: cover;
-    width: 306px;
+    width: inherit;
     height: 178px;
     max-height: inherit;
 }
@@ -61,4 +61,42 @@
 .sortFoodname:hover {
     border-bottom: 1px solid rgb(21, 87, 163);
     color: rgb(21, 87, 163);
+}
+
+.nav-food {
+    // overflow-y: hidden;
+}
+
+.nav-food::-webkit-scrollbar {
+    // width: 6px;
+    // border-left: 1px solid #E6ECF8;
+}
+
+.gach {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fbd5d5 5%, #bbdde7 95%, rgba(255, 255, 255, 0) 100%);
+    clear: both;
+    display: block;
+    -webkit-filter: none;
+    filter: none;
+    height: 1px;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    top: -2px !important;
+    width: 2px;
+    border-left: 1px solid #E6ECF8;
+    height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #545454;
+}
+
+@media (max-width: 576px) {
+    .food-items img {
+        height: auto;
+    }
 }

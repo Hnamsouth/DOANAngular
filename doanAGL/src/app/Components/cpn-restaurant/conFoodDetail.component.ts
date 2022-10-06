@@ -4,6 +4,7 @@ import {CpnRestaurantComponent} from'./cpn-restaurant.component'
 @Component({
   selector: 'app-FoodDetail',
   templateUrl:'./Fooddetail.html',
+  styleUrls:['./foodDetail.scss']
 })
 export class FoodDetailComponent implements OnInit {
   // option 1

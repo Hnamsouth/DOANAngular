@@ -55,7 +55,7 @@ export class ServiService {
                 {
                   icon:"bi bi-info-circle",routelink:'/ticket-infomation',name:"Ticket Information"
                 },
-                {icon:"fa-solid fa-horse",routelink:'rideheight-ticketing',name:" Ride Height & Ticketing"}
+                {icon:"fa-solid fa-horse",routelink:'/rideheight-ticketing',name:" Ride Height & Ticketing"}
               ]
             },{
               title:"Items 2",
@@ -137,24 +137,25 @@ export class ServiService {
                 {icon:"",routelink:'history',name:"History"},
                 {icon:"",routelink:'',name:"Service Animals"},
               ]
-            },
-            {
-              title:"News",
-              child_items:[
-                {icon:"",routelink:'',name:"Operating Calendar"},
-                {icon:"",routelink:'',name:"Events"},
-                {icon:"",routelink:'',name:"Fundraising"},
-              ]
-            },
-            {
-              title:"Location",
-              child_items:[
-                {icon:"",routelink:'',name:"Accommodations"},
-                {icon:"",routelink:'',name:"Location Shoots"},
-                {icon:"",routelink:'',name:"Directions & Parking"},
-                {icon:"",routelink:'',name:"Park Map"},
-              ]
             }
+            // ,
+            // {
+            //   title:"News",
+            //   child_items:[
+            //     {icon:"",routelink:'',name:"Operating Calendar"},
+            //     {icon:"",routelink:'',name:"Events"},
+            //     {icon:"",routelink:'',name:"Fundraising"},
+            //   ]
+            // },
+            // {
+            //   title:"Location",
+            //   child_items:[
+            //     {icon:"",routelink:'',name:"Accommodations"},
+            //     {icon:"",routelink:'',name:"Location Shoots"},
+            //     {icon:"",routelink:'',name:"Directions & Parking"},
+            //     {icon:"",routelink:'',name:"Park Map"},
+            //   ]
+            // }
           ],
           FeaturedItems:[],
           routelink:
@@ -213,8 +214,9 @@ tax=9
     urlapi='https://app-t2204m-eprojet.herokuapp.com/'
     // urltest='http://localhost:1234/'
     // link web
-    urlWeb='http://localhost:4200/'
-    // urlWeb='https://eproject-team.web.app/'
+    // urlWeb='http://localhost:4200/'
+    urlWeb='https://eproject-team.web.app/'
+
 
   constructor() { }
   setticket(data:any){localStorage.setItem('currentTicket',JSON.stringify(data))}

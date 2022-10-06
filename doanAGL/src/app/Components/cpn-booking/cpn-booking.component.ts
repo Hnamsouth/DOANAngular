@@ -24,13 +24,17 @@ export class CpnBookingComponent implements OnInit {
     'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/195/123/75/dam/global/cards/din-3x.png?1660199125354',
     'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/195/123/75/dam/global/cards/jcb-3x.png?1660199125354'
   ]
-  constructor(private servi:ServiService) { }
+  constructor(private servi:ServiService) {
+    if(!this.servi.getuser()){
+      window.location.replace(`${this.servi.urlWeb}/login`)
+    }
+   }
 
   dataticket=this.servi.getticket()
-subtotal=this.servi.Subtotalall()
-tax=this.servi.tax
+  subtotal=this.servi.Subtotalall()
+  tax=this.servi.tax
   ngOnInit(): void {
-console.log(this.dataticket)
+    console.log(this.dataticket)
   }
 
   collapsetoggle(index:any){

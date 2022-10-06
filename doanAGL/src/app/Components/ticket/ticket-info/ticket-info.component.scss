@@ -1,0 +1,17 @@
+.btn-to-cart {
+    border: none;
+    outline: none;
+    background: linear-gradient(191deg, #f3d4ab, #9d7239);
+    box-shadow: inset 2px -3px 9px #6c6c6c, 0px 2px 4px 0px #a3a3a3;
+    color: white;
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-align: center;
+    text-shadow: 0 0 2px black;
+    transition: all 1s;
+    &:hover {
+        background: linear-gradient(22deg, #f3d4ab, #9d7239);
+        box-shadow: inset 2px -3px 9px #ffde92, 0px 2px 4px 0px #bebbbb;
+    }
+}

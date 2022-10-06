@@ -13,3 +13,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+@media (max-width:768px) {
+    .quick-btn {
+        display: none !important;
+    }
+    .bi-person-circle {
+        font-size: calc(15px + 0.5vw) !important;
+    }
+}

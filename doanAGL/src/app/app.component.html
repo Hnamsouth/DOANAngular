@@ -1,40 +1,11 @@
 <div>
     <app-cpn-header></app-cpn-header>
     <!-- class="sticky-top" -->
-    <app-cpn-quickbtn class=" fixed-bottom d-flex justify-content-end" style="width: 200px;"></app-cpn-quickbtn>
-    <!-- Messenger Plugin chat Code -->
-    <div id="fb-root"></div>
+    <app-cpn-quickbtn class="quick-btn fixed-bottom d-flex justify-content-end" style="width: 200px;"></app-cpn-quickbtn>
 
-    <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "111688960247316");
-        chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                xfbml: true,
-                version: 'v15.0'
-            });
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
     <router-outlet (activate)="onActivate($event)"></router-outlet>
-    <!-- " -->
+
+    <app-sitemap></app-sitemap>
     <app-con-footer></app-con-footer>
 </div>
 <div>

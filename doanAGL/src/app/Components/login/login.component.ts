@@ -29,17 +29,17 @@ checkuser=false;
 
   constructor(private fbd:FormBuilder,private http:HttpClient,private route:ActivatedRoute,private rt: Router,private location: Location,private servi:ServiService) {
 
+    console.log(this.route.snapshot.queryParams['asd'])
   }
   // exclamation check
   loginSubmit(){
-
     let data = this.FormLogin.value
     console.log(data.email +" "+data.password )
     this.http.post<any>(`${this.servi.urlapi}checkUerlogin`,{emailorphone:data.email,password:data.password}).subscribe(vl=>{
       console.log(vl)
       if(vl.status==101){
         localStorage.setItem("user",JSON.stringify({user:data.email,id:1}));
-        if(this.datacheckout){
+        if(this.datacheckout || this.route.snapshot.queryParams['asd']){
           window.location.replace(`${this.servi.urlWeb}checkout-booking`);
         }else{
           window.location.replace(this.servi.urlWeb);

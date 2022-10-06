@@ -102,7 +102,7 @@ export class CpnHeaderComponent implements OnInit {
 
   ckUserLogin(){
     this.usercheck==true?window.location.replace(`${this.servi.urlWeb}checkout-booking`):
-    window.location.replace(`${this.servi.urlWeb}login`);
+    window.location.replace(`${this.servi.urlWeb}login?asd=true`);
   }
 
   class=''

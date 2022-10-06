@@ -507,3 +507,22 @@
         box-shadow: 2px 2px 10px black;
     }
 }
+
+@media (max-width: 991.98px) {
+    .im-left {
+        overflow: scroll !important;
+        flex-direction: row !important;
+        img {
+            width: inherit !important;
+            height: inherit !important;
+        }
+    }
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    .im-right {
+        h3 {
+            text-align: center;
+        }
+    }
+}

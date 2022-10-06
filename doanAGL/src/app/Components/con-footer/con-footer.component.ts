@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-con-footer',
@@ -11,5 +12,5 @@ export class ConFooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  email=new FormControl('');
 }

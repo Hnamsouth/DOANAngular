@@ -47,6 +47,7 @@ import { HistoryComponent } from './Components/infomation/history/history.compon
 import { CkOutCplComponent } from './Components/cpn-booking/ckout_complete.component';
 import { TicketInfoComponent } from './Components/ticket/ticket-info/ticket-info.component';
 import { RideheightTicketComponent } from './Components/ticket/rideheight-ticket/rideheight-ticket.component';
+import { SitemapComponent } from './Components/con-footer/sitemap.component';
 const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,NgbRatingModule,NgbDropdownModule,NgbAccordionModule,NgbPopoverModule,NgbCollapseModule,NgbDatepickerModule,NgbModalModule,NgbOffcanvasModule,NgbProgressbarModule,NgbToastModule,NgbTooltipModule,NgbTypeaheadModule]
 
 
@@ -107,8 +108,8 @@ const ngbt=[NgbPaginationModule, NgbAlertModule,NgbNavModule,NgbCarouselModule,N
     HistoryComponent,
     CkOutCplComponent,
     TicketInfoComponent,
-    RideheightTicketComponent
-
+    RideheightTicketComponent,
+    SitemapComponent
 
 
   ],

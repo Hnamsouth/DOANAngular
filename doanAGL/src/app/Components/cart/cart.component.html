@@ -14,103 +14,114 @@
             <div class="img-1 mb-5">
                 <img src="assets/img/ALL/unf01.jpg" alt="">
             </div>
-
-            <div>
+            <!-- 1 -->
+            <div *ngIf="!statusticket">
                 <div>
-                    <table id="customers">
-                        <tr>
-                            <th style="width:10% ;"></th>
-                            <th style="width:40% ;"> Type Ticket</th>
-                            <th>Unit Price </th>
-                            <th>Count</th>
-                            <th>Price</th>
-                            <th style="width:10% ;"></th>
-                        </tr>
-                        <tr *ngFor="let i of userTicket;let j=index">
-                            <td></td>
-                            <td>
-                                <div>
-                                    <h5>Name : <strong> {{i.name}} </strong></h5>
-                                    <p>Valid 1 day : <strong>{{i.datepick}}</strong></p>
-                                </div>
-                            </td>
-                            <td>{{i.costper1|currency}}..</td>
-                            <td>
-                                <div><input type="number" value="{{i.amount}}" (change)="changeamountTK($event.target,j)"></div>
-                            </td>
-                            <td>{{i.cost|currency}}</td>
-                            <!-- Button trigger modal -->
-
-                            <td><button type="button" class="" (click)="deleteTKbutn(j)" data-bs-toggle="modal" data-bs-target="#deleleTK"><i class="bi bi-x-circle-fill"></i></button></td>
-                        </tr>
-
-                    </table>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="deleleTK" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content ">
-                            <div class="">
-                                <h3 class="modal-title" id="exampleModalLabel">Remove Ticket</h3>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <span class="gach" style="height:2px"></span>
-                            <div>
-                                <table class="tbdeleteTK">
-                                    <tr>
-                                        <th style="width:6%;"><i class="bi bi-ticket-perforated-fill"></i></th>
-                                        <th>{{deleteTicket.name}} Tickets</th>
-                                        <th></th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td style="width:75%;">1 Day {{deleteTicket.name}}, {{deleteTicket.datepick}} </td>
-                                        <td> Quantity: {{deleteTicket.amount}} </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="button" class="savecart" data-bs-dismiss="modal">Keep Cart Items</button>
-                                <button type="button" class="btn-submit" (click)="dltTickets(deleteTicket.id)" data-bs-dismiss="modal"> Remove Cart Items </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <span class="gach "></span>
-                <div class="subtotal">
                     <div>
-                        <p class="fs-4 m-0">Tax <span class="ms-3">{{ Subtotal*15/100|currency }}</span></p>
+                        <table id="customers">
+                            <tr>
+                                <th style="width:10% ;"></th>
+                                <th style="width:40% ;"> Type Ticket</th>
+                                <th>Unit Price </th>
+                                <th>Count</th>
+                                <th>Price</th>
+                                <th style="width:10% ;"></th>
+                            </tr>
+                            <tr *ngFor="let i of userTicket;let j=index">
+                                <td></td>
+                                <td>
+                                    <div>
+                                        <h5>Name : <strong> {{i.name}} </strong></h5>
+                                        <p>Valid 1 day : <strong>{{i.datepick}}</strong></p>
+                                    </div>
+                                </td>
+                                <td>{{i.costper1|currency}}..</td>
+                                <td>
+                                    <div><input type="number" value="{{i.amount}}" (change)="changeamountTK($event.target,j)"></div>
+                                </td>
+                                <td>{{i.cost|currency}}</td>
+                                <!-- Button trigger modal -->
+
+                                <td><button type="button" class="" (click)="deleteTKbutn(j)" data-bs-toggle="modal" data-bs-target="#deleleTK"><i class="bi bi-x-circle-fill"></i></button></td>
+                            </tr>
+
+                        </table>
                     </div>
-                    <div> <span class="fs-4 fw-bold"> Subtotal </span> <span class="fs-2 fw-bold"> {{ Subtotal+Subtotal*15/100|currency }} </span> <span class="fs-4">USD</span></div>
-                    <div>
-                        <a type="button" class="savecart">Save Cart</a>
-                        <a *ngIf="statusUser" type="button" class="btn-submit" id="checkout" (click)="Checkout($event)" data-bs-toggle="modal" data-bs-target="#exampleModal"> Check Out </a>
-                        <a *ngIf="!statusUser" type="button" class="btn-submit" routerLink="/checkout-booking"> Check Out </a>
-                    </div>
-                    <p><i class="bi bi-check-circle-fill checkicon"></i> See Important Details above.</p>
-                    <p>Vacation Questions? Call (407) 939-7702</p>
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [style.display]="checkout1">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class="modal-content">
-                                <div>
+                    <div class="modal fade" id="deleleTK" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content ">
+                                <div class="">
+                                    <h3 class="modal-title" id="exampleModalLabel">Remove Ticket</h3>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <app-login class="login-1" [datacheckout]="statusUser">
-                                </app-login>
+                                <span class="gach" style="height:2px"></span>
+                                <div>
+                                    <table class="tbdeleteTK">
+                                        <tr>
+                                            <th style="width:6%;"><i class="bi bi-ticket-perforated-fill"></i></th>
+                                            <th>{{deleteTicket.name}} Tickets</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td style="width:75%;">1 Day {{deleteTicket.name}}, {{deleteTicket.datepick}} </td>
+                                            <td> Quantity: {{deleteTicket.amount}} </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="savecart" data-bs-dismiss="modal">Keep Cart Items</button>
+                                    <button type="button" class="btn-submit" (click)="dltTickets(deleteTicket.id)" data-bs-dismiss="modal"> Remove Cart Items </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <span class="gach "></span>
+                    <div class="subtotal">
+                        <div>
+                            <p class="fs-4 m-0">Tax <span class="ms-3">{{ Subtotal*15/100|currency }}</span></p>
+                        </div>
+                        <div> <span class="fs-4 fw-bold"> Subtotal </span> <span class="fs-2 fw-bold"> {{ Subtotal+Subtotal*15/100|currency }} </span> <span class="fs-4">USD</span></div>
+                        <div>
+                            <a type="button" class="savecart">Save Cart</a>
+                            <a *ngIf="statusUser" type="button" class="btn-submit" id="checkout" (click)="Checkout($event)" data-bs-toggle="modal" data-bs-target="#exampleModal"> Check Out </a>
+                            <a *ngIf="!statusUser" type="button" class="btn-submit" routerLink="/checkout-booking"> Check Out </a>
+                        </div>
+                        <p><i class="bi bi-check-circle-fill checkicon"></i> See Important Details above.</p>
+                        <p>Vacation Questions? Call (407) 939-7702</p>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [style.display]="checkout1">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content">
+                                    <div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <app-login class="login-1" [datacheckout]="statusUser">
+                                    </app-login>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <span class="gach"></span>
+                <div class="d-flex  align-items-end flex-column" style="margin:0 55px ;">
+                    <p>Prices in US Dollars (USD). Shipping and parking fees not included. Total calculated at checkout.</p>
+                    <p>View the Terms and Conditions of your order.</p>
+                    <p>Guests younger than age 18 must have parent or guardian permission to call.</p>
+                </div>
             </div>
-            <span class="gach"></span>
-            <div class="d-flex  align-items-end flex-column" style="margin:0 55px ;">
-                <p>Prices in US Dollars (USD). Shipping and parking fees not included. Total calculated at checkout.</p>
-                <p>View the Terms and Conditions of your order.</p>
-                <p>Guests younger than age 18 must have parent or guardian permission to call.</p>
+            <!-- 2 -->
+            <div *ngIf="statusticket">
+                <span class="gach"></span>
+                <div class="text-center pt-5 pb-3" style="color:#253B56">
+                    <h5><strong>Your shopping cart is empty.</strong></h5>
+                    <p>Go to <a routerLink="/select-tickets" class="text-decoration-none fw-bold" style="color: #0079BC;"> book tickets </a> book tickets to experience the exciting things in Keansburg Park</p>
+                </div>
             </div>
+            <!--  -->
             <span class="gach"></span>
             <div>
                 <h2 style="margin:10px 25px ;">Continue Shopping for:</h2>

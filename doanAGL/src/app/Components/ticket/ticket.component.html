@@ -6,9 +6,10 @@
   </video>
     </div>
     <div class="content-rapids">
-        <div class="controls-vd" id="btn-fsc" [style.height]="widthvideo">
+        <div class="controls-vd" id="btn-fsc">
+            <!-- [style.height]="widthvideo" -->
             <div class="btn-fsc d-flex flex-column ">
-                <h1 class="text-light mb-4"><strong>Celebrate Across All 4 Theme Parks and Beyond</strong></h1>
+                <h1 class="text-light t-hd mb-4"><strong>Celebrate Across All 4 Theme Parks and Beyond</strong></h1>
                 <div>
                     <button type="button" (click)="fullscreen()" class="f-screen me-3">Watch Full Video  <i class="bi bi-arrows-fullscreen"></i>  </button>
                     <button (click)="playPause()" class="f-screen"> <i [class]="icon_play_pause"> </i></button>
@@ -23,8 +24,8 @@
         <div class="cnt-rp main-cnt">
             <div class="ticket">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-4 items-tickets">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 col-sm-6 col-12  items-tickets">
                             <a routerLink="park-tickets" class="d-flex flex-column justify-content-between">
                                 <div>
                                     <h3><strong> Infomation Tickets  </strong></h3>
@@ -37,7 +38,7 @@
                                 <button type="button"><strong> View Details </strong></button>
                             </a>
                         </div>
-                        <div class="col-4 items-tickets item-tk-center">
+                        <div class="col-md-4 col-sm-6  col-12 items-tickets item-tk-center">
                             <a routerLink="park-tickets" class="d-flex flex-column justify-content-between">
                                 <div>
                                     <h3><strong>Pick Park Tickets</strong></h3>
@@ -50,7 +51,7 @@
                                 <button type="button"><strong> Select Tickets </strong></button>
                             </a>
                         </div>
-                        <div class="col-4 items-tickets item-tk-center">
+                        <div class="col-md-4 col-sm-6 items-tickets item-tk-center">
                             <a routerLink="park-tickets" class="d-flex flex-column justify-content-between">
                                 <div>
                                     <h3><strong>Home stay</strong></h3>
@@ -115,7 +116,7 @@
 
             <div class="cnt-1 mcnt2">
                 <div class="container">
-                    <h1>The World’s Most Magical Celebration</h1>
+                    <h1 class="title-story">The World’s Most Magical Celebration</h1>
                     <div class="row">
                         <div class="col-6 p-0">
                             <div class="ov-imgfood2">
@@ -154,12 +155,12 @@
                     </div>
                     <div class="mcnt4">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <div class="ov-imgfood2">
                                     <img class="img-mcnt4" src="assets/img/homepage/experiences/kb1-0.jpg" alt="">
                                 </div>
                             </div>
-                            <div class="col-6 text">
+                            <div class="col-md-6 col-12 text">
                                 <span class="descrip">Discover new merchandise collections created for The World’s Most Magical Celebration—a once-in-a-lifetime event honoring the 50th anniversary of Walt Disney World Resort.</span>
                                 <button class="bnt-mcnt4"> <a routerLink="/"> Learn More </a> </button>
                             </div>
@@ -177,11 +178,11 @@
                     </div>
                     <div class="mcnt4">
                         <div class="row">
-                            <div class="col-6 text">
+                            <div class="col-md-6 col-12 text">
                                 <span class="descrip">Discover new merchandise collections created for The World’s Most Magical Celebration—a once-in-a-lifetime event honoring the 50th anniversary of Walt Disney World Resort.</span>
                                 <button class="bnt-mcnt4"> <a routerLink="/"> Learn More </a> </button>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <div class="ov-imgfood2">
                                     <img class="img-mcnt4" src="assets/img/homepage/experiences/kb1-0.jpg" alt="">
                                 </div>

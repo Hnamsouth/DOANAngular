@@ -1,18 +1,18 @@
 <nav class="navbar navbar-light navbar-expand-md py-3 bg-svg">
     <div class="container">
         <div class="row w-100">
-            <div class="col-12 row justify-content-between align-items-center mb-1 ">
-                <div *ngIf="!usercheck" class="d-block col-md-3 col-xl-3 "></div>
-                <div *ngIf="usercheck" class=" col-md-3 col-xl-3 ">
-                    <a routerLink="/profile" class="text-light login-p-header" title="Your Profile"><i class="bi bi-person-circle"></i>  Welcome, User name</a>
+            <div class="col-12 row justify-content-between align-items-center mb-1 flex-nowrap">
+                <div *ngIf="!usercheck" class="d-block col-md-3 col-xl-3 col"></div>
+                <div *ngIf="usercheck" class=" col-md-3 col-xl-3 col">
+                    <a routerLink="/profile" class="text-light login-p-header" title="Your Profile"><i class="bi bi-person-circle"></i><span class="wlc"> Welcome</span></a>
                 </div>
 
-                <div class=" col-md-8  col-xl-7 row justify-content-end ">
-                    <div *ngIf="!usercheck" class=" col-md-4 col-xl-4 d-flex align-items-center" style="width: fit-content;">
-                        <a routerLink="/login" class="text-light login-p-header "><i class="bi bi-person-circle" ></i>  Sign In or Create Account</a>
+                <div class=" col-md-8  col-xl-7 col row  justify-content-sm-end ">
+                    <div *ngIf="!usercheck" class="col-xl-4 col-md-4 col d-flex justify-content-end " style="width: fit-content;">
+                        <a routerLink="/login" class="text-light login-p-header "><i class="bi bi-person-circle"></i>  Sign In</a>
                     </div>
 
-                    <div *ngIf="usercheck" class="col-md-4 col-xl-4 d-flex align-items-center" style="width:fit-content ;">
+                    <div *ngIf="usercheck" class="col-xl-4 col-md-4  col d-flex justify-content-end" style="width:fit-content ;">
                         <a class="text-light login-p-header" (click)="signout()" type="button" href="/"> Sign Out</a>
                     </div>
                     <div class="nav-hd col-xl-4 col-4">
@@ -24,7 +24,7 @@
             <div class="col d-flex justify-content-center row nav-second">
 
                 <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse nav-text justify-content-between col" id="navcol-3">
-                    <div class="me-2 col-2 mb-2 text-center">
+                    <div class="me-2 col-2 mb-2 text-center logo-nv2">
                         <img src="assets/svg/logo.svg" width="163" height="50" style="filter: drop-shadow(0 1px 2px #35181f);">
                     </div>
                     <div class="list-nav">
@@ -143,76 +143,3 @@
         </div>
     </div>
 </nav>
-
-<style>
-    ul,
-    ul li {
-        list-style: none;
-    }
-
-    .list-nav {
-        position: relative;
-        /*height: 100%;
-      display: flex;
-      align-items: center;*/
-    }
-
-    .child-items1 {
-        position: absolute;
-        display: none;
-        z-index: 1000;
-    }
-
-    .list-nav:hover .child-items1 {
-        display: block;
-    }
-
-    .nav-items1 {
-        font-size: calc(3px + 1vw)!important;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 7px 13px;
-    }
-
-    .child-items-left {
-        background: #012169;
-        padding: 17px;
-    }
-
-    .child-items-right {
-        background-color: #FFFBF5;
-        padding: 17px;
-    }
-
-    .nav-items1:hover {
-        background: #012169;
-        text-decoration: underline;
-    }
-
-    .nav-items1,
-    .child-items-left a,
-    .child-items-right a {
-        color: white;
-        text-decoration: none;
-        text-shadow: 0 0 3px black;
-    }
-
-    .child-items-left h6 {
-        color: white;
-        font-weight: 600;
-    }
-
-    .child-items-left a:hover,
-    .child-items-right a:hover {
-        text-decoration: underline;
-    }
-
-    .child-items-right a {
-        color: #021031b4;
-    }
-
-    .img-my {
-        filter: brightness(0) invert(1);
-        width: 22px;
-    }
-</style>

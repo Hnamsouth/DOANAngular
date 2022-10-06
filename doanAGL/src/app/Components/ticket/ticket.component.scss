@@ -19,7 +19,7 @@
 
 .hr {
     background: url(https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/500/40/75/dam/disney-world/50th-anniversary/graphics/decorative-rule/mk_star_rule-1x.jpg?1664291516745) no-repeat;
-    width: 500px;
+    max-width: 500px;
     height: 40px;
     background-position: center;
     margin-left: auto;
@@ -360,6 +360,10 @@
     // --------------------
 }
 
+.title-story {
+    font-size: calc(20px + 2vw) !important;
+}
+
 .item-tk-center {
     // border-left: 2px solid gray;
     // border-right: 2px solid gray;
@@ -377,3 +381,11 @@
         width: 100%;
     }
 }
+
+// @media (max-width: 575.98px) {}
+// @media (max-width: 767.98px) {}
+// @media (max-width: 991.98px) {
+//     .controls-vd {
+//         height: calc(720px + 2vh) !important;
+//     }
+// }

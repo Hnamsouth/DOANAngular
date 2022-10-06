@@ -75,7 +75,7 @@ css-------
     }
 
 --------- span hr
-<span class=""gach></span>
+<span class="gach"></span>
 css----------
 .gach {
         background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fbd5d5 5%, #bbdde7 95%, rgba(255, 255, 255, 0) 100%);

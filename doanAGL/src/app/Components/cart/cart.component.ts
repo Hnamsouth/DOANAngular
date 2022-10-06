@@ -15,10 +15,12 @@ export class CartComponent implements OnInit {
   userTicket:any[]=[];
   Subtotal:number=0.0;
   statusUser=true;
+  statusticket=true;
   constructor( private route:Router,private http:HttpClient,private servi:ServiService) {
     this.Subtotal=this.servi.Subtotalall()
     this.userTicket=this.servi.getticket()
     this.checkUseRLogin()
+    this.statusticket=this.servi.getticket().length!=0?false:true;
    }
 
   ngOnInit(): void {
@@ -31,7 +33,6 @@ export class CartComponent implements OnInit {
       this.statusUser=false
     }
   }
-
 
   changeamountTK(amount:any,index:any){
     let dataTK=this.servi.getticket()
@@ -83,8 +84,6 @@ export class CartComponent implements OnInit {
       this.checkout1='none'
     }
   }
-
-
 
   deleteTicket:ticket={
     id: 0,

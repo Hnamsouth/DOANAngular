@@ -1,22 +1,42 @@
 <footer class="bg-svg text-light">
     <div class="container py-4  ">
         <div class="row justify-content-center is_ft">
-            <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
+            <div class="col-lg-3 col-md-4 col-6 text-center text-lg-start d-flex flex-column item">
                 <div class="row">
                     <div class="col">
-                        <h3 class="fs-5 text-center" style="margin-top: 8px;color: #fff;font-size: 16px;">Stay Connected</h3>
+                        <h3 class="fs-5 text-start" style="margin-top: 8px;color: #fff;font-size: 16px;">Stay Connected</h3>
                     </div>
                 </div>
-                <ul class="list-unstyled text-center" style="">
-                    <li class="text-start" style="margin: 8px;"><a class="text-decoration-none" href="https://fb.me/KeansburgAmusementRunawayRapids/"><img src="assets/svg/facebook.svg" style="width: 36px;margin: 8px;" />Facebook</a></li>
-                    <li class="text-start" style="margin: 8px;"><a class="text-decoration-none" href="#"><img src="assets/svg/twitter.svg" style="width: 36px;height: 36px;margin: 8px;" />Twitter</a></li>
-                    <li class="text-start" style="margin: 8px;"><a class="text-decoration-none" href="https://www.instagram.com/keansburg_amusement_park/"><img src="assets/svg/instagram.svg" style="width: 36px;margin: 8px;" />Instagram</a></li>
+                <ul class="list-unstyled text-center">
+                    <li class="text-start" style="margin: 8px;">
+                        <button type="button" class="btn-sitemap" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    Site Map
+                  </button>
+                    </li>
+                    <li class="text-start" style="margin: 8px;">
+                        <a class="text-decoration-none" href="https://fb.me/KeansburgAmusementRunawayRapids/"><img src="assets/svg/facebook.svg" style="width: 36px;margin: 8px;" />Facebook</a>
+                    </li>
+                    <li class="text-start" style="margin: 8px;">
+                        <a class="text-decoration-none" href="#"><img src="assets/svg/twitter.svg" style="width: 36px;height: 36px;margin: 8px;" />Twitter</a>
+                    </li>
+                    <li class="text-start" style="margin: 8px;">
+                        <a class="text-decoration-none" href="https://www.instagram.com/keansburg_amusement_park/"><img src="assets/svg/instagram.svg" style="width: 36px;margin: 8px;" />Instagram</a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-sm-4 col-md-3 text-center text-lg-start flex-column item justify-content-evenly">
+            <style>
+                .btn-sitemap {
+                    color: white;
+                    border: 1px solid white;
+                    border-radius: 25px;
+                    background: none;
+                    padding: 2px 10px;
+                }
+            </style>
+            <div class="col-lg-3 col-md-4 col-6 text-center text-lg-start flex-column item justify-content-evenly">
                 <div class="row">
                     <div class="col">
-                        <h3 class="fs-5 text-center" style="margin-top: 8px;color: #fff;font-size: 16px;">Related Sites</h3>
+                        <h3 class="fs-5 text-start" style="margin-top: 8px;color: #fff;font-size: 16px;">Related Sites</h3>
                     </div>
                 </div>
                 <div class="d-flex align-items-center" style="height: 52px;margin: 8px;margin-bottom: 0px;"><a class="text-decoration-none" href="#">About</a></div>
@@ -24,18 +44,18 @@
                 <div class="d-flex align-items-center" style="height: 52px;margin: 8px;margin-bottom: 0px;"><a class="text-decoration-none" href="#">Team</a></div>
                 <div class="d-flex align-items-center" style="height: 52px;margin: 8px;margin-bottom: 0px;"><a class="text-decoration-none" href="#">Legacy</a></div>
             </div>
-            <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item from_scr justify-content-evenly">
+            <div class="col-lg-3 col-4 text-center text-lg-start d-flex flex-column item from_scr justify-content-evenly">
                 <h3 class="fs-6 text-center">Subscribe Newsletter for our latest news!</h3>
                 <form action="" method="get">
                     <div class="d-flex flex-column">
-                        <input type="text" class="inp_scr_email" placeholder="Email Address">
+                        <input type="email" class="inp_scr_email" placeholder="Email Address">
                         <button class="btn scr_submit" type="button">Send</button>
                     </div>
 
                 </form>
             </div>
-            <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last item social justify-content-evenly">
-                <img src="assets/svg/logo.svg" width="100%" style="filter: drop-shadow(0 1px 2px #35181f);">
+            <div class="col-lg-3 col-12 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last item social justify-content-evenly">
+                <img class="logo" src="assets/svg/logo.svg">
                 <div class="fw-bold d-flex align-items-center mb-2"></div>
                 <p class="text-muted copyright">275 Beachway Avenue, Keansburg, NJ 07734</p>
             </div>
@@ -46,66 +66,3 @@
         </div>
     </div>
 </footer>
-<style>
-    .is_ft {
-        background: #fffbf54f;
-        padding: 15px;
-        border-radius: 15px;
-    }
-
-    .inp_scr_email {
-        background: none;
-        border: none;
-        border-bottom: 1px solid #040b3c;
-        outline: none;
-        color: #040b3c;
-        padding: 5px;
-    }
-
-     ::placeholder {
-        color: #040b3c;
-        opacity: 0.8;
-    }
-
-    .from_scr {
-        background: #FFFBF5;
-        padding: 10px 25px;
-        border-radius: 15px;
-    }
-
-    .from_scr h3 {
-        color: #040b3c;
-    }
-
-    .scr_submit {
-        background: #996B09;
-        margin-top: 20px;
-        color: white;
-        opacity: 0.8;
-    }
-
-    .scr_submit:hover {
-        opacity: 1;
-    }
-
-    .gach {
-        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fbd5d5 5%, #bbdde7 95%, rgba(255, 255, 255, 0) 100%);
-        clear: both;
-        display: block;
-        -webkit-filter: none;
-        filter: none;
-        height: 1px;
-        margin: 20px 0;
-        position: relative;
-        width: 100%;
-    }
-
-    .list-unstyled li {
-        margin-bottom: 9px;
-    }
-
-    .link-secondary {
-        text-decoration: none;
-        text-shadow: 0 0 3px black;
-    }
-</style>

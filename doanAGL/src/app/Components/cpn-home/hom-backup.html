@@ -5,9 +5,9 @@
         </video>
     </div>
     <div class="content-rapids">
-        <div class="controls-vd" id="btn-fsc" [style.height]="widthvideo">
+        <div class="controls-vd" id="btn-fsc">
             <div class="btn-fsc d-flex flex-column ">
-                <h1 class=" mb-4"><strong>Celebrate Across All 4 Theme Parks and Beyond</strong></h1>
+                <h1 class=" t-hd mb-4"><strong>Celebrate Across All 4 Theme Parks and Beyond</strong></h1>
                 <div>
                     <button type="button" (click)="fullscreen()" class="f-screen me-3">Watch Full Video  <i class="bi bi-arrows-fullscreen"></i>  </button>
                     <button (click)="playPause()" class="f-screen"> <i [class]="icon_play_pause"> </i></button>
@@ -24,7 +24,7 @@
 
                 <section>
                     <h2 class="title-story">Experiences</h2>
-                    <div class="row">
+                    <div class="row  justify-content-center">
                         <div class="row justify-content-center carousel">
                             <div class="col-12 mb-3 ">
                                 <div class="ov-imgfood2">
@@ -32,20 +32,20 @@
                                     <img class="img-b" width="100%" style="height: 400px;object-fit: cover;" src="assets/img/homepage/experiences/1-1.jpg">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 img-food">
+                            <div class="row img-ud-hd flex-row flex-nowrap overflow-scroll">
+                                <div class="col-md-4 col-6 img-food">
                                     <div class="ov-imgfood">
                                         <span class="tt-img">Sea Serpent Roller Coaster</span>
                                         <img src="assets/img/homepage/experiences/2-1.jpg" alt="">
                                     </div>
                                 </div>
-                                <div class="col-4 img-food">
+                                <div class="col-md-4 col-6 img-food">
                                     <div class="ov-imgfood">
                                         <span class="tt-img">Food</span>
                                         <img src="assets/img/homepage/experiences/2-2.jpg" alt="">
                                     </div>
                                 </div>
-                                <div class="col-4 img-food">
+                                <div class="col-md-4 col-6 img-food">
                                     <div class="ov-imgfood">
                                         <span class="tt-img">Thrill Rides</span>
                                         <img src="assets/img/homepage/experiences/2-3.jpg" alt="">
@@ -189,17 +189,17 @@
     section {
         /*margin-bottom: 10vh;*/
     }
-
+    
     .title-story {
         margin-top: 15px;
         margin-bottom: 15px;
         color: rgb(211, 134, 18);
     }
-
+    
     * {
         box-sizing: border-box;
     }
-
+    
     .ov-imgfood,
     .ov-imgfood2 {
         position: relative;
@@ -210,27 +210,27 @@
         overflow: hidden;
         /*box-shadow: 5px 5px 8px #7a6f6f;*/
     }
-
+    
     .ov-imgfood img {
         object-fit: cover;
         width: 100%;
         height: 250px;
         max-height: inherit;
     }
-
+    
     .ov-imgfood img:hover,
     .ov-imgfood2 img:hover,
     img:hover {
         transform: scale(1.1);
         transition: all 1.6s ease-in-out;
     }
-
+    
     .tt-img {
         position: absolute;
         color: white;
         top: 0;
         z-index: 2;
-        font-size: 18px;
+        font-size: calc(8px + 1vw);
         font-weight: 600;
         text-shadow: 0 0 3px black;
         margin-top: 5px;
