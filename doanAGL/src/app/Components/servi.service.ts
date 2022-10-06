@@ -53,15 +53,15 @@ export class ServiService {
               title:"Items 1",
               child_items:[
                 {
-                  icon:"bi bi-info-circle",name:"Ticket InformatiWon"
+                  icon:"bi bi-info-circle",routelink:'/ticket-infomation',name:"Ticket Information"
                 },
-                {icon:"fa-solid fa-horse",name:" Ride Height & Ticketing"}
+                {icon:"fa-solid fa-horse",routelink:'rideheight-ticketing',name:" Ride Height & Ticketing"}
               ]
             },{
               title:"Items 2",
               child_items:[
-                {icon:"bi bi-stars",name:" Discount & Specials"},
-                {icon:"bi bi-bag-plus",name:" Buy Ticket"}
+                {icon:"bi bi-stars",routelink:'',name:" Discount & Specials"},
+                {icon:"bi bi-bag-plus",routelink:'/select-tickets',name:" Buy Ticket"}
               ]
             }
           ],
@@ -70,7 +70,6 @@ export class ServiService {
             {
               main:'/ticket'
             }
-
         },{
             navname:"Ride & Attractions",
             icon:"",
@@ -80,14 +79,14 @@ export class ServiService {
                 child_items:[
                   {icon:"",routelink:'/runaway-rapids',name:"Runaway Rapids"},
                   {icon:"",routelink:'/hollowgraves-haunted',name:"Hollowgraves Haunted Manor"},
-                  {icon:"",routelink:'',name:"Keansburg Games"},
+                  {icon:"",routelink:'/keansburg-games',name:"Keansburg Games"},
                   {icon:"",routelink:'/arcades',name:"Arcades"},
                 ]
               },{
                 title:"Water",
                 child_items:[
-                  {icon:"",routelink:'',name:"Fishing Pier"},
-                  {icon:"",routelink:'',name:"Beach"},
+                  {icon:"",routelink:'/fishing-pier',name:"Fishing Pier"},
+                  {icon:"",routelink:'/beach',name:"Beach"},
                 ]
               },
               {

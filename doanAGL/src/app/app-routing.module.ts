@@ -28,6 +28,8 @@ import { BeachComponent } from './Components/Ride-Attraction/beach/beach.compone
 import { FishingPierComponent } from './Components/Ride-Attraction/fishing-pier/fishing-pier.component';
 import { GokartsComponent } from './Components/Ride-Attraction/gokarts/gokarts.component';
 import { KBgameComponent } from './Components/Ride-Attraction/kbgame/kbgame.component';
+import { TicketInfoComponent } from './Components/ticket/ticket-info/ticket-info.component';
+import { RideheightTicketComponent } from './Components/ticket/rideheight-ticket/rideheight-ticket.component';
 
 const routes: Routes = [
   {path:'',component:CpnHomeComponent},
@@ -66,6 +68,8 @@ const routes: Routes = [
   {path:"fishing-pier",component:FishingPierComponent},
   {path:"go-karts",component:GokartsComponent},
   {path:"keansburg-games",component:KBgameComponent},
+  {path:"ticket-infomation",component:TicketInfoComponent},
+  {path:"rideheight-ticketing",component:RideheightTicketComponent},
 
 ]
 @NgModule({
