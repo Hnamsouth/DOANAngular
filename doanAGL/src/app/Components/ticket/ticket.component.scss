@@ -369,3 +369,11 @@
     border-image: linear-gradient( to top, rgb(223 223 223), rgba(0, 0, 0, 0)) 1 50%;
     ;
 }
+
+.img-ticket {
+    max-width: 100px;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}

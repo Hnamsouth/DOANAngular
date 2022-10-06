@@ -105,6 +105,12 @@ export class CpnHeaderComponent implements OnInit {
     window.location.replace(`${this.servi.urlWeb}login`);
   }
 
+  class=''
+  btncollap(){
+    this.class=this.class=='block'?'none':'block';
+    console.log(this.class)
+  }
+  public isMenuCollapsed = true;
 
 }
 

@@ -17,18 +17,15 @@
                     </div>
                     <div class="nav-hd col-xl-4 col-4">
                         <i class="bi bi-search text-light fs-6 me-1 ms-1"></i>
-                        <!-- <input type="text" class="searchbar" placeholder="seach keansburgworld"> -->
-                        <!-- <input id="typeahead-format" type="text" class="form-control searchbar" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="formatter" /> -->
                         <input id="typeahead-basic" type="text" class="searchbar text-light" [(ngModel)]="model" [ngbTypeahead]="search" (keydown)="searchbar($event)" />
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center row">
+            <div class="col d-flex justify-content-center row nav-second">
 
-                <div class="collapse navbar-collapse nav-text justify-content-between col" id="navcol-3">
+                <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse nav-text justify-content-between col" id="navcol-3">
                     <div class="me-2 col-2 mb-2 text-center">
                         <img src="assets/svg/logo.svg" width="163" height="50" style="filter: drop-shadow(0 1px 2px #35181f);">
-                        <!-- https://cdn.discordapp.com/attachments/1017641794202247241/1023594446278897794/uppercase_logoAsset_1.png -->
                     </div>
                     <div class="list-nav">
                         <a routerLink="" class="nav-items1"> <i class="fa-solid fa-house-chimney fs-4"></i> </a>
@@ -64,7 +61,6 @@
                         <a routerLink="/cart" class="nav-items1"> <i class="bi bi-cart2 fs-5"></i> Cart</a>
                         <div class="child-items1">
                             <div class="d-flex" style="width: max-content;">
-                                <!--  -->
                                 <div *ngIf="!cartcheck" class="child-items-left cart-item">
                                     <span><strong>Your Cart</strong></span>
                                     <div class=" pt-3 pb-3 " style="border-top:1px solid white ;">
@@ -81,7 +77,6 @@
                                         <span> <span class="fs-5 fw-bold">$0.00</span>USD</span>
                                     </div>
                                 </div>
-                                <!--  -->
                                 <div *ngIf="cartcheck" class="child-items-left cart-item">
                                     <span><strong>Your Cart</strong></span>
                                     <div class=" pt-3 pb-3 " style="border-top:1px solid white; border-bottom:1px solid white;">
@@ -139,9 +134,50 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-between align-items-center  ">
+                <!-- <button class="navbar-toggler" (click)="btncollap()" data-bs-target="#navcol-3" style="border-style: none;"><span class="visually-hidden">Toggle navigationa</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg></button> -->
+                <div class="me-2 col-2 mb-2 text-center">
+                    <img src="assets/svg/logo.svg" class="logo-123" width="163" height="50" style="filter: drop-shadow(0 1px 2px #35181f);">
+                </div>
+                <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+              <!-- &#9776; -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="color: #ffffff;">
+                <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            </button>
+
+            </div>
+
         </div>
     </div>
 </nav>
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="'.'">Responsive navbar</a>
+
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      &#9776;
+    </button>
+
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Examples</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
 <style>
     ul,
     ul li {
@@ -212,41 +248,5 @@
     .img-my {
         filter: brightness(0) invert(1);
         width: 22px;
-    }
-</style>
-<style>
-    .nav-hd {
-        border-radius: 20px;
-        background-color: rgba(0, 0, 0, 0);
-        border: 1px solid #fff;
-        box-sizing: border-box;
-        box-shadow: inset 1px 1px 2px rgb(0 0 0 / 30%);
-        color: #3a5c87;
-        display: flex;
-        height: 30px;
-        padding: 4px;
-    }
-    
-    .searchbar {
-        background: none;
-        border: none;
-        border-inline: none;
-        outline: none;
-        width: -webkit-fill-available;
-    }
-    
-     ::placeholder {
-        color: white;
-        opacity: 0.8;
-        text-align: center;
-    }
-    
-    .login-p-header {
-        text-decoration: none;
-        text-shadow: 0 0 3px black;
-    }
-    
-    .login-p-header:hover {
-        text-decoration: underline;
     }
 </style>

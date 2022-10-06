@@ -186,101 +186,6 @@
 }
 
 // ----------------------------------
-// can touch this!
-@import '~compass-mixins/lib/compass/css3';
-// can touch this!
-$items: 6;
-$size: 100;
-$bgcolor: #a31a28;
-// can't touch this!
-$deg: 60;
-$unrotate: 60;
-$skew: 30;
-html {
-    background: #44384E;
-    margin: 70px;
-}
-
-ul {
-    @include transform(scale(0.3));
-    @include transition(.3s ease-out all);
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    li {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        -webkit-transform-origin: 100% 100%;
-        overflow: hidden;
-        display: none;
-        a {
-            color: white;
-            display: block;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            text-align: center;
-            background: #343434;
-            font-size: 25px;
-        }
-        &:nth-child(odd) {
-            a {
-                background: #253b56;
-            }
-        }
-        &:nth-child(even) {
-            a {
-                background: #1f3148;
-            }
-        }
-        @for $i from 1 through 6 {
-            &:nth-child(#{$i}) {
-                display: block;
-                @include transform(rotate(#{$i*$deg}deg) skew(#{$skew}deg));
-                a {
-                    line-height: 50px;
-                    @include transform(skew(#{-$skew}deg) rotate(-#{$deg}deg));
-                    &:hover {
-                        background-image: linear-gradient(90deg, #F2D49D, #b38633);
-                        color: white;
-                    }
-                }
-            }
-        }
-        &.close {
-            width: 50px;
-            height: 50px;
-            background-image: linear-gradient(45deg, #F2D49D, #b38633);
-            border-radius: 50%;
-            position: absolute;
-            left: calc(50% - 25px);
-            top: calc(50% - 25px);
-            display: block;
-            @include transform(scale(3.8) rotate(45deg));
-            @include transition(.3s ease-in-out all);
-            -webkit-transform-origin: 50% 50%;
-            a {
-                background: none;
-                width: 50px;
-                height: 50px;
-                line-height: 50px;
-                color: rgb(255, 255, 255);
-            }
-        }
-    }
-    &.active {
-        @include transform(scale(1));
-        .close {
-            @include transform(rotate(0deg));
-        }
-    }
-}
-
 .ctnShop {
     justify-content: space-around;
     text-align: center;
@@ -314,4 +219,99 @@ ul {
     color: white !important;
     box-shadow: inset 5px 5px 6px #ffffff91, 1px 2px 4px 0px #a8a8a8;
     margin-left: 35px;
+}
+
+.nav-hd {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 2px rgb(0 0 0 / 30%);
+    color: #3a5c87;
+    display: flex;
+    height: 30px;
+    padding: 4px;
+}
+
+.searchbar {
+    background: none;
+    border: none;
+    border-inline: none;
+    outline: none;
+    width: -webkit-fill-available;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.login-p-header {
+    text-decoration: none;
+    text-shadow: 0 0 3px black;
+}
+
+.login-p-header:hover {
+    text-decoration: underline;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 760px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 936px;
+    }
+    .row {
+        justify-content: center;
+    }
+    .logo-123 {
+        display: block !important;
+    }
+}
+
+@media (max-width: 996px) {
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 990px;
+    }
+    .row {
+        justify-content: center;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media only screen and (max-width: 936px) {
+    // .logo-123 {
+    //     display: block !important;
+    // }
+    // #navcol-3 {
+    //     display: none;
+    // }
+    // .navbar-toggler {
+    //     display: block !important;
+    // }
+}
+
+.logo-123 {
+    display: none;
+}
+
+.navbar-toggler {
+    border: none;
+    &:focus {
+        // outline: none;
+        box-shadow: none;
+    }
 }

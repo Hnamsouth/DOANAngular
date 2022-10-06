@@ -80,14 +80,12 @@ export class ServiService {
                 child_items:[
                   {icon:"",routelink:'/runaway-rapids',name:"Runaway Rapids"},
                   {icon:"",routelink:'/hollowgraves-haunted',name:"Hollowgraves Haunted Manor"},
-                  {icon:"",routelink:'',name:"Batting Cages"},
                   {icon:"",routelink:'',name:"Keansburg Games"},
                   {icon:"",routelink:'/arcades',name:"Arcades"},
                 ]
               },{
                 title:"Water",
                 child_items:[
-                  {icon:"",routelink:'',name:"Keansburg Amusement Park"},
                   {icon:"",routelink:'',name:"Fishing Pier"},
                   {icon:"",routelink:'',name:"Beach"},
                 ]
@@ -95,7 +93,7 @@ export class ServiService {
               {
                 title:"Kids",
                 child_items:[
-                  {icon:"",routelink:'',name:"Go Karts"},
+                  {icon:"",routelink:'/go-karts',name:"Go Karts"},
                 ]
               }
             ],
@@ -187,28 +185,28 @@ export class ServiService {
         //     }
 
         // },
-        {
-          navname:"Groups & Parties",
-          icon:"",
-          navitems:[
-            {
-              title:"",
-              child_items:[
-                {
-                  icon:"",routelink:'',name:"Group Packages"
-                },
-                {icon:"",routelink:'',name:"Brithday Packages"},
-                {icon:"",routelink:'',name:"Jeep Jam & Truck Show 2022"},
-              ]
-            }
-          ],
-          FeaturedItems:[],
-          routelink:
-            {
-              main:''
-            }
+        // {
+        //   navname:"Groups & Parties",
+        //   icon:"",
+        //   navitems:[
+        //     {
+        //       title:"",
+        //       child_items:[
+        //         {
+        //           icon:"",routelink:'',name:"Group Packages"
+        //         },
+        //         {icon:"",routelink:'',name:"Brithday Packages"},
+        //         {icon:"",routelink:'',name:"Jeep Jam & Truck Show 2022"},
+        //       ]
+        //     }
+        //   ],
+        //   FeaturedItems:[],
+        //   routelink:
+        //     {
+        //       main:''
+        //     }
 
-        }
+        // }
       ]
     }
 tax=9
@@ -216,8 +214,8 @@ tax=9
     urlapi='https://app-t2204m-eprojet.herokuapp.com/'
     // urltest='http://localhost:1234/'
     // link web
-    // urlWeb='http://localhost:4200/'
-    urlWeb='https://eproject-team.web.app/'
+    urlWeb='http://localhost:4200/'
+    // urlWeb='https://eproject-team.web.app/'
 
   constructor() { }
   setticket(data:any){localStorage.setItem('currentTicket',JSON.stringify(data))}

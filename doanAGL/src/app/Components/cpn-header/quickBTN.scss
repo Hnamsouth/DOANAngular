@@ -1,0 +1,94 @@
+// can touch this!
+@import '~compass-mixins/lib/compass/css3';
+// can touch this!
+$items: 6;
+$size: 100;
+$bgcolor: #a31a28;
+// can't touch this!
+$deg: 60;
+$unrotate: 60;
+$skew: 30;
+html {
+    background: #44384E;
+    margin: 70px;
+}
+
+ul {
+    @include transform(scale(0.3));
+    @include transition(.3s ease-out all);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    li {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        -webkit-transform-origin: 100% 100%;
+        overflow: hidden;
+        display: none;
+        a {
+            color: white;
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            text-align: center;
+            background: #343434;
+            font-size: 25px;
+        }
+        &:nth-child(odd) {
+            a {
+                background: #253b56;
+            }
+        }
+        &:nth-child(even) {
+            a {
+                background: #1f3148;
+            }
+        }
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+                display: block;
+                @include transform(rotate(#{$i*$deg}deg) skew(#{$skew}deg));
+                a {
+                    line-height: 50px;
+                    @include transform(skew(#{-$skew}deg) rotate(-#{$deg}deg));
+                    &:hover {
+                        background-image: linear-gradient(90deg, #F2D49D, #b38633);
+                        color: white;
+                    }
+                }
+            }
+        }
+        &.close {
+            width: 50px;
+            height: 50px;
+            background-image: linear-gradient(45deg, #F2D49D, #b38633);
+            border-radius: 50%;
+            position: absolute;
+            left: calc(50% - 25px);
+            top: calc(50% - 25px);
+            display: block;
+            @include transform(scale(3.8) rotate(45deg));
+            @include transition(.3s ease-in-out all);
+            -webkit-transform-origin: 50% 50%;
+            a {
+                background: none;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+    &.active {
+        @include transform(scale(1));
+        .close {
+            @include transform(rotate(0deg));
+        }
+    }
+}

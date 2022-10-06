@@ -41,7 +41,7 @@ import { Component, OnInit } from '@angular/core';
       </li>
   </ul>
 </div>`,
-  styleUrls: ['./cpn-header.component.scss']
+  styleUrls: ['./cpn-header.component.scss','./quickBTN.scss']
 })
 export class QuickBtnComponent implements OnInit {
 
