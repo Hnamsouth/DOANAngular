@@ -144,30 +144,6 @@
     </div>
 </nav>
 
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-  <div class="container-fluid">
-      <a class="navbar-brand" [routerLink]="'.'">Responsive navbar</a>
-
-      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-    &#9776;
-  </button>
-
-      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-          <ul class="navbar-nav">
-              <li class="nav-item active">
-                  <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Features</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Examples</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-</nav> -->
 <style>
     ul,
     ul li {
@@ -192,6 +168,7 @@
     }
 
     .nav-items1 {
+        font-size: calc(3px + 1vw)!important;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding: 7px 13px;
@@ -217,7 +194,6 @@
     .child-items-right a {
         color: white;
         text-decoration: none;
-        font-size: 15px;
         text-shadow: 0 0 3px black;
     }
 
